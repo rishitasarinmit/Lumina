@@ -200,6 +200,9 @@ footer p{max-width:none}
   dl.metagrid{grid-template-columns:minmax(0,1fr)}
   dl.metagrid dd{margin-bottom:6px}
   body{font-size:16px}
+  table.matrix th[scope=row]{white-space:normal;font-size:.84rem;padding-right:4px}
+  table.matrix td,table.matrix th{padding:3px 2px}
+  .cell{min-width:34px;height:36px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 @media (forced-colors:active){.seg,.cell,.fill-V,.fill-P,.fill-I{border:1px solid CanvasText}}
@@ -208,7 +211,7 @@ footer p{max-width:none}
 <body>
 <div class="wrap">
 <header>
-  <p class="eyebrow">Synthetic customer discovery · DE Steps 3 / 5 / 8 / 20</p>
+  <p class="eyebrow">Synthetic customer discovery · DE Steps 3 / 5 / 7 / 20</p>
   <h1>The Sepsis Sentinel</h1>
   <p class="muted" style="font-size:1.08rem">Ring-worn wearable digital twin for 14-day post-surgical at-home sepsis monitoring. Findings from 10 synthetic interviews.</p>
   <div class="meta num"><span class="mono">2026-09-28</span><span>n=10 synthetic personas</span><span>6 patients/caregivers · 4 clinical/buyers</span><span>Single coder</span></div>
@@ -270,7 +273,7 @@ footer p{max-width:none}
 </section>
 
 <section id="wtp">
-  <p class="eyebrow">DE Steps 15/16 · Willingness to pay</p>
+  <p class="eyebrow">DE Steps 16/17 · Willingness to pay</p>
   <h2>Buyers anchor near $125 per episode; patients expect it free</h2>
   <p class="lede">Van Westendorp price points. Ranges given by personas are stored as midpoints; original wording is in the notes columns. Refusals are flagged.</p>
   <h3>B2B: USD per monitored 14-day episode</h3>
@@ -361,7 +364,7 @@ footer p{max-width:none}
 <div class="tip" id="tip" role="tooltip"></div>
 
 <script type="application/json" id="study-data">{
- "study": "The Sepsis Sentinel: synthetic customer-discovery synthesis (Disciplined Entrepreneurship Steps 3, 5, 8, 20)",
+ "study": "The Sepsis Sentinel: synthetic customer-discovery synthesis (Disciplined Entrepreneurship Steps 3, 5, 7, 20)",
  "disclaimer": "SYNTHETIC research: cannot predict real human behavior; validate with real patients, clinicians and buyers.",
  "scoring_rubric": "Per cell: Validated = persona's own words support the assumption as stated without material conditions; Partially Validated = supports it only under explicit conditions or with mixed/indirect evidence; Invalidated = persona's words contradict it as stated. Verdict: Validated only if a majority validate with no invalidation majority in the decisive segment; Invalidated if no persona validates it as stated and >=50% of the decisive segment (patients/caregivers for A1 and A4; clinical/buyers for A2 and A3) invalidate; otherwise Partially Validated.",
  "assumptions": [
@@ -1912,7 +1915,7 @@ footer p{max-width:none}
   "date": "2026-09-28",
   "n": "10 synthetic personas (6 patients/caregivers, 4 clinical/buyers)",
   "method": "Semi-structured synthetic interviews (script v1: warm-up W1-W2, Q1-Q12, close C1-C2) with LLM-generated personas spread across the adoption curve; transcripts coded per assumption with a three-level rubric (Validated / Partially Validated / Invalidated) by a single analyst; objections coded and merged into 15 themes; Van Westendorp price-sensitivity questions, B2C (out-of-pocket per 2 weeks) and B2B (per monitored 14-day episode) kept separate.",
-  "grounding": "Disciplined Entrepreneurship Step 3 (End User Profile), Step 5 (Persona), Step 8 (High-Level Product Spec), Step 20 (Identify Key Assumptions); implications also noted for Steps 6, 9, 15/16 and 21.",
+  "grounding": "Disciplined Entrepreneurship Step 3 (End User Profile), Step 5 (Persona), Step 7 (High-Level Product Specification), Step 20 (Identify Key Assumptions); implications also noted for Steps 6, 8, 16/17 and 21.",
   "segments": "Patients/Caregivers = P1, P3, P5, P6, P9, P10. Clinical/Buyers = P2, P4, P7, P8.",
   "concept": "Concept read verbatim to every persona (script Section C): \"Some teams are exploring a small ring worn on the finger that passively measures heart rate, temperature, and similar signals around the clock for about two weeks after discharge. It learns a person's own normal pattern and can notify a care team if the pattern changes. It is an early idea, and I'm looking for honest reactions, including reasons it would not work.\""
  },
@@ -2408,15 +2411,21 @@ function marker(k, x, y, tipText){
 })();
 function rangePlot(boxId, rows, maxV, ticks, unit){
   var box = $(boxId); box.textContent = "";
-  var Wd = width(boxId), narrow = Wd < 560, left = narrow ? 96 : 220, right = 24, rowH = 44, top = 8;
+  var Wd = width(boxId), narrow = Wd < 560, left = narrow ? 8 : 220, right = narrow ? 16 : 24, rowH = narrow ? 50 : 44, top = 8;
   var H = top + rows.length * rowH + 22;
   var svg = s("svg", {viewBox:"0 0 " + Wd + " " + H, role:"img", "aria-label": "Van Westendorp price points per persona, " + unit});
   var pw = Wd - left - right; function X_(v){ return left + pw * v / maxV; }
   ticks.forEach(function(t){ var x = X_(t); svg.appendChild(s("line", {x1:x, x2:x, y1:top, y2:H-18, "class":"grid"})); svg.appendChild(s("text", {x:x, y:H-4, "text-anchor": "middle", "class":"monot"}, "$" + t)); });
   rows.forEach(function(r, i){
     var y = top + i*rowH + rowH/2 - 4;
-    svg.appendChild(s("text", {x:0, y:y-2, "class":"ink", "font-weight":"600"}, r.label));
-    svg.appendChild(s("text", {x:0, y:y+13, "font-size":"11"}, narrow ? r.subShort : r.sub));
+    if (narrow){
+      y = top + i*rowH + 30;
+      var nt = s("text", {x:0, y:y-14, "class":"ink", "font-weight":"600"}, r.label + " ");
+      if (r.subShort) nt.appendChild(s("tspan", {"font-weight":"400", style:"fill:var(--muted)"}, "\u00B7 " + r.subShort)); svg.appendChild(nt);
+    } else {
+      svg.appendChild(s("text", {x:0, y:y-2, "class":"ink", "font-weight":"600"}, r.label));
+      svg.appendChild(s("text", {x:0, y:y+13, "font-size":"11"}, r.sub));
+    }
     var vals = VWK.map(function(k){ return r[k[0]]; }).filter(function(v){ return v !== null && v !== undefined; });
     if (r.note) svg.appendChild(s("text", {x: X_(vals.length ? Math.max.apply(null, vals) : 0) + (vals.length ? 12 : 0), y:y+4, "font-size":"11.5"}, r.note));
     if (vals.length >= 2){
@@ -2426,19 +2435,19 @@ function rangePlot(boxId, rows, maxV, ticks, unit){
     VWK.forEach(function(k){
       var v = r[k[0]]; if (v === null || v === undefined) return;
       svg.appendChild(marker(k[0], X_(v), y, money(v) + "\n" + r.label + " · " + k[1]));
-      if (!narrow || k[0] === "good_deal") svg.appendChild(s("text", {x:X_(v), y:y-11, "text-anchor":"middle", "class":"monot"}, money(v)));
+      if (!narrow) svg.appendChild(s("text", {x:X_(v), y:y-11, "text-anchor":"middle", "class":"monot"}, money(v)));
     });
   });
   box.appendChild(svg);
 }
 function renderWTP(){
-  var b2b = W.b2b.map(function(r){ return {label: r.persona + " " + PN[r.persona], sub: P.filter(function(p){return p.id===r.persona;})[0].adoption.split(" (")[0], subShort: r.refused ? "Refused" : "", too_cheap:r.too_cheap, good_deal:r.good_deal, getting_expensive:r.getting_expensive, too_expensive:r.too_expensive, note: r.refused ? "Refused to price" : null}; });
+  var b2b = W.b2b.map(function(r){ return {label: r.persona + " " + PN[r.persona], sub: P.filter(function(p){return p.id===r.persona;})[0].adoption.split(" (")[0], subShort: r.refused ? "Refused" : "Late majority", too_cheap:r.too_cheap, good_deal:r.good_deal, getting_expensive:r.getting_expensive, too_expensive:r.too_expensive, note: r.refused ? "Refused to price" : null}; });
   b2b.forEach(function(r){ if (r.label.indexOf("P2") === 0){ r.sub = "Device + software only"; r.subShort = "Device only"; } if (r.label.indexOf("P8") === 0){ r.sub = "All-in incl. overnight monitoring"; r.subShort = "All-in"; } if (r.label.indexOf("P4") === 0){ r.subShort = "Gut only"; r.sub = "Gut numbers, no budget authority"; } });
   b2b.push({label:"Median (n=3)", sub:"Median of midpoints", subShort:"n=3", too_cheap:bb.median.too_cheap, good_deal:bb.median.good_deal, getting_expensive:bb.median.getting_expensive, too_expensive:bb.median.too_expensive});
   rangePlot("chart-b2b", b2b, 600, [0,100,200,300,400,500,600], "USD per episode");
   var b2c = W.b2c.map(function(r){
     var o = {label: r.persona + " " + PN[r.persona], sub: r.refused ? "Refuses out-of-pocket" : "Would pay (fallback)", subShort: r.refused ? "Refuses" : "Would pay", too_cheap:r.too_cheap, good_deal:r.good_deal, getting_expensive:r.getting_expensive, too_expensive:r.too_expensive, note:null};
-    if (r.persona === "P5"){ o.sub = "Refuses; numbers under protest"; o.subShort = "Refuses*"; }
+    if (r.persona === "P5"){ o.sub = "Refuses; numbers under protest"; o.subShort = "Refuses; under protest"; }
     if (r.persona === "P9") o.note = "Refused: good deal is 'Free'";
     if (r.persona === "P10") o.note = "Refused: 'Free is too cheap'";
     return o; });
@@ -2604,7 +2613,7 @@ P.forEach(function(p){
 });
 
 /* ---------- DE ---------- */
-[["step3","DE Step 3","End User Profile"],["step5","DE Step 5","Persona (recommendation)"],["step6","DE Step 6","Full Life Cycle Use Case"],["step8","DE Steps 7/8","High-Level Product Spec"],["step9","DE Step 9","Quantified Value Proposition"],["step15_16","DE Steps 15/16","Pricing Framework and LTV"],["step20","DE Step 20","Revised assumptions and next riskiest"]].forEach(function(r){
+[["step3","DE Step 3","End User Profile"],["step5","DE Step 5","Persona (recommendation)"],["step6","DE Step 6","Full Life Cycle Use Case"],["step8","DE Step 7","High-Level Product Specification"],["step9","DE Step 8","Quantified Value Proposition"],["step15_16","DE Steps 16/17","Pricing Framework and LTV"],["step20","DE Step 20","Revised assumptions and next riskiest"]].forEach(function(r){
   var a = el("article"); a.appendChild(el("p", {"class":"eyebrow"}, r[1])); a.appendChild(el("h3", null, r[2])); a.appendChild(el("p", null, D.de_implications[r[0]])); $("destep").appendChild(a);
 });
 $("tests-intro").textContent = X.tests_intro;

@@ -6,13 +6,13 @@
 
 | Field | Value |
 |---|---|
-| Study | The Sepsis Sentinel: synthetic customer-discovery synthesis (Disciplined Entrepreneurship Steps 3, 5, 8, 20) |
+| Study | The Sepsis Sentinel: synthetic customer-discovery synthesis (Disciplined Entrepreneurship Steps 3, 5, 7, 20) |
 | Product concept | Ring-worn wearable digital twin for 14-day post-surgical at-home sepsis monitoring |
 | Report date | 2026-09-28 |
 | Sample | n=10 synthetic personas (6 patients/caregivers, 4 clinical/buyers) |
 | Segments | Patients/Caregivers = P1, P3, P5, P6, P9, P10. Clinical/Buyers = P2, P4, P7, P8. |
 | Method | Semi-structured synthetic interviews (script v1: warm-up W1-W2, Q1-Q12, close C1-C2) with LLM-generated personas spread across the adoption curve; transcripts coded per assumption with a three-level rubric (Validated / Partially Validated / Invalidated) by a single analyst; objections coded and merged into 15 themes; Van Westendorp price-sensitivity questions, B2C (out-of-pocket per 2 weeks) and B2B (per monitored 14-day episode) kept separate. |
-| Framework grounding | Disciplined Entrepreneurship Step 3 (End User Profile), Step 5 (Persona), Step 8 (High-Level Product Spec), Step 20 (Identify Key Assumptions); implications also noted for Steps 6, 9, 15/16 and 21. |
+| Framework grounding | Disciplined Entrepreneurship Step 3 (End User Profile), Step 5 (Persona), Step 7 (High-Level Product Specification), Step 20 (Identify Key Assumptions); implications also noted for Steps 6, 8, 16/17 and 21. |
 | Data type | SYNTHETIC. Every persona, transcript, quote and price is LLM-generated. |
 
 Concept read verbatim to every persona (script Section C): "Some teams are exploring a small ring worn on the finger that passively measures heart rate, temperature, and similar signals around the clock for about two weeks after discharge. It learns a person's own normal pattern and can notify a care team if the pattern changes. It is an early idea, and I'm looking for honest reactions, including reasons it would not work."
@@ -578,15 +578,15 @@ Recommend THE Persona be Karen Mitchell, RN (RPM Nurse Manager). The value can o
 
 Full Life Cycle Use Case, revised: (1) Surgeon's office enrolls the patient at the pre-op visit through an Epic order; (2) ring sizing kit at pre-admission testing, with a 7-14 day pre-op baseline for elective cases; (3) removed for the OR, and a larger size or an alternative form factor (wrist/patch) is issued at discharge if fingers are swollen; (4) cellular hub, no phone pairing; teach-back to the caregiver in the patient's language; (5) days 0-14: vendor-staffed 24/7 nurse triage watches post-op-trajectory-adjusted deviations; non-wear or low battery triggers a caregiver nudge, never a clinical alert; (6) tiered escalation: nurse call → photo/recheck → same-day visit/CRP → ED with call-ahead; Epic In Basket only for pre-triaged escalations; (7) structured human touchpoints on about day 2, 5 and 9 (P4, P7, P10); (8) day 14: prepaid return mailer, data deletion confirmation, outcome report to service line and finance.
 
-### DE Steps 7/8: High-Level Product Spec
+### DE Step 7: High-Level Product Specification
 
 High-Level Product Spec: the product is a service (24/7 triage and escalation protocol) with a wearable attached, not a ring with a dashboard. Must-haves: multi-size or adjustable fit tolerant of edema and arthritis, plus a non-ring alternative; at least 7-day battery or charge-while-worn, so there is no nightly removal; cellular hub instead of smartphone Bluetooth; non-wear/signal-loss detection kept separate from clinical alerts; explainable alerts (which signal, magnitude, window, versus a population post-op trajectory plus a personal pre-op baseline); medication and comorbidity context (immunosuppression, beta-blockers, diabetes); Epic integration with no standalone login; bias-audited PPG across skin tones; multilingual caregiver notifications (Spanish, Chinese); patient data export (P1, P5); strict no-secondary-use/deletion terms. Consider an Oura/Apple Health BYOD integration tier (P1).
 
-### DE Step 9: Quantified Value Proposition
+### DE Step 8: Quantified Value Proposition
 
 Quantified Value Proposition in the buyer's currency: (a) alerts per 100 patient-days and PPV, with a target of less than one-third false positives forwarded to health-system staff; (b) nurse minutes per enrolled patient, with net-zero or negative time by displacing post-discharge calls or the call vendor (P8: 2 FTE at ~$130K loaded plus a low-six-figure vendor); (c) lead time in hours versus current detection; (d) avoided TEAM-episode readmissions at ~$15-25K each. P8's break-even is ~15-25 avoided per ~1,100 episodes at $200/episode plus 1 FTE, and he requires 1.5x. For caregivers: 'somebody knows before 7 a.m.', measured as caregiver sleep hours and anxiety scores.
 
-### DE Steps 15/16: Pricing Framework and LTV
+### DE Steps 16/17: Pricing Framework and LTV
 
 Pricing Framework: B2B per-episode, all-in (device, logistics, 24/7 triage, Epic integration), anchored at $125-200 with an outcomes-based or risk-share component on documented TEAM episode savings (P8's preferred structure). Avoid a device-only SKU below ~$50-75, which reads as 'a consumer ring with a dashboard bolted on'. Do not rely on B2C: median out-of-pocket good deal is ~$39 per two weeks and half refuse, and patient coinsurance on RPM codes (verify) is a barrier for fixed-income patients. Treat RPM codes as an upside offset. LTV (illustrative only): a mid-size system with ~1,000-1,200 TEAM/ACO episodes/yr at $125-200 is ~$125-240K ARR, expanding across service lines. Unit-economics risk: one 24/7 triage seat needs ~4.5-5 FTE (~$600K+/yr at P8's loaded cost), so triage must be pooled across many systems before the price covers labor.
 
