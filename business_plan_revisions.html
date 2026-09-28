@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sepsis Sentinel Plan Revisions</title>
+<meta name="description" content="Recommended revisions to the Sepsis Sentinel end user profile, persona, value proposition and business plan, organized by Disciplined Entrepreneurship step, from a synthetic interview study.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F5F7FA; --surface:#FFFFFF; --surface-2:#EDF1F6;
+  --ink:#15213A; --muted:#56657E; --rule:#D6DDE7;
+  --accent:#2343A5; --accent-soft:#E3E9F8;
+  --ok:#1D7A4E; --ok-soft:#E1F2E9;
+  --warn:#9A5B00; --warn-soft:#FBEFD9;
+  --bad:#B0281F; --bad-soft:#FBE4E1;
+  --display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0D1320; --surface:#151D2E; --surface-2:#1C2639;
+  --ink:#E5EBF4; --muted:#9BA9BF; --rule:#2A3550;
+  --accent:#8FA8FF; --accent-soft:#1F2B4D;
+  --ok:#5CC98E; --ok-soft:#133224; --warn:#F0B35A; --warn-soft:#3A2A10; --bad:#FF8A7F; --bad-soft:#3D1A17;
+  color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --paper:#0D1320; --surface:#151D2E; --surface-2:#1C2639;
+  --ink:#E5EBF4; --muted:#9BA9BF; --rule:#2A3550;
+  --accent:#8FA8FF; --accent-soft:#1F2B4D;
+  --ok:#5CC98E; --ok-soft:#133224; --warn:#F0B35A; --warn-soft:#3A2A10; --bad:#FF8A7F; --bad-soft:#3D1A17;
+  color-scheme:dark; }
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;
+  padding-inline:max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right));padding-block:32px 48px}
+.wrap{max-width:1080px;margin:0}
+@media (min-width:1180px){ .wrap{margin-left:max(0px, calc((100vw - 1080px)/2 - 60px))} }
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(24px,3.4vw,30px);font-weight:600;margin-top:8px}
+h3{font-size:clamp(20px,2.6vw,24px);font-weight:600;margin-top:4px}
+h4{font-family:var(--body);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:20px 0 6px}
+p,li{max-width:68ch}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin-bottom:6px}
+li:last-child{margin-bottom:0}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:2px}
+strong{font-weight:700}
+.eyebrow{font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 4px}
+.muted{color:var(--muted)}
+.mono{font-family:var(--mono);font-size:.9em}
+.num,table{font-variant-numeric:tabular-nums}
+.chip{font-family:var(--mono);font-size:12.5px;padding:1px 6px;border:1px solid var(--rule);border-radius:4px;background:var(--surface-2);white-space:nowrap}
+.pid{font-family:var(--mono);font-size:.86em;font-weight:500;color:var(--muted)}
+
+/* header */
+header.top{border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:20px}
+.dek{font-size:19px;color:var(--muted);max-width:62ch;margin-top:10px}
+.meta-line{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 18px}
+
+/* disclaimer */
+.notice{background:var(--warn-soft);border:1px solid var(--warn);border-radius:6px;padding:16px 18px;margin:0 0 28px}
+.notice .eyebrow{color:var(--warn)}
+.notice p{margin:0;font-weight:600;max-width:80ch}
+
+/* sections */
+section.block{margin-top:44px}
+.theme{margin-top:56px;padding-top:18px;border-top:2px solid var(--ink)}
+.theme > .eyebrow{color:var(--muted)}
+.theme-intro{color:var(--muted);margin-top:6px}
+article.step{margin-top:28px;padding-top:22px;border-top:1px solid var(--rule);scroll-margin-top:16px}
+.step-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px}
+.step-head h3{flex:1 1 320px;min-width:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px}
+.grid2 > *{min-width:0}
+@media (max-width:640px){ .grid2{grid-template-columns:1fr} }
+.part{margin-top:14px}
+.part > h4{margin-top:0}
+.orig{color:var(--muted)}
+.rev{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:14px 16px}
+.rev h4{color:var(--accent)}
+.validate{background:var(--surface-2);border-radius:6px;padding:12px 16px;margin-top:14px}
+.validate h4{margin-top:0}
+.validate p:last-child,.validate ul:last-child,.rev p:last-child,.rev ul:last-child{margin-bottom:0}
+blockquote{margin:10px 0;padding:0 0 0 14px;border-left:2px solid var(--rule);max-width:64ch}
+blockquote p{margin:0;font-style:italic}
+blockquote cite{display:block;font-style:normal;font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:2px}
+.qs{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}
+.qs > *{min-width:0}
+@media (max-width:640px){ .qs{grid-template-columns:1fr} }
+
+/* pills */
+.pill{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;padding:2px 8px;border-radius:999px;border:1px solid;white-space:nowrap;line-height:1.5}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.c-high{color:var(--accent);background:var(--accent-soft);border-color:var(--accent)}
+.c-med{color:var(--ink);background:var(--surface);border-color:var(--muted)}
+.c-med::before{background:transparent;border:1.5px solid currentColor;width:5px;height:5px}
+.c-low{color:var(--muted);background:transparent;border-color:var(--muted);border-style:dashed}
+.c-low::before{background:transparent;border:1.5px dashed currentColor;width:5px;height:5px}
+.v-ok{color:var(--ok);background:var(--ok-soft);border-color:var(--ok)}
+.v-warn{color:var(--warn);background:var(--warn-soft);border-color:var(--warn)}
+.v-bad{color:var(--bad);background:var(--bad-soft);border-color:var(--bad)}
+.type{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:4px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);white-space:nowrap}
+.type.new{border-color:var(--accent);color:var(--accent)}
+.type.test{border-style:dashed}
+
+/* tables */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0 16px;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:8px 12px;border-bottom:1px solid var(--rule)}
+tr:last-child td{border-bottom:0}
+th{font-family:var(--body);font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);white-space:nowrap}
+td.n,th.n{text-align:right;white-space:nowrap}
+.summary td:first-child{font-family:var(--mono);white-space:nowrap}
+.summary td:nth-child(2){min-width:170px}
+.summary td:nth-child(5){min-width:260px}
+.summary tr.grp td{background:var(--surface-2);font-family:var(--body);font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-block:6px}
+
+/* toc */
+nav.toc{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px;margin-top:20px}
+nav.toc ol{list-style:none;padding:0;margin:0;columns:2;column-gap:32px}
+@media (max-width:640px){ nav.toc ol{columns:1} }
+nav.toc li{break-inside:avoid;margin:0 0 10px;max-width:none}
+nav.toc li > a{font-weight:600}
+nav.toc ul{list-style:none;padding:0;margin:4px 0 0}
+nav.toc ul li{margin:0 0 2px;font-size:15px}
+nav.toc ul a{font-weight:400}
+nav.toc .s{font-family:var(--mono);font-size:12px;color:var(--muted);display:inline-block;min-width:26px}
+
+/* legend */
+.legend{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:baseline;margin:12px 0}
+.legend > *{min-width:0}
+.legend p{margin:0}
+
+/* before/after */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.ba > div{min-width:0;border:1px solid var(--rule);border-radius:6px;padding:14px 16px;background:var(--surface)}
+.ba .before{background:var(--surface-2)}
+.ba .before p{color:var(--muted)}
+.ba .after{border-color:var(--accent)}
+.ba h4{margin-top:0}
+.ba .after h4{color:var(--accent)}
+.ba p:last-child{margin-bottom:0}
+@media (max-width:640px){ .ba{grid-template-columns:1fr} }
+
+/* timeline */
+.tl{list-style:none;padding:0;margin:14px 0;border-left:2px solid var(--rule);max-width:none}
+.tl li{position:relative;padding:0 0 14px 20px;max-width:none;display:grid;grid-template-columns:118px 1fr;gap:4px 14px}
+.tl li > *{min-width:0}
+.tl li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.tl li.night::before{background:var(--ink);border-color:var(--ink)}
+.tl .d{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--accent);padding-top:2px}
+.tl .w{max-width:62ch}
+.tl .w strong{display:block}
+@media (max-width:640px){ .tl li{grid-template-columns:1fr} }
+
+/* formula */
+.formula{font-family:var(--mono);font-size:14px;background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;overflow-x:auto;white-space:pre;line-height:1.7;margin:12px 0}
+.ph{color:var(--warn);font-weight:500}
+
+/* assumption cards */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0}
+@media (max-width:640px){ .cards{grid-template-columns:1fr} }
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;min-width:0}
+.card .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline}
+.card .id{font-family:var(--mono);font-weight:500}
+.card p{font-size:15.5px;margin:8px 0 0}
+.card .cnt{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:6px}
+.card.new{border-style:dashed;border-color:var(--accent)}
+
+footer{margin-top:64px;padding-top:18px;border-top:2px solid var(--ink);font-size:15px;color:var(--muted)}
+footer .notice{margin-top:14px}
+footer .notice p{color:var(--ink)}
+.back{font-family:var(--mono);font-size:12.5px;margin-top:10px;display:inline-block}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Sepsis Sentinel · Business plan revisions · Disciplined Entrepreneurship</p>
+  <h1>Recommended revisions to the Sepsis Sentinel plan, step by step</h1>
+  <p class="dek">What a 10-persona synthetic interview study suggests we change in the end user profile, persona, value proposition and business model. Organized by Bill Aulet's 24 Steps, built only on the strongest patterns, with weaker signals flagged.</p>
+  <div class="meta-line"><span>n=10 synthetic personas</span><span>6 patients/caregivers · 4 clinical/buyers</span><span>Assumptions A1–A4</span><span>2026-09-28</span></div>
+</header>
+
+<div class="notice" role="note" aria-label="Methodological disclaimer">
+  <p class="eyebrow">Mandatory disclaimer</p>
+  <p>Synthetic user research provides a rapid, low-cost hypothesis test, but IT CANNOT RELIABLY PREDICT REAL HUMAN BEHAVIOR. All findings, objections, and willingness-to-pay metrics generated by synthetic personas must be validated through primary market research with real patients, clinicians, and health system buyers.</p>
+</div>
+
+<section class="block" id="how-to-read" aria-labelledby="h-how">
+  <p class="eyebrow">Orientation</p>
+  <h2 id="h-how">How to read this</h2>
+  <p>Each step section follows the same order: the original assumption or plan, what the synthetic study showed, the recommended revision, a confidence level, and how to validate it with real people. Counts are out of 10 personas unless stated. Text in quotation marks is copied verbatim from the synthetic transcripts. Persona IDs: <span class="pid">P1</span> Raj (Innovator patient), <span class="pid">P2</span> Dr. Okafor (CMIO, champion), <span class="pid">P3</span> Maria (caregiver), <span class="pid">P4</span> Karen Mitchell, RN (RPM nurse manager), <span class="pid">P5</span> Denise (transplant patient), <span class="pid">P6</span> Linda (spouse caregiver), <span class="pid">P7</span> Dr. Brennan (colorectal chief), <span class="pid">P8</span> Greg (CFO), <span class="pid">P9</span> Hal (rural patient), <span class="pid">P10</span> Frank (rejector).</p>
+  <div class="legend">
+    <span class="pill c-high">High</span><p>Consistent across at least 7 of 10 personas and present in both segments (patients/caregivers and clinical/buyers). These drive the plan.</p>
+    <span class="pill c-med">Medium</span><p>A clear pattern within one segment, or 4–6 personas across both, or a direct inference from High findings. Act on it, but test early.</p>
+    <span class="pill c-low">Low</span><p>Needs data. Based on 3 or fewer personas, synthetic numbers (for example n=3 price points), or analyst reasoning. Treat as a placeholder.</p>
+  </div>
+  <p class="muted">Change types: <span class="type">Revise</span> change the original plan · <span class="type">Keep</span> leave as is or defer · <span class="type new">New</span> did not exist in the plan · <span class="type test">Test</span> a real-world experiment. Step numbers follow Aulet's book (2013). Earlier project notes numbered some steps one higher (for example "Step 9" for Quantify the Value Proposition); the step name is authoritative.</p>
+</section>
+
+<nav class="toc" aria-label="Contents">
+  <p class="eyebrow">Contents</p>
+  <ol>
+    <li><a href="#how-to-read">How to read this</a></li>
+    <li><a href="#at-a-glance">At-a-glance summary</a></li>
+    <li><a href="#before-after">Before and after: value proposition and end user</a></li>
+    <li><a href="#theme-who">Who is your customer?</a>
+      <ul><li><span class="s">1</span> <a href="#step-1">Market Segmentation</a></li><li><span class="s">2</span> <a href="#step-2">Beachhead Market</a></li><li><span class="s">3</span> <a href="#step-3">End User Profile</a></li><li><span class="s">4</span> <a href="#step-4">TAM for the Beachhead</a></li><li><span class="s">5</span> <a href="#step-5">Persona</a></li><li><span class="s">9</span> <a href="#step-9">Next 10 Customers</a></li></ul></li>
+    <li><a href="#theme-what">What can you do for your customer?</a>
+      <ul><li><span class="s">6</span> <a href="#step-6">Full Life Cycle Use Case</a></li><li><span class="s">7</span> <a href="#step-7">High-Level Product Specification</a></li><li><span class="s">8</span> <a href="#step-8">Quantify the Value Proposition</a></li><li><span class="s">10</span> <a href="#step-10">Define the Core</a></li><li><span class="s">11</span> <a href="#step-11">Competitive Position</a></li></ul></li>
+    <li><a href="#theme-acquire">How does your customer acquire your product?</a>
+      <ul><li><span class="s">12</span> <a href="#step-12">Decision-Making Unit</a></li><li><span class="s">13</span> <a href="#step-13">Process to Acquire a Paying Customer</a></li></ul></li>
+    <li><a href="#theme-money">How do you make money off your product?</a>
+      <ul><li><span class="s">15</span> <a href="#step-15">Business Model</a></li><li><span class="s">16</span> <a href="#step-16">Pricing Framework</a></li><li><span class="s">17</span> <a href="#step-17">Lifetime Value</a></li><li><span class="s">19</span> <a href="#step-19">Cost of Customer Acquisition</a></li></ul></li>
+    <li><a href="#theme-build">How do you design and build your product?</a>
+      <ul><li><span class="s">20</span> <a href="#step-20">Identify Key Assumptions</a></li><li><span class="s">21</span> <a href="#step-21">Test Key Assumptions</a></li><li><span class="s">22</span> <a href="#step-22">Minimum Viable Business Product</a></li><li><span class="s">23</span> <a href="#step-23">Dogs Will Eat the Dog Food</a></li></ul></li>
+    <li><a href="#theme-scale">How do you scale your business?</a>
+      <ul><li><span class="s">14</span> <a href="#step-14">TAM for Follow-on Markets</a></li><li><span class="s">18</span> <a href="#step-18">Sales Process</a></li><li><span class="s">24</span> <a href="#step-24">Product Plan</a></li></ul></li>
+  </ol>
+</nav>
+
+<section class="block" id="at-a-glance" aria-labelledby="h-glance">
+  <p class="eyebrow">Summary before detail</p>
+  <h2 id="h-glance">At a glance: every step touched</h2>
+  <p>The three highest-confidence changes: (1) the product becomes a vendor-staffed 24/7 triage service that owns the night, with the wearable as its sensor; (2) the ring alone cannot be the form factor, because all 10 personas raised fit and the highest-risk patients are least able to wear one; (3) the money case moves off CMS RPM codes and HRRP penalties, which no persona validated, toward risk-bearing surgical episodes.</p>
+  <div class="tw">
+  <table class="summary">
+    <thead><tr><th>Step</th><th>Name</th><th>Change</th><th>Confidence</th><th>One-line change</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="5">Who is your customer?</td></tr>
+      <tr><td>1</td><td><a href="#step-1">Market Segmentation</a></td><td><span class="type">Revise</span></td><td><span class="pill c-med">Medium</span></td><td>Segment by who carries post-discharge financial risk, then by surgery type and age.</td></tr>
+      <tr><td>2</td><td><a href="#step-2">Beachhead Market</a></td><td><span class="type">Revise</span></td><td><span class="pill c-med">Medium</span></td><td>TEAM-participating health systems with an RPM hub; start with major bowel episodes.</td></tr>
+      <tr><td>3</td><td><a href="#step-3">End User Profile</a></td><td><span class="type">Revise</span></td><td><span class="pill c-high">High</span></td><td>End user is a triad: wearer, caregiver-operator, triage nurse. Swollen hands and night ambiguity define it.</td></tr>
+      <tr><td>4</td><td><a href="#step-4">TAM for the Beachhead</a></td><td><span class="type">Revise</span></td><td><span class="pill c-low">Low</span></td><td>Recount TAM as TEAM episodes per year times per-episode price. No new numbers until sourced.</td></tr>
+      <tr><td>5</td><td><a href="#step-5">Persona</a></td><td><span class="type">Revise</span></td><td><span class="pill c-med">Medium</span></td><td>THE Persona is the RPM nurse manager (<span class="pid">P4</span>). The CFO moves to the DMU as economic buyer.</td></tr>
+      <tr><td>9</td><td><a href="#step-9">Next 10 Customers</a></td><td><span class="type new">New</span></td><td><span class="pill c-med">Medium</span></td><td>Recruit 10 real RPM nurse managers at TEAM hospitals, plus their surgeon and CFO.</td></tr>
+      <tr class="grp"><td colspan="5">What can you do for your customer?</td></tr>
+      <tr><td>6</td><td><a href="#step-6">Full Life Cycle Use Case</a></td><td><span class="type">Revise</span></td><td><span class="pill c-high">High</span></td><td>Pre-op enrollment and baseline, a named 24/7 overnight owner, tiered escalation, human calls on set days.</td></tr>
+      <tr><td>7</td><td><a href="#step-7">High-Level Product Spec</a></td><td><span class="type">Revise</span></td><td><span class="pill c-high">High</span></td><td>A staffed triage service with an edema-tolerant sensor, 7-day battery, cellular hub and explainable tiered alerts.</td></tr>
+      <tr><td>8</td><td><a href="#step-8">Quantify the Value Proposition</a></td><td><span class="type">Revise</span></td><td><span class="pill c-high">High</span></td><td>Stop leading with readmission penalties. Express value in episode dollars, nurse minutes and avoided ED visits.</td></tr>
+      <tr><td>10</td><td><a href="#step-10">Define the Core</a></td><td><span class="type new">New</span></td><td><span class="pill c-med">Medium</span></td><td>The core is overnight clinical ownership: protocol, staffing model and post-op-adjusted alert logic.</td></tr>
+      <tr><td>11</td><td><a href="#step-11">Competitive Position</a></td><td><span class="type">Revise</span></td><td><span class="pill c-high">High</span></td><td>The main competitor is the status quo: the 48-hour call and the call-above-101°F rule, plus a well-timed nurse call.</td></tr>
+      <tr class="grp"><td colspan="5">How does your customer acquire your product?</td></tr>
+      <tr><td>12</td><td><a href="#step-12">Decision-Making Unit</a></td><td><span class="type">Revise</span></td><td><span class="pill c-med">Medium</span></td><td>Champion CMIO, economic buyer CFO, veto holders surgeon and nurse manager, influencers coordinator and caregiver.</td></tr>
+      <tr><td>13</td><td><a href="#step-13">Process to Acquire</a></td><td><span class="type new">New</span></td><td><span class="pill c-med">Medium</span></td><td>Surgeon-prescribed, order-triggered enrollment; purchase through a study-grade pilot with kill criteria.</td></tr>
+      <tr class="grp"><td colspan="5">How do you make money off your product?</td></tr>
+      <tr><td>15</td><td><a href="#step-15">Business Model</a></td><td><span class="type">Revise</span></td><td><span class="pill c-med">Medium</span></td><td>Per-episode, all-in device plus service fee with a risk-share option. RPM billing is an optional offset.</td></tr>
+      <tr><td>16</td><td><a href="#step-16">Pricing Framework</a></td><td><span class="type">Revise</span></td><td><span class="pill c-low">Low</span></td><td>Test $125 and $200 per-episode anchors plus risk-share. Drop patient out-of-pocket as a channel.</td></tr>
+      <tr><td>17</td><td><a href="#step-17">Lifetime Value</a></td><td><span class="type">Revise</span></td><td><span class="pill c-low">Low</span></td><td>Structure only: episodes per system times price times service lines times retention, minus triage labor.</td></tr>
+      <tr><td>19</td><td><a href="#step-19">COCA</a></td><td><span class="type">Revise</span></td><td><span class="pill c-low">Low</span></td><td>Structure only: long enterprise cycle plus funded pilot and integration costs.</td></tr>
+      <tr class="grp"><td colspan="5">How do you design and build your product?</td></tr>
+      <tr><td>20</td><td><a href="#step-20">Identify Key Assumptions</a></td><td><span class="type">Revise</span></td><td><span class="pill c-high">High</span></td><td>A1, A2, A3 invalidated as stated. New riskiest: signal validity (A5), then triage unit economics.</td></tr>
+      <tr><td>21</td><td><a href="#step-21">Test Key Assumptions</a></td><td><span class="type test">Test</span></td><td><span class="pill c-med">Medium</span></td><td>Six real-world experiments with pass and kill thresholds set before data collection.</td></tr>
+      <tr><td>22</td><td><a href="#step-22">MVBP</a></td><td><span class="type new">New</span></td><td><span class="pill c-med">Medium</span></td><td>Paid concierge triage for one TEAM episode type at one hospital, with ring or alternate sensor.</td></tr>
+      <tr><td>23</td><td><a href="#step-23">Dogs Eat the Dog Food</a></td><td><span class="type test">Test</span></td><td><span class="pill c-low">Low</span></td><td>Evidence of real demand: signed paid pilot, wear-hours, nurse minutes, caregiver reuse.</td></tr>
+      <tr class="grp"><td colspan="5">How do you scale your business?</td></tr>
+      <tr><td>14</td><td><a href="#step-14">TAM for Follow-on Markets</a></td><td><span class="type">Keep</span></td><td><span class="pill c-low">Low</span></td><td>Defer. List candidate follow-on markets as hypotheses only.</td></tr>
+      <tr><td>18</td><td><a href="#step-18">Sales Process</a></td><td><span class="type new">New</span></td><td><span class="pill c-low">Low</span></td><td>Land one service line through a pilot, expand across TEAM episode types, then pool triage across systems.</td></tr>
+      <tr><td>24</td><td><a href="#step-24">Product Plan</a></td><td><span class="type new">New</span></td><td><span class="pill c-low">Low</span></td><td>Sequence: concierge service, shadow-mode sensor, tiered alerts in Epic, BYOD tier, follow-on episodes.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="block" id="before-after" aria-labelledby="h-ba">
+  <p class="eyebrow">DE Steps 3 and 8 · Headline rewrite</p>
+  <h2 id="h-ba">Before and after</h2>
+  <h4>Value proposition</h4>
+  <div class="ba">
+    <div class="before">
+      <h4>Before (original thesis)</h4>
+      <p>Post-surgical patients wear a ring 24/7 for 14 days. It builds a digital twin of their personal baseline, and RPM nurses act on baseline-deviation alerts. Health systems pay through CMS RPM codes to avoid 30-day readmission penalties, and patients and caregivers welcome passive tracking.</p>
+    </div>
+    <div class="after">
+      <h4>After (recommended)</h4>
+      <p>For health systems carrying the cost of surgical episodes under CMS TEAM or other risk contracts, Sepsis Sentinel is a surgeon-prescribed, vendor-staffed 24/7 triage service for the first 14 days at home. A comfortable, edema-tolerant wearable collects signals against a pre-op baseline and the expected post-op trajectory. Our nurses screen every alert overnight, call the patient or caregiver with a clear next step, and forward only explained, pre-triaged escalations into Epic. The system pays per episode, with an option to tie fees to documented episode savings, and adds no net work for its own nurses. Patients and caregivers get a named person who knows them and answers at 2 a.m.</p>
+    </div>
+  </div>
+  <h4>End user profile statement</h4>
+  <div class="ba">
+    <div class="before">
+      <h4>Before (Stage 1 persona file)</h4>
+      <p>"Adults aged 60+ and/or immunocompromised who have been discharged home within 14 days after inpatient surgery (colorectal, cardiac, orthopedic joint, transplant, abdominal), plus the family caregivers who manage their recovery, plus the hospital clinical and economic stakeholders (RPM nurses, surgeons, CMIO/digital health leaders, CFOs) who would deploy and pay for monitoring."</p>
+    </div>
+    <div class="after">
+      <h4>After (recommended)</h4>
+      <p>Adults recovering at home in the 14 days after an elective TEAM episode surgery (starting with major bowel) at a TEAM hospital with an RPM hub. The end user is a triad: the wearer, often older, on opioids and with swollen or arthritic hands; the family caregiver who operates the device and takes the calls; and the RPM or triage nurse who acts on alerts. All three face the same night-time question of whether a sub-101°F temperature and feeling "off" is normal recovery or the start of sepsis, and none of them has anyone to ask before morning.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THEME 1 -->
+<section class="theme" id="theme-who" aria-labelledby="h-t1">
+  <p class="eyebrow">Theme 1 of 6</p>
+  <h2 id="h-t1">Who is your customer?</h2>
+  <p class="theme-intro">Steps 1, 2, 3, 4, 5 and 9.</p>
+
+  <article class="step" id="step-1" aria-labelledby="h-s1">
+    <p class="eyebrow">DE Step 1</p>
+    <div class="step-head"><h3 id="h-s1">Market Segmentation</h3><div class="tags"><span class="type">Revise</span><span class="pill c-med">Medium</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>Segment by patient: adults 60+ or immunocompromised, after any inpatient surgery (colorectal, cardiac, orthopedic, transplant, abdominal), with health systems as a single buyer type paying through RPM codes.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>No persona named CMS RPM codes as the primary funding source (0/10); 3 buyers called RPM a partial offset (<span class="pid">P2, P4, P8</span>). The buyers who gave a funding source pointed to TEAM/episode or ACO budgets (<span class="pid">P2, P8</span>) or a service-line budget (<span class="pid">P4</span>). Under fee-for-service, an avoided readmission can cost revenue.</p>
+        <blockquote><p>“For commercial fee-for-service, avoiding a readmission can actually cost us revenue.”</p><cite>P8, CFO</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Put the buyer's risk position first in the segmentation. Primary axis: who pays for a post-discharge complication (TEAM episode participant, ACO or integrated-plan lives, Medicare Advantage risk, pure fee-for-service). Secondary axes: surgery type (elective vs emergency, since elective allows a pre-op baseline), existence of an RPM hub, and patient hand and connectivity constraints. Fee-for-service-only systems become a low-priority segment.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Interviewing 8–10 real CFOs and revenue-cycle leads across TEAM, ACO and fee-for-service systems about who absorbs the cost of a post-op readmission. Confidence is Medium because only 4 synthetic buyers spoke to it.</p></div>
+  </article>
+
+  <article class="step" id="step-2" aria-labelledby="h-s2">
+    <p class="eyebrow">DE Step 2</p>
+    <div class="step-head"><h3 id="h-s2">Beachhead Market</h3><div class="tags"><span class="type">Revise</span><span class="pill c-med">Medium</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>Any US health system with post-surgical patients at risk of readmission, motivated by readmission penalties.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>Three personas noted post-op sepsis is not an HRRP penalty condition (<span class="pid">P4, P7, P8</span>). The CFO said the money lands only in episode or ACO budgets. All 3 frontline clinicians (<span class="pid">P2, P4, P7</span>) told a recent bowel-surgery story where a patient was "off" for 1–2 days, or data sat unwatched over a weekend, before presenting septic.</p>
+        <blockquote><p>“Honestly, TEAM is the only place it clearly lands.”</p><cite>P8, CFO</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Beachhead: hospitals selected for CMS TEAM (mandatory from January 2026, with episode budgets that include 30 days after discharge) that already run an RPM or virtual care hub. Start with one episode type. Major bowel is the lead candidate because it matches the leak window and the clinical stories; lower-extremity joint replacement is the alternate. CABG, spinal fusion and hip/femur fracture follow within TEAM. Verify which hospitals and episodes are in TEAM from current CMS lists.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Pulling each target hospital's own TEAM episode volume and 30-day readmission causes for major bowel versus joint replacement, and asking 5 real service-line leaders which episode is over target and why.</p></div>
+  </article>
+
+  <article class="step" id="step-3" aria-labelledby="h-s3">
+    <p class="eyebrow">DE Step 3</p>
+    <div class="step-head"><h3 id="h-s3">End User Profile</h3><div class="tags"><span class="type">Revise</span><span class="pill c-high">High</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>A single end user, the patient, who wears the ring and welcomes passive tracking because of anxiety about complications.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <ul>
+          <li>All 10 personas raised ring fit (swelling, arthritis, sizing); 9/10 raised charging or connectivity.</li>
+          <li>9/10 described the core ambiguity of telling normal recovery from early complication. All 6 patients/caregivers had a sub-101°F low-grade temperature episode; in all 4 night-time episodes (<span class="pid">P1, P6, P9, P10</span>) nobody called before morning.</li>
+          <li>8/10 asked for an accountable human owner or interpreter when asked what one thing they would change.</li>
+          <li>Caregivers operate the device and take the calls (<span class="pid">P3, P6</span>, and <span class="pid">P9</span>'s wife June).</li>
+        </ul>
+        <blockquote><p>“they're going to be the real operators for a lot of these patients”</p><cite>P2, CMIO, on caregivers</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Replace the single patient with a triad: (a) the wearer, older, often on opioids, with swollen or arthritic hands; (b) the family caregiver who charges, fits and receives calls; (c) the RPM or triage nurse who consumes alerts. Narrow to elective TEAM episodes so a pre-op baseline is possible. Immunocompromised patients (<span class="pid">P5</span>) have high need because fever is blunted. Design alternatives for emergency surgery (no baseline, <span class="pid">P9</span>), rheumatoid or severe arthritis (<span class="pid">P9, P10</span>) and homes without cellular coverage.</p>
+      <p class="muted">Confidence split: the triad, hand constraints and night-time ambiguity are High. Narrowing to elective TEAM episodes is Medium.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Observing 15–20 real discharges and follow-up home visits for one TEAM episode type, and measuring finger circumference on post-op days 0, 3, 7 and 14. Interview the caregivers separately from the patients.</p></div>
+  </article>
+
+  <article class="step" id="step-4" aria-labelledby="h-s4">
+    <p class="eyebrow">DE Step 4</p>
+    <div class="step-head"><h3 id="h-s4">TAM for the Beachhead</h3><div class="tags"><span class="type">Revise</span><span class="pill c-low">Low</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>TAM sized from all 60+ post-surgical discharges times RPM reimbursement per patient.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4><p>The RPM revenue line is doubtful for a 14-day episode (<span class="pid">P4, P7, P8</span>), the buyer is the episode budget holder, and patients will not pay (3/6 refuse any out-of-pocket cost). So both the unit count and the price per unit in the original TAM are wrong.</p>
+        <blockquote><p>“RPM billing is not a clean fit for a fourteen-day episode.”</p><cite>P2, CMIO</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Rebuild the beachhead TAM bottom-up. This page adds no new market-size figures; every input below is to be validated.</p>
+      <div class="formula" role="figure" aria-label="TAM structure">Beachhead TAM / yr = <span class="ph">[# TEAM hospitals with an RPM hub]</span>
+                 × <span class="ph">[eligible major bowel episodes per hospital / yr]</span>
+                 × <span class="ph">[share clinically eligible for home monitoring]</span>
+                 × <span class="ph">[per-episode price, to be validated]</span></div>
+      <p>Replace the RPM-reimbursement price with the per-episode service price from Step 16. Size RPM billing separately as a possible offset, and only after compliance review.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Sourcing hospital and episode counts from current CMS TEAM participant files, and checking eligibility share with 3 real surgical service lines. Low confidence until then.</p></div>
+  </article>
+
+  <article class="step" id="step-5" aria-labelledby="h-s5">
+    <p class="eyebrow">DE Step 5</p>
+    <div class="step-head"><h3 id="h-s5">Persona</h3><div class="tags"><span class="type">Revise</span><span class="pill c-med">Medium</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>The persona was the anxious post-surgical patient who welcomes passive tracking. The Stage 1 file deliberately spread 10 profiles across the adoption curve without choosing one.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>A2 (workflow and alert fatigue, the nurse manager's domain) was invalidated by 3 of 4 clinical/buyers. Every buyer priced the product through nurse workload. The champion said the nurse manager holds the practical veto. The CFO's all-in price with vendor overnight monitoring ($100–150 good value) sat below the champion's device-only price ($150–250).</p>
+        <blockquote><p>“she has veto power in practice even if not on paper”</p><cite>P2, CMIO, on the RPM nurse manager</cite></blockquote>
+        <blockquote><p>“But show me the night coverage plan and the false-alarm numbers before you show me the ring.”</p><cite>P4, RPM nurse manager</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p><strong>THE Persona: Karen Mitchell, RN, RPM Nurse Manager (<span class="pid">P4</span>).</strong> Her team is where the value is delivered or lost, and she can stop a deployment on the ground.</p>
+      <h4>Weighing the nurse manager against the economic buyer</h4>
+      <div class="tw"><table>
+        <thead><tr><th>Criterion</th><th>P4 Nurse manager</th><th>P8 CFO (economic buyer)</th></tr></thead>
+        <tbody>
+          <tr><td>Uses the product daily</td><td>Yes, her team takes escalations</td><td>No</td></tr>
+          <tr><td>Can stop adoption</td><td>Practical veto (P2)</td><td>Formal veto on budget</td></tr>
+          <tr><td>Defines success as</td><td>Alerts per patient, minutes per alert, night coverage</td><td>Episode savings on his own ledger, 12-month payback</td></tr>
+          <tr><td>Stable across systems</td><td>RPM hubs look similar across systems</td><td>Finances depend heavily on each system's contracts</td></tr>
+          <tr><td>Product design guidance</td><td>High (workflow, protocol, Epic)</td><td>Low (price, contract terms)</td></tr>
+        </tbody>
+      </table></div>
+      <p>Aulet's persona is the end user whose needs shape the product. The CFO decides whether money moves, so he leads the DMU in Step 12, but he cannot tell us what to build. Design the wearer experience around the Rosa and Maria dyad (<span class="pid">P3</span>): an older non-gadget user plus an engaged caregiver. Do not make Raj (<span class="pid">P1</span>) the persona. He already owns an Oura and rejects a second ring.</p>
+      <p class="muted">Medium, because only 4 clinical/buyer personas exist and they were written to represent distinct roles.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Running 10 real interviews with RPM and virtual-care nurse managers at TEAM hospitals (Step 9), and asking each of their CFOs the same pricing questions separately. If real nurse managers show little influence on purchase, revisit the choice.</p></div>
+  </article>
+
+  <article class="step" id="step-9" aria-labelledby="h-s9">
+    <p class="eyebrow">DE Step 9</p>
+    <div class="step-head"><h3 id="h-s9">Identify Your Next 10 Customers</h3><div class="tags"><span class="type new">New</span><span class="pill c-med">Medium</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>Not defined. The plan assumed demand from any hospital with an RPM program.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4><p>Buyers asked for their own data before any money moves: a retrospective on their own TEAM readmissions (<span class="pid">P8</span>) and a pilot on their own patients with a comparison group (<span class="pid">P2, P4, P8</span>). The C2 referrals named APPs, after-hours line nurses, transplant coordinators, revenue cycle, the CISO and risk management.</p></div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Recruit 10 real customers that match the persona, each with the other DMU roles reachable:</p>
+      <ul>
+        <li>4 RPM or virtual-care nurse managers at TEAM hospitals with a major bowel volume, hub closed nights or weekends.</li>
+        <li>2 at systems with an integrated health plan or ACO lives (Okafor-type).</li>
+        <li>2 at community systems with thin margins (Halvorsen-type).</li>
+        <li>1 at an orthopedic-heavy TEAM hospital (joint replacement alternate).</li>
+        <li>1 at a transplant center, to test the immunocompromised sub-segment.</li>
+      </ul>
+      <p>For each, record: hub hours, nurse FTEs, current alert noise, TEAM episode volume, who covers nights, and the name of the colorectal chief and CFO.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Counting how many of the 10 agree to a second meeting that includes their CFO or surgeon. Fewer than 3 would signal the persona or beachhead is wrong.</p></div>
+  </article>
+</section>
+
+<!-- THEME 2 -->
+<section class="theme" id="theme-what" aria-labelledby="h-t2">
+  <p class="eyebrow">Theme 2 of 6</p>
+  <h2 id="h-t2">What can you do for your customer?</h2>
+  <p class="theme-intro">Steps 6, 7, 8, 10 and 11.</p>
+
+  <article class="step" id="step-6" aria-labelledby="h-s6">
+    <p class="eyebrow">DE Step 6</p>
+    <div class="step-head"><h3 id="h-s6">Full Life Cycle Use Case</h3><div class="tags"><span class="type">Revise</span><span class="pill c-high">High</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>Ring issued at discharge, worn 24/7 for 14 days, learns the baseline after discharge, and alerts go to "the care team".</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>8/10 raised that no one owns the alert, especially at night; every hub described is daytime-only. The Innovator lost about 4 days of data right after surgery. Three personas asked for structured human touchpoints (<span class="pid">P4, P7, P10</span>).</p>
+        <blockquote><p>“a notification at 2 a.m. goes to nobody in my world”</p><cite>P4, RPM nurse manager</cite></blockquote>
+        <blockquote><p>“So I've got a gap of about four days in my data, right when you'd most want it.”</p><cite>P1, patient</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision: post-op day 0 to 14</h4>
+      <p>Filled markers are overnight. The overnight owner is the vendor's 24/7 triage nurse, who escalates to the hospital's on-call surgery team under a surgeon-signed standing protocol.</p>
+      <ol class="tl">
+        <li><span class="d">Pre-op visit</span><div class="w"><strong>Surgeon's office enrolls through an Epic order</strong>The surgeon or their nurse explains it in the patient's language. The messenger is the patient's own clinician.</div></li>
+        <li><span class="d">Day −14 to −1</span><div class="w"><strong>Sizing kit and pre-op baseline</strong>Fitted at pre-admission testing; 7–14 days of baseline for elective cases.</div></li>
+        <li><span class="d">Day 0</span><div class="w"><strong>Removed for the OR; refit at discharge</strong>Larger size, adjustable ring or non-ring form factor if hands are swollen. Cellular hub, no phone pairing. Teach-back with the caregiver.</div></li>
+        <li class="night"><span class="d">Days 0–3</span><div class="w"><strong>72-hour window: trajectory mode</strong>Compare against the pre-op baseline and the expected post-op trajectory, since post-op physiology is already abnormal. Non-wear or low battery triggers a caregiver nudge, never a clinical alert.</div></li>
+        <li><span class="d">Day 2</span><div class="w"><strong>Human touchpoint 1</strong>Nurse call, replacing or absorbing the existing 48-hour call.</div></li>
+        <li class="night"><span class="d">Any night</span><div class="w"><strong>Tiered escalation, owned by vendor triage nurse</strong>Nurse call, then photo or recheck, then same-day visit or CRP, then ED with call-ahead. Epic In Basket receives only pre-triaged escalations.</div></li>
+        <li><span class="d">Day 5</span><div class="w"><strong>Human touchpoint 2</strong>Covers the leak and SSI window that opens days 5–10.</div></li>
+        <li><span class="d">Day 9</span><div class="w"><strong>Human touchpoint 3</strong>Last structured call before the clinic visit.</div></li>
+        <li><span class="d">Day 14</span><div class="w"><strong>Close-out</strong>Prepaid return mailer, data deletion confirmation, outcome report to the service line and finance.</div></li>
+      </ol>
+      <p class="muted">The need for a named overnight owner is High (8/10, both segments). The exact call days (2, 5, 9) are Medium, drawn from 3 personas.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Walking the timeline with 3 real hub teams and 2 on-call surgery teams, then running it as a concierge pilot (Step 21, test 5). Record where hand-offs fail, especially between 9 p.m. and 7 a.m.</p></div>
+  </article>
+
+  <article class="step" id="step-7" aria-labelledby="h-s7">
+    <p class="eyebrow">DE Step 7</p>
+    <div class="step-head"><h3 id="h-s7">High-Level Product Specification</h3><div class="tags"><span class="type">Revise</span><span class="pill c-high">High</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>A smart ring measuring heart rate, temperature and related signals, building a personal "digital twin" after discharge, with alerts to existing RPM nurses.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>Top objections: false alarms destroy trust (10/10), ring fit (10/10), charging and connectivity (9/10), no alert owner at night (8/10), opaque alerts (8/10), prefer a human (8/10), baseline and specificity (7/10), post-surgical evidence (7/10).</p>
+        <div class="qs">
+          <blockquote><p>“the ring fits on day one and is loose on day ten, or it's too tight on day three”</p><cite>P4</cite></blockquote>
+          <blockquote><p>“I can't get my wedding ring past my knuckle and you want to put a ring on me.”</p><cite>P10</cite></blockquote>
+          <blockquote><p>“So it's baselining on a sick person.”</p><cite>P1</cite></blockquote>
+          <blockquote><p>“was this tested on people who look like me and take my medications?”</p><cite>P5</cite></blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision: a staffed service with a sensor attached</h4>
+      <div class="tw"><table>
+        <thead><tr><th>Spec area</th><th>Recommendation</th><th>Evidence</th><th>Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>Form factor for swollen hands</td><td>Multi-size kit and an adjustable or open ring; a second size issued at discharge; alternate wear sites (wrist band, upper arm); an adhesive chest or arm patch for RA and severe arthritis</td><td>Fit raised by 10/10; hardest cases <span class="pid">P6, P9, P10</span></td><td><span class="pill c-high">High</span></td></tr>
+          <tr><td>72-hour post-op baseline problem</td><td>Do not learn "normal" from days 0–3. Score against pre-op baseline plus a population post-op trajectory for the procedure</td><td>Baseline objection 7/10 across both segments</td><td><span class="pill c-high">High</span></td></tr>
+          <tr><td>Pre-op baseline capture</td><td>7–14 days of wear before elective surgery, fitted at pre-admission testing</td><td><span class="pid">P1, P7</span>; synthesis Step 3</td><td><span class="pill c-med">Medium</span></td></tr>
+          <tr><td>Power and connectivity</td><td>At least 7-day battery or charge-while-worn; cellular hub, no smartphone Bluetooth</td><td>Charging/connectivity 9/10</td><td><span class="pill c-high">High</span></td></tr>
+          <tr><td>Alert tiering and explanation</td><td>Show which signal, how much, over what window, and a tiered next step. Non-wear and signal loss are separate from clinical alerts</td><td>Opaque alerts 8/10; silent gaps 7/10</td><td><span class="pill c-high">High</span></td></tr>
+          <tr><td>Human in the loop, 24/7</td><td>Vendor-staffed triage nurses screen all alerts, call with steps, forward only real escalations</td><td>Human over device 8/10; no night owner 8/10</td><td><span class="pill c-high">High</span></td></tr>
+          <tr><td>EHR integration</td><td>Order-triggered enrollment and escalations in Epic In Basket; no standalone login or dashboard</td><td><span class="pid">P2, P4, P7, P8</span> (clinical segment only)</td><td><span class="pill c-med">Medium</span></td></tr>
+          <tr><td>Skin-tone validation</td><td>Bias-audited PPG with subgroup results published; include transplant and immunosuppressed patients</td><td>Equity theme 5/10</td><td><span class="pill c-med">Medium</span></td></tr>
+          <tr><td>Clinical context</td><td>Medication and comorbidity inputs (immunosuppression, beta-blockers, diabetes, COPD, tremor)</td><td>Baseline/specificity theme</td><td><span class="pill c-med">Medium</span></td></tr>
+          <tr><td>Language and privacy</td><td>Spanish and Chinese caregiver messages; no secondary use, deletion after episode, patient data export</td><td>Privacy 7/10; language <span class="pid">P3, P6</span></td><td><span class="pill c-med">Medium</span></td></tr>
+          <tr><td>Consumer ring integration</td><td>Optional BYOD tier for Oura or Apple Health owners</td><td><span class="pid">P1</span> only</td><td><span class="pill c-low">Low</span></td></tr>
+        </tbody>
+      </table></div>
+      <p>Drop "digital twin", "AI" and "tracking" from patient-facing language. Those terms triggered surveillance and gadget framing for <span class="pid">P7, P9, P10</span>.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>A fit clinic trying 2–3 form factors on real post-op hands, including RA and arthritic hands, on days 0, 3, 7 and 14, and a shadow-mode wear study (Step 21, tests 1 and 2).</p></div>
+  </article>
+
+  <article class="step" id="step-8" aria-labelledby="h-s8">
+    <p class="eyebrow">DE Step 8</p>
+    <div class="step-head"><h3 id="h-s8">Quantify the Value Proposition</h3><div class="tags"><span class="type">Revise</span><span class="pill c-high">High</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>Value = avoided HRRP readmission penalties plus RPM revenue (<span class="chip">99453</span> <span class="chip">99454</span> <span class="chip">99457</span> <span class="chip">99458</span>).</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>A3 was invalidated as stated: 0 Validated, 6 Partial, 4 Invalidated. No persona called RPM the primary funding. Buyers price in labor and alert volume.</p>
+        <blockquote><p>“A cheap device that doubles my alert volume is the most expensive thing you could sell me.”</p><cite>P4</cite></blockquote>
+        <blockquote><p>“So an alerting tool can actually make my numbers worse in exactly the contracts where I'm supposed to be saving money”</p><cite>P8</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Stop leading with HRRP. Sepsis is not an HRRP target condition (HRRP covers AMI, heart failure, pneumonia, COPD, CABG and THA/TKA, with a penalty cap of 3% of base DRG payments). Express value in the buyer's currency. The structure below uses placeholders; it reports no results.</p>
+      <div class="formula" role="figure" aria-label="Value math structure">Net value per 100 episodes =
+    <span class="ph">[avoided readmissions per 100]</span> × <span class="ph">[cost per readmission inside TEAM episode]</span>
+  + <span class="ph">[avoided ED visits per 100]</span>    × <span class="ph">[cost per ED visit]</span>
+  + <span class="ph">[displaced nurse-hours]</span>          × <span class="ph">[loaded hourly cost]</span>
+  + <span class="ph">[displaced call-vendor spend]</span>
+  − <span class="ph">[false-alarm ED visits and CTs]</span>   × <span class="ph">[cost each]</span>
+  − <span class="ph">[residual health-system nurse minutes]</span> × <span class="ph">[cost per minute]</span>
+  − 100 × <span class="ph">[per-episode price]</span>
+  + <span class="ph">[RPM offset, only if compliant]</span></div>
+      <p>Operating metrics to publish alongside: forwarded alerts per 100 patient-days, PPV, lead time in hours versus current detection, and caregiver sleep and anxiety. Buyer thresholds stated by synthetic personas, to be confirmed: forwarded false positives under one-third (<span class="pid">P4</span>); payback within 12 months and at least 1.5x return (<span class="pid">P8</span>). <span class="pid">P8</span> also sketched a break-even of about $350K per year at $200 per episode for about 1,100 episodes plus one triage FTE, needing roughly 15–25 avoided readmissions. That is a synthetic persona's estimate, not a validated figure.</p>
+      <p>For caregivers, the value line is <span class="mono">“Just knowing that if something happens at 2 a.m., somebody knows before 7 a.m.”</span> (<span class="pid">P3</span>).</p>
+      <p class="muted">High for moving off HRRP and RPM as the lead (0/10 validated A3, both segments). Medium for TEAM as the replacement currency (2–3 buyers).</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Filling every placeholder with a real CFO's own TEAM data (Step 21, test 4). Confirm current RPM code rules with revenue cycle: <span class="chip">99454</span> historically required at least 16 days of data per 30 days, and the CY2026 Physician Fee Schedule added shorter options (2–15 days of device supply and a 10-minute management code). Verify current CMS rules and payer policy, including whether RPM can be billed inside a surgical global period.</p></div>
+  </article>
+
+  <article class="step" id="step-10" aria-labelledby="h-s10">
+    <p class="eyebrow">DE Step 10</p>
+    <div class="step-head"><h3 id="h-s10">Define Your Core</h3><div class="tags"><span class="type new">New</span><span class="pill c-med">Medium</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>Implied core: the ring hardware and its personal-baseline algorithm.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>The single biggest unmet need (8/10) is an accountable person who owns the patient overnight. The champion framed alert thresholds as a staffing decision.</p>
+        <blockquote><p>“It also taught me that the threshold isn't a technical decision, it's a staffing decision.”</p><cite>P2</cite></blockquote>
+        <blockquote><p>“That's not a device, that's just, somebody paying attention.”</p><cite>P10</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Define the core as overnight clinical ownership at low alert volume: the combination of (1) a surgeon-signed tiered protocol library by procedure, (2) a pooled 24/7 triage staffing model with known minutes per alert, and (3) post-op-trajectory-adjusted alert logic tuned on outcome data. Hardware can be sourced or swapped. Protocol, staffing data and outcome-tuned thresholds accumulate with every episode and are hard to copy.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Checking in the Wizard-of-Oz triage test whether real nurses achieve lower minutes per alert with the protocol than without it. If sensors from any vendor perform the same, that confirms hardware is not the core.</p></div>
+  </article>
+
+  <article class="step" id="step-11" aria-labelledby="h-s11">
+    <p class="eyebrow">DE Step 11</p>
+    <div class="step-head"><h3 id="h-s11">Chart Your Competitive Position</h3><div class="tags"><span class="type">Revise</span><span class="pill c-high">High</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>Competitors are other wearables and RPM vendors; the ring wins on passive, continuous data.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>The real incumbent is the discharge sheet and the 48-hour call. 6/6 patients/caregivers had a sub-101°F episode that the single threshold did not catch. <span class="pid">P7</span>'s comparator is a day-5 nurse call plus CRP. 3/6 patients/caregivers would prefer or accept a nurse call over the ring.</p>
+        <blockquote><p>“said it's probably the pain medication and to watch the incision and call if it's over 101”</p><cite>P3, on the nurse line</cite></blockquote>
+        <blockquote><p>“The gap between the 48-hour call and the two-week visit is exactly when leaks and deep wound infections show up”</p><cite>P7</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Chart position on the two axes buyers used: overnight coverage by a named clinician, and health-system nurse workload added.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Alternative</th><th>Overnight coverage</th><th>Added nurse workload</th><th>Sees sub-101°F drift</th><th>Evidence base</th></tr></thead>
+        <tbody>
+          <tr><td>Status quo: 48h call + call-above-101°F rule</td><td>None</td><td>Low</td><td>No</td><td>6/6 patient episodes missed; confidence High</td></tr>
+          <tr><td>Well-timed nurse calls (days 2/5/9)</td><td>None</td><td>Medium</td><td>Only if asked</td><td><span class="pid">P5, P6, P7, P10</span>; Medium</td></tr>
+          <tr><td>Existing RPM vendors (cuffs, scales, wrist wearables)</td><td>Rarely; hubs closed nights</td><td>High (~35% noise, <span class="pid">P4</span>)</td><td>Partly</td><td><span class="pid">P2, P4, P8</span>; Medium</td></tr>
+          <tr><td>Consumer rings (Oura and similar)</td><td>None; no care-team loop</td><td>None</td><td>Yes, but nobody sees it</td><td><span class="pid">P1</span> only; Low</td></tr>
+          <tr><td>Revised Sepsis Sentinel</td><td>Vendor triage nurse, 24/7</td><td>Target net zero</td><td>Yes, with context</td><td>To be proven</td></tr>
+        </tbody>
+      </table></div>
+      <p>Position against the status quo and nurse calls first; they are what buyers will compare to. Treat the RPM vendor landscape as unresearched: this study contains no real competitor data.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>A head-to-head concierge test (Step 21, test 5): nurse calls alone versus nurse calls plus sensor data, measuring caregiver preference and missed events. Separately, map real RPM vendor offerings and their overnight coverage from public sources.</p></div>
+  </article>
+</section>
+
+<!-- THEME 3 -->
+<section class="theme" id="theme-acquire" aria-labelledby="h-t3">
+  <p class="eyebrow">Theme 3 of 6</p>
+  <h2 id="h-t3">How does your customer acquire your product?</h2>
+  <p class="theme-intro">Steps 12 and 13.</p>
+
+  <article class="step" id="step-12" aria-labelledby="h-s12">
+    <p class="eyebrow">DE Step 12</p>
+    <div class="step-head"><h3 id="h-s12">Determine the Customer's Decision-Making Unit</h3><div class="tags"><span class="type">Revise</span><span class="pill c-med">Medium</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>The hospital buys; RPM nurses use it; patients accept it.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>At least 6 personas said they would comply only if their own trusted clinician prescribed it, and that messenger differs by patient. The surgeon controls protocol enrollment. The CFO signs.</p>
+        <blockquote><p>“You get one shot.”</p><cite>P7, colorectal chief</cite></blockquote>
+        <blockquote><p>“It would come out of the episode budget, meaning TEAM and ACO, not RPM.”</p><cite>P8, CFO</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <div class="tw"><table>
+        <thead><tr><th>Role</th><th>Who</th><th>What they need to say yes</th></tr></thead>
+        <tbody>
+          <tr><td>Champion</td><td>CMIO / VP Digital Health (<span class="pid">P2</span>)</td><td>PPV and nurse workload per 100 patients, Epic integration, pilot with kill criterion</td></tr>
+          <tr><td>End user and persona</td><td>RPM nurse manager (<span class="pid">P4</span>)</td><td>Night coverage plan, false-alarm numbers, surgeon-signed protocol</td></tr>
+          <tr><td>Economic buyer</td><td>CFO (<span class="pid">P8</span>)</td><td>Model on own TEAM data, risk-share, 12-month payback</td></tr>
+          <tr><td>Veto holder: clinical</td><td>Chief of surgery (<span class="pid">P7</span>)</td><td>Prospective surgical evidence, triage off his APPs, explicit escalation thresholds</td></tr>
+          <tr><td>Veto holder: operational</td><td>RPM nurse manager (<span class="pid">P4</span>)</td><td>No net workload, no standalone dashboard</td></tr>
+          <tr><td>Veto holders: other</td><td>CISO, risk management, compliance</td><td>BAA, security review, liability for unseen data (not interviewed)</td></tr>
+          <tr><td>Influencers</td><td>Transplant coordinator (<span class="pid">P5</span>), family doctor (<span class="pid">P9</span>), family caregiver (<span class="pid">P3, P6</span>)</td><td>Trusted messenger for the wearer; caregiver as operator</td></tr>
+          <tr><td>Wearer</td><td>Patient</td><td>Own clinician prescribes it, it fits, a named person calls</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Asking each of the next 10 customers to name who signed, who blocked and who was consulted on their last RPM or post-discharge program, and interviewing the roles the synthetic study missed (CISO, risk, APPs, after-hours line nurses).</p></div>
+  </article>
+
+  <article class="step" id="step-13" aria-labelledby="h-s13">
+    <p class="eyebrow">DE Step 13</p>
+    <div class="step-head"><h3 id="h-s13">Map the Process to Acquire a Paying Customer</h3><div class="tags"><span class="type new">New</span><span class="pill c-med">Medium</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>Not mapped. Implied: sell a device to an RPM program and bill.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>The champion runs everything through a digital health steering committee, can approve pilots up to about $250K, and faces 6–9 month procurement. The CFO wants a finance-run pilot.</p>
+        <blockquote><p>“If a vendor won't agree to prespecified success criteria and a kill criterion, I won't run it”</p><cite>P2</cite></blockquote>
+        <blockquote><p>“a prospective pilot on a few hundred patients with a matched comparison group, measured on readmissions, ED visits, and total episode spend, with our finance team doing the analysis, not yours”</p><cite>P8</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <ol>
+        <li>Nurse manager discovery call; share staffing model and alert-volume data.</li>
+        <li>Champion sponsors a free retrospective on the hospital's own TEAM readmissions.</li>
+        <li>Surgeon review of the tiered protocol; surgeon signs it.</li>
+        <li>CISO and BAA review in parallel.</li>
+        <li>Steering committee approves a paid pilot with prespecified success and kill criteria, analyzed by the hospital's finance team.</li>
+        <li>CFO contract: per-episode fee with risk-share, aligned to the fiscal year.</li>
+        <li>Patient-level acquisition runs through an Epic order at the pre-op visit; the surgeon's office is the messenger.</li>
+      </ol>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Tracking the real calendar time and cost of steps 1–6 with the first 2–3 hospitals. Record the step where each stalls.</p></div>
+  </article>
+</section>
+
+<!-- THEME 4 -->
+<section class="theme" id="theme-money" aria-labelledby="h-t4">
+  <p class="eyebrow">Theme 4 of 6</p>
+  <h2 id="h-t4">How do you make money off your product?</h2>
+  <p class="theme-intro">Steps 15, 16, 17 and 19.</p>
+
+  <article class="step" id="step-15" aria-labelledby="h-s15">
+    <p class="eyebrow">DE Step 15</p>
+    <div class="step-head"><h3 id="h-s15">Design a Business Model</h3><div class="tags"><span class="type">Revise</span><span class="pill c-med">Medium</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>Hardware plus software; the health system bills CMS RPM codes and keeps the margin.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>3 buyers tolerate a per-episode all-in fee that includes vendor 24/7 monitoring (<span class="pid">P2, P4, P8</span>). The CFO prefers risk-share.</p>
+        <blockquote><p>“my preferred structure is that I pay nothing upfront: a risk-share where the vendor gets a percentage of documented episode savings above an agreed baseline”</p><cite>P8</cite></blockquote>
+        <blockquote><p>“that changes my math, because now it's not my FTEs”</p><cite>P4, on vendor 24/7 nurse monitoring</cite></blockquote>
+      </div>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Device plus service, sold per monitored episode. The fee covers the sensor, logistics and returns, 24/7 triage staffing, protocol and Epic integration. Offer two structures: (a) fixed per-episode fee; (b) lower fixed fee plus a share of documented episode savings above an agreed baseline. RPM billing by the health system, where compliant, is an offset the buyer keeps. Patient out-of-pocket is not part of the model.</p>
+      <p class="muted">Main risk: one 24/7 triage seat needs roughly 4.5–5 FTE, so triage must be pooled across many hospitals before the per-episode price covers labor (analyst estimate from synthesis, to be validated).</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Presenting both structures to 5–10 real CFOs and asking which they would sign (Step 21, test 6), and building a triage staffing model with a real nurse staffing lead.</p></div>
+  </article>
+
+  <article class="step" id="step-16" aria-labelledby="h-s16">
+    <p class="eyebrow">DE Step 16</p>
+    <div class="step-head"><h3 id="h-s16">Set Your Pricing Framework</h3><div class="tags"><span class="type">Revise</span><span class="pill c-low">Low</span></div></div>
+    <div class="grid2">
+      <div class="part orig"><h4>Original assumption / plan</h4><p>Price anchored to RPM reimbursement per patient per month, with possible consumer sales.</p></div>
+      <div class="part"><h4>What the synthetic study showed</h4>
+        <p>B2B Van Westendorp, per monitored 14-day episode, n=3 priced (<span class="pid">P2, P4, P8</span>); <span class="pid">P7</span> refused to price.</p>
+        <blockquote><p>“Both sold outcomes and delivered dashboards.”</p><cite>P8, on cancelled vendors</cite></blockquote>
+      </div>
+    </div>
+    <div class="tw"><table>
+      <thead><tr><th>B2B price point</th><th class="n">Median</th><th>Range as stated</th></tr></thead>
+      <tbody>
+        <tr><td>Too cheap to be credible</td><td class="n num">$50</td><td>under $50 to under $75</td></tr>
+        <tr><td>Good value</td><td class="n num">$125</td><td>$100 to $250</td></tr>
+        <tr><td>Getting expensive</td><td class="n num">$250</td><td>$250 to $400</td></tr>
+        <tr><td>Non-starter</td><td class="n num">$400</td><td>$400 to $600+</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">Bases differ: <span class="pid">P2</span> priced device plus software only (a staffed 24/7 service moves her "expensive" line to $600–700); <span class="pid">P8</span> priced all-in including vendor overnight monitoring; <span class="pid">P4</span>'s $400 non-starter applies unless monitoring staff are included.</p>
+    <div class="tw"><table>
+      <thead><tr><th>B2C out-of-pocket, per 2 weeks</th><th class="n">Median (n=4)</th><th class="n">Excluding refusers</th></tr></thead>
+      <tbody>
+        <tr><td>Too cheap</td><td class="n num">$15</td><td class="n num">$20</td></tr>
+        <tr><td>Good deal</td><td class="n num">$38.75</td><td class="n num">$50</td></tr>
+        <tr><td>Getting expensive</td><td class="n num">$105</td><td class="n num">$135</td></tr>
+        <tr><td>Too expensive</td><td class="n num">$200</td><td class="n num">$250</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">3 of 6 patients/caregivers refused any out-of-pocket payment (<span class="pid">P5, P9, P10</span>), and all 6 expect the hospital, Medicare or their plan to pay. <span class="pid">P10</span>: “If it's free, I'm the product.”</p>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Price per episode, all-in. Test two anchors, $125 and $200 per episode, plus a risk-share variant. Do not sell a device-only SKU below about $50–75; buyers read that as a consumer ring with a clinical sticker. Drop B2C out-of-pocket as a channel; at most, test a caregiver-paid rental add-on (<span class="pid">P3</span>). Verify whether RPM services carry Part B coinsurance, which would be a barrier for fixed-income patients.</p>
+      <p class="muted">Low: three synthetic price points are not a price. B2C not being viable is Medium (patients only, but 6/6 expect a payer).</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Real written proposals at both anchors to 5–10 CFOs or VPs, counting LOIs or paid pilots signed, not stated intent.</p></div>
+  </article>
+
+  <article class="step" id="step-17" aria-labelledby="h-s17">
+    <p class="eyebrow">DE Step 17</p>
+    <div class="step-head"><h3 id="h-s17">Calculate the Lifetime Value of an Acquired Customer</h3><div class="tags"><span class="type">Revise</span><span class="pill c-low">Low</span></div></div>
+    <div class="part"><h4>Original assumption / plan</h4><p class="orig">LTV per patient from monthly RPM billing.</p></div>
+    <div class="part"><h4>What the synthetic study showed</h4><p>The customer is a health system, the unit is an episode, and labor dominates cost. Episodes last 14 days, so there is no patient-level recurring revenue.</p></div>
+    <div class="rev part"><h4>Recommended revision (structure only)</h4>
+      <div class="formula" role="figure" aria-label="LTV structure">LTV per health system = Σ over years [ <span class="ph">[episodes / yr]</span> × <span class="ph">[price per episode]</span>
+                           × <span class="ph">[# service lines live]</span> × <span class="ph">[gross margin after triage labor]</span> ]
+                           × <span class="ph">[retention per year]</span>, discounted at <span class="ph">[rate]</span></div>
+      <p>Drivers to learn: episodes per service line, speed of expansion across TEAM episode types, and gross margin once triage is pooled. No figures until a real pilot produces them.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Measuring real triage minutes per episode and renewal intent at the end of the first paid pilot.</p></div>
+  </article>
+
+  <article class="step" id="step-19" aria-labelledby="h-s19">
+    <p class="eyebrow">DE Step 19</p>
+    <div class="step-head"><h3 id="h-s19">Calculate the Cost of Customer Acquisition</h3><div class="tags"><span class="type">Revise</span><span class="pill c-low">Low</span></div></div>
+    <div class="part"><h4>What the synthetic study showed</h4><p>Buyers expect a free retrospective, a study-grade pilot on a few hundred patients, Epic integration and security review before a contract. The champion cited 6–9 month procurement cycles.</p></div>
+    <div class="rev part"><h4>Recommended revision (structure only)</h4>
+      <div class="formula" role="figure" aria-label="COCA structure">COCA per health system = <span class="ph">[sales and clinical team time over the cycle]</span>
+                        + <span class="ph">[retrospective analysis cost]</span>
+                        + <span class="ph">[unpaid or discounted pilot cost]</span>
+                        + <span class="ph">[Epic integration and security review]</span>
+                        + <span class="ph">[marketing: conferences, publications]</span></div>
+      <p>Expect COCA to be high for the first customers. Reduce it later with a published outcome study and a reusable Epic integration.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Logging actual hours and costs for the first 3 hospitals from first call to signed contract.</p></div>
+  </article>
+</section>
+
+<!-- THEME 5 -->
+<section class="theme" id="theme-build" aria-labelledby="h-t5">
+  <p class="eyebrow">Theme 5 of 6</p>
+  <h2 id="h-t5">How do you design and build your product?</h2>
+  <p class="theme-intro">Steps 20, 21, 22 and 23.</p>
+
+  <article class="step" id="step-20" aria-labelledby="h-s20">
+    <p class="eyebrow">DE Step 20</p>
+    <div class="step-head"><h3 id="h-s20">Identify Key Assumptions</h3><div class="tags"><span class="type">Revise</span><span class="pill c-high">High</span></div></div>
+    <div class="part"><h4>Original assumptions and synthetic verdicts</h4></div>
+    <div class="cards">
+      <div class="card"><div class="top"><span class="id">A1 Adherence</span><span class="pill v-bad">Invalidated</span></div><p>Patients will wear a smart ring 24/7 for 14 days despite swelling, discomfort and fatigue.</p><p class="cnt">0 Validated · 5 Partial · 5 Invalidated</p></div>
+      <div class="card"><div class="top"><span class="id">A2 Workflow and alerts</span><span class="pill v-bad">Invalidated</span></div><p>Care teams will monitor and trust a baseline-deviation alert without being overwhelmed.</p><p class="cnt">0 Validated · 5 Partial · 5 Invalidated</p></div>
+      <div class="card"><div class="top"><span class="id">A3 Economics</span><span class="pill v-bad">Invalidated</span></div><p>Health systems will pay under CMS RPM codes to avoid 30-day readmission penalties.</p><p class="cnt">0 Validated · 6 Partial · 4 Invalidated</p></div>
+      <div class="card"><div class="top"><span class="id">A4 Patient pull</span><span class="pill v-warn">Partially Validated</span></div><p>Patients and caregivers are anxious enough to welcome continuous passive tracking.</p><p class="cnt">2 Validated · 5 Partial · 3 Invalidated</p></div>
+    </div>
+    <div class="qs">
+      <blockquote><p>“Then it'd be dead in a drawer.”</p><cite>P9, on A1</cite></blockquote>
+      <blockquote><p>“Night is where it dies.”</p><cite>P7, on A2</cite></blockquote>
+      <blockquote><p>“sepsis on its own isn't one of the readmission penalty conditions”</p><cite>P4, on A3</cite></blockquote>
+      <blockquote><p>“I want someone to carry part of it.”</p><cite>P6, on A4</cite></blockquote>
+    </div>
+    <div class="rev part"><h4>Recommended revision: revised assumption list</h4>
+      <div class="cards">
+        <div class="card"><div class="top"><span class="id">A1′ Wear</span><span class="pill c-med">Rewritten</span></div><p>With pre-op fitting, edema-tolerant sizing or an alternative form factor, at least 7-day battery and non-wear nudges, at least 80% of enrolled patients produce at least 18 valid hours per day on at least 11 of 14 days.</p></div>
+        <div class="card"><div class="top"><span class="id">A2′ Triage</span><span class="pill c-med">Rewritten</span></div><p>A vendor-staffed triage layer keeps forwarded escalations at or below X per 100 patient-days with PPV of at least Y, at no net increase in health-system nurse minutes.</p></div>
+        <div class="card"><div class="top"><span class="id">A3′ Money</span><span class="pill c-med">Rewritten</span></div><p>TEAM participants will pay a per-episode fee from episode budgets, or via risk-share, if a retrospective on their own data shows a plausibly preventable readmission fraction.</p></div>
+        <div class="card"><div class="top"><span class="id">A4′ Acceptance</span><span class="pill c-med">Rewritten</span></div><p>Patients and caregivers accept monitoring when their own clinician prescribes it and it comes with a named human.</p></div>
+        <div class="card new"><div class="top"><span class="id">A5 Signal validity</span><span class="pill v-bad">New · riskiest</span></div><p>Finger or alternate-site HR, temperature and HRV deviation can separate post-op SIRS from early sepsis, leak or SSI with useful PPV and lead time, including in immunosuppressed patients and on darker skin.</p></div>
+        <div class="card new"><div class="top"><span class="id">A2′ unit economics</span><span class="pill v-warn">New · 2nd riskiest</span></div><p>A pooled 24/7 triage service can be staffed at a cost per episode below the price buyers accept.</p></div>
+        <div class="card new"><div class="top"><span class="id">A1′ first 72 hours</span><span class="pill v-warn">New · 3rd riskiest</span></div><p>Enough valid data can be captured on post-op days 0–3, when hands are most swollen, to score against the post-op trajectory.</p></div>
+      </div>
+      <p class="muted">X and Y are deliberately unset; agree them with a partner hospital before any data is collected. The verdicts are High confidence as statements that the original assumptions fail as written; the rewritten assumptions are untested.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Running the tests in Step 21 in order of risk: A5 first (retrospective and shadow mode), then triage economics, then first-72-hour wear.</p></div>
+  </article>
+
+  <article class="step" id="step-21" aria-labelledby="h-s21">
+    <p class="eyebrow">DE Step 21</p>
+    <div class="step-head"><h3 id="h-s21">Test Key Assumptions</h3><div class="tags"><span class="type test">Test</span><span class="pill c-med">Medium</span></div></div>
+    <div class="part"><h4>Original assumption / plan</h4><p class="orig">No real-world tests; the synthetic study was the first check.</p></div>
+    <div class="part"><h4>What the synthetic study showed</h4><p>Buyers named the evidence they need: prospective post-surgical PPV and alert volume (<span class="pid">P2, P4, P7, P8</span>), a pilot on their own patients with a comparison group (<span class="pid">P2, P4, P8</span>), a retrospective on their own TEAM readmissions (<span class="pid">P8</span>), and prespecified kill criteria (<span class="pid">P2</span>).</p>
+      <blockquote><p>“Show me PPV and nurse workload per 100 patients.”</p><cite>P2</cite></blockquote>
+    </div>
+    <div class="rev part"><h4>Recommended revision: experiments with real people</h4>
+      <p>Thresholds are proposed decision rules, to be agreed with the partner before data is collected. They are not results.</p>
+      <div class="tw"><table>
+        <thead><tr><th>#</th><th>Experiment</th><th>Tests</th><th>Measure</th><th>Proposed pass / kill</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">1</td><td>20-patient wear test, one TEAM episode type, 2–3 form factors</td><td>A1′, first 72h</td><td>Valid hours worn per day by post-op day 0–14; finger circumference days 0/3/7/14; reasons for removal</td><td>Pass: at least 80% reach 18 h/day on at least 11 of 14 days. Kill ring-only: median below 12 h/day on days 0–3</td></tr>
+          <tr><td class="mono">2</td><td>Retrospective alert PPV on a partner's data (shadow-mode or existing vitals)</td><td>A5</td><td>Alerts per 100 patient-days, PPV, lead time versus clinical recognition, by skin tone and immunosuppression</td><td>Pass: meets partner-set X and Y in every subgroup. Kill: PPV in any subgroup materially below the overall rate</td></tr>
+          <tr><td class="mono">3</td><td>Staffing-model pilot (Wizard-of-Oz triage queue)</td><td>A2′, unit economics</td><td>Minutes per alert, share forwarded, point where nurses click through</td><td>Pass: forwarded false positives under one-third and net health-system nurse minutes at or below zero</td></tr>
+          <tr><td class="mono">4</td><td>TEAM episode financial model built with a CFO on own data</td><td>A3′</td><td>Preventable readmission fraction and cost; filled value math from Step 8</td><td>Pass: payback within 12 months and at least 1.5x (P8's stated bar, to confirm with real CFOs)</td></tr>
+          <tr><td class="mono">5</td><td>Concierge MVP: nurse calls days 2/5/9, with vs without sensor data</td><td>A4′, competition</td><td>Caregiver sleep and anxiety, patient preference, missed events</td><td>Pass: the with-data arm is preferred and catches events the calls miss</td></tr>
+          <tr><td class="mono">6</td><td>Priced proposals at $125, $200 and risk-share to 5–10 CFOs/VPs</td><td>Pricing</td><td>LOIs or paid pilots signed</td><td>Pass: at least 2 signed. Kill current pricing: none signed after 10</td></tr>
+        </tbody>
+      </table></div>
+      <p>Also run: real interviews with Spanish- and Chinese-speaking caregivers, Black transplant patients, rural patients with their family doctors, APPs, after-hours nurses, revenue cycle, the CISO and risk management; and a compliance review of 2026 RPM short-duration codes, the surgical global period and patient coinsurance.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Pre-registering thresholds with the partner, and having the partner's finance or quality team analyze tests 2 and 4.</p></div>
+  </article>
+
+  <article class="step" id="step-22" aria-labelledby="h-s22">
+    <p class="eyebrow">DE Step 22</p>
+    <div class="step-head"><h3 id="h-s22">Define the Minimum Viable Business Product</h3><div class="tags"><span class="type new">New</span><span class="pill c-med">Medium</span></div></div>
+    <div class="part"><h4>Original assumption / plan</h4><p class="orig">A working ring, app and dashboard.</p></div>
+    <div class="part"><h4>What the synthetic study showed</h4><p>The value buyers and families described comes from the person, the protocol and the night coverage. The device alone had no pull.</p>
+      <blockquote><p>“If it's purely additive, it's just a new cost center.”</p><cite>P8</cite></blockquote>
+    </div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>A paid, time-boxed concierge service for one TEAM episode type (major bowel) at one hospital:</p>
+      <ul>
+        <li>Surgeon-signed tiered protocol; Epic order for enrollment.</li>
+        <li>A small vendor nurse team covering 24/7, with structured calls on days 2, 5 and 9.</li>
+        <li>An off-the-shelf, cleared wearable in two form factors (sized ring and a patch or band), cellular hub, pre-op baseline where possible.</li>
+        <li>Alerts screened by hand against simple, explained rules; only pre-triaged escalations into Epic In Basket.</li>
+        <li>Per-episode fee with a risk-share option; outcome report to finance at day 14 and at 30 days.</li>
+      </ul>
+      <p>It is viable when the hospital pays for it, nurse managers report no added work, and caregivers use the overnight line.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Selling it to one of the next 10 customers for a 50–100 patient cohort before building custom hardware or algorithms.</p></div>
+  </article>
+
+  <article class="step" id="step-23" aria-labelledby="h-s23">
+    <p class="eyebrow">DE Step 23</p>
+    <div class="step-head"><h3 id="h-s23">Show That "The Dogs Will Eat the Dog Food"</h3><div class="tags"><span class="type test">Test</span><span class="pill c-low">Low</span></div></div>
+    <div class="part"><h4>What the synthetic study showed</h4><p>Nothing about real behavior. Stated tolerance (1–3 false alarms for patients, about one-third noise for nurses) and stated prices are hypotheses.</p></div>
+    <div class="rev part"><h4>Recommended revision: evidence that counts</h4>
+      <ul>
+        <li>A hospital pays for the MVBP pilot (money moved, not a letter of interest alone).</li>
+        <li>Measured wear hours meet the A1′ threshold, including days 0–3.</li>
+        <li>Health-system nurse minutes per episode are flat or lower than before.</li>
+        <li>Caregivers call the overnight line and would use it again.</li>
+        <li>The surgeon keeps the protocol switched on after the first month.</li>
+        <li>The customer renews or extends to a second episode type.</li>
+      </ul>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Reporting these six measures at the end of the first paid cohort. Stated enthusiasm from synthetic or real interviews does not count.</p></div>
+  </article>
+</section>
+
+<!-- THEME 6 -->
+<section class="theme" id="theme-scale" aria-labelledby="h-t6">
+  <p class="eyebrow">Theme 6 of 6</p>
+  <h2 id="h-t6">How do you scale your business?</h2>
+  <p class="theme-intro">Steps 18, 14 and 24.</p>
+
+  <article class="step" id="step-18" aria-labelledby="h-s18">
+    <p class="eyebrow">DE Step 18</p>
+    <div class="step-head"><h3 id="h-s18">Map the Sales Process to Acquire a Customer</h3><div class="tags"><span class="type new">New</span><span class="pill c-low">Low</span></div></div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Near term: founder-led, clinical sales to nurse managers and CMIOs, with a free retrospective as the door opener. Mid term: land one service line, expand across TEAM episode types in the same system, and use published outcomes to shorten the cycle. Long term: channel through integrated plans, ACOs and Medicare Advantage payers, and pool triage across systems to lower cost per episode.</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Measuring conversion from retrospective to paid pilot across the first 5 hospitals.</p></div>
+  </article>
+
+  <article class="step" id="step-14" aria-labelledby="h-s14">
+    <p class="eyebrow">DE Step 14</p>
+    <div class="step-head"><h3 id="h-s14">Calculate TAM for Follow-on Markets</h3><div class="tags"><span class="type">Keep</span><span class="pill c-low">Low</span></div></div>
+    <div class="rev part"><h4>Recommended revision</h4>
+      <p>Defer sizing until the beachhead works. Candidate follow-on markets, all hypotheses: other TEAM episodes (joint replacement, CABG, spinal fusion, hip/femur fracture); transplant and immunosuppressed surgical patients (<span class="pid">P5</span>); ACO and Medicare Advantage lives outside TEAM; rural critical-access partners using landline or cellular hubs (<span class="pid">P9</span>); a BYOD software tier for consumer ring owners (<span class="pid">P1</span>).</p>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Asking the first paying customers which episode or population they would add next and why.</p></div>
+  </article>
+
+  <article class="step" id="step-24" aria-labelledby="h-s24">
+    <p class="eyebrow">DE Step 24</p>
+    <div class="step-head"><h3 id="h-s24">Develop a Product Plan</h3><div class="tags"><span class="type new">New</span><span class="pill c-low">Low</span></div></div>
+    <div class="rev part"><h4>Recommended revision (brief)</h4>
+      <ol>
+        <li>Concierge triage service with off-the-shelf sensors (MVBP).</li>
+        <li>Shadow-mode data collection to tune post-op trajectory alerts and publish PPV by subgroup.</li>
+        <li>Tiered, explained alerts delivered in Epic; non-wear handling for caregivers; multilingual messages.</li>
+        <li>Edema-tolerant form factor line (sized or adjustable ring, band, patch); regulatory pathway for the clinical claim.</li>
+        <li>BYOD tier and follow-on episode protocols; pooled multi-system triage.</li>
+      </ol>
+    </div>
+    <div class="validate"><h4>Validate with real humans by</h4><p>Gating each stage on the Step 23 measures from the stage before it.</p></div>
+  </article>
+</section>
+
+<footer>
+  <p>Synthetic study · n=10 synthetic personas · generated with Claude Code · 2026-09-28</p>
+  <p>Sources: research/03_synthesis.md, research/synthesis_data.json, research/01_synthetic_personas.md, research/02_interview_script.md, research/transcripts/P1–P10.</p>
+  <div class="notice" role="note" aria-label="Disclaimer repeated">
+    <p class="eyebrow">Disclaimer</p>
+    <p>Synthetic research cannot reliably predict real human behavior. Validate every finding, objection and price here with real patients, clinicians and health system buyers.</p>
+  </div>
+  <a class="back" href="#how-to-read">Back to top</a>
+</footer>
+
+</div>
+</body>
+</html>
