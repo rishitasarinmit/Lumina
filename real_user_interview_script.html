@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sepsis Sentinel Interview Guide</title>
+<meta name="description" content="Interview guide (v2) for real-human validation interviews on post-surgical at-home monitoring, optimized from a synthetic study of 10 personas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F5F7FA; --surface:#FFFFFF; --surface-2:#EDF1F6;
+  --ink:#15213A; --muted:#56657E; --rule:#D6DDE7;
+  --accent:#2343A5; --accent-soft:#E3E9F8;
+  --ok:#1D7A4E; --ok-soft:#E1F2E9;
+  --warn:#9A5B00; --warn-soft:#FBEFD9;
+  --bad:#B0281F; --bad-soft:#FBE4E1;
+  --display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0D1320; --surface:#151D2E; --surface-2:#1C2639;
+  --ink:#E5EBF4; --muted:#9BA9BF; --rule:#2A3550;
+  --accent:#8FA8FF; --accent-soft:#1F2B4D;
+  --ok:#5CC98E; --ok-soft:#133224; --warn:#F0B35A; --warn-soft:#3A2A10; --bad:#FF8A7F; --bad-soft:#3D1A17;
+  color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --paper:#0D1320; --surface:#151D2E; --surface-2:#1C2639;
+  --ink:#E5EBF4; --muted:#9BA9BF; --rule:#2A3550;
+  --accent:#8FA8FF; --accent-soft:#1F2B4D;
+  --ok:#5CC98E; --ok-soft:#133224; --warn:#F0B35A; --warn-soft:#3A2A10; --bad:#FF8A7F; --bad-soft:#3D1A17;
+  color-scheme:dark; }
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--body); font-size:17px; line-height:1.55;
+  padding-inline:max(16px, env(safe-area-inset-left)); padding-block:32px 48px;
+}
+.page{ max-width:1080px; margin-inline:auto; }
+h1,h2,h3,h4{ font-family:var(--display); line-height:1.15; text-wrap:balance; margin:0; font-weight:600; }
+h1{ font-size:clamp(2rem, 5vw, 2.9rem); font-weight:700; letter-spacing:-.005em; }
+h2{ font-size:1.75rem; margin-top:.25rem; }
+h3{ font-size:1.25rem; }
+h4{ font-size:1rem; }
+p,li{ max-width:65ch; }
+p{ margin:.5rem 0 0; }
+ul,ol{ margin:.5rem 0 0; padding-left:1.25rem; }
+li+li{ margin-top:.3rem; }
+a{ color:var(--accent); text-underline-offset:2px; }
+a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:2px; }
+strong{ font-weight:700; }
+.mono,code{ font-family:var(--mono); font-size:.86em; }
+.num{ font-variant-numeric:tabular-nums; }
+.eyebrow{
+  font-family:var(--mono); font-size:.75rem; font-weight:500; text-transform:uppercase;
+  letter-spacing:.08em; color:var(--muted); margin:0;
+}
+.muted{ color:var(--muted); }
+.small{ font-size:.93rem; }
+
+header.top{ padding-bottom:20px; border-bottom:1px solid var(--rule); }
+header.top .lede{ font-size:1.12rem; color:var(--muted); margin-top:.6rem; }
+.meta{ display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:14px; font-family:var(--mono); font-size:.8rem; color:var(--muted); }
+
+.notice{
+  margin-top:22px; background:var(--warn-soft); border:1.5px solid var(--warn);
+  border-radius:6px; padding:16px 18px;
+}
+.notice .eyebrow{ color:var(--warn); font-weight:500; }
+.notice p{ margin-top:.35rem; font-weight:600; max-width:none; }
+.notice p.sub{ font-weight:400; font-size:.95rem; }
+
+nav.toc{ margin-top:22px; }
+nav.toc ol{ display:flex; flex-wrap:wrap; gap:6px 8px; list-style:none; padding:0; margin:.5rem 0 0; }
+nav.toc li{ margin:0; max-width:none; }
+nav.toc a{
+  display:inline-block; font-size:.9rem; text-decoration:none; color:var(--ink);
+  border:1px solid var(--rule); background:var(--surface); padding:3px 10px; border-radius:4px;
+}
+nav.toc a:hover{ border-color:var(--accent); color:var(--accent); }
+
+section.block{ margin-top:44px; }
+section.block > .eyebrow + h2{ margin-top:.2rem; }
+.intro{ color:var(--muted); }
+
+.grid2{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; margin-top:16px; }
+.grid2 > *{ min-width:0; }
+.card{ background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:16px 18px; }
+.card h3{ font-size:1.1rem; }
+.card p,.card li{ font-size:.97rem; }
+
+.tablewrap{ overflow-x:auto; margin-top:14px; border:1px solid var(--rule); border-radius:6px; background:var(--surface); }
+table{ border-collapse:collapse; width:100%; font-size:.93rem; font-variant-numeric:tabular-nums; }
+th,td{ text-align:left; vertical-align:top; padding:10px 12px; border-bottom:1px solid var(--rule); }
+thead th{ font-family:var(--mono); font-size:.72rem; font-weight:500; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); background:var(--surface-2); white-space:nowrap; }
+tbody tr:last-child td{ border-bottom:0; }
+td.id{ font-family:var(--mono); font-weight:500; white-space:nowrap; }
+td .stmt{ display:block; }
+td .rev{ display:block; margin-top:6px; color:var(--muted); font-size:.88rem; }
+.tbl-assump td:nth-child(2){ min-width:280px; }
+.tbl-assump td:nth-child(3){ min-width:170px; }
+.tbl-assump td:nth-child(4){ min-width:220px; }
+.tbl-recruit td:first-child{ min-width:170px; font-weight:600; }
+.tbl-recruit td:nth-child(3){ min-width:260px; }
+
+.pill{
+  display:inline-block; font-family:var(--mono); font-size:.72rem; font-weight:500; letter-spacing:.04em;
+  text-transform:uppercase; padding:2px 7px; border-radius:4px; border:1px solid currentColor; white-space:nowrap;
+}
+.pill.bad{ color:var(--bad); background:var(--bad-soft); }
+.pill.warn{ color:var(--warn); background:var(--warn-soft); }
+.pill.ok{ color:var(--ok); background:var(--ok-soft); }
+.pill.new{ color:var(--accent); background:var(--accent-soft); }
+.pill.muted{ color:var(--muted); background:var(--surface-2); }
+.counts{ display:block; margin-top:6px; font-family:var(--mono); font-size:.8rem; color:var(--muted); }
+.counts b{ color:var(--ink); font-weight:500; }
+
+.tag{
+  display:inline-block; font-family:var(--mono); font-size:.72rem; font-weight:500; letter-spacing:.03em;
+  padding:1px 6px; border-radius:3px; background:var(--accent-soft); color:var(--accent); white-space:nowrap;
+}
+.cpt{ display:inline-block; font-family:var(--mono); font-size:.78rem; padding:1px 6px; border:1px solid var(--rule); border-radius:3px; background:var(--surface-2); }
+
+.rules{ counter-reset:r; list-style:none; padding:0; margin-top:14px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 22px; }
+.rules li{ counter-increment:r; position:relative; padding-left:34px; margin:0; max-width:none; }
+.rules li::before{ content:counter(r, decimal-leading-zero); position:absolute; left:0; top:1px; font-family:var(--mono); font-size:.78rem; color:var(--accent); font-weight:500; }
+
+.changes li{ max-width:75ch; }
+
+/* Script */
+.section-head{ margin-top:40px; padding-top:14px; border-top:2px solid var(--ink); display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 16px; }
+.section-head > *{ min-width:0; }
+.section-head h3{ font-size:1.4rem; }
+.section-head .time{ font-family:var(--mono); font-size:.8rem; color:var(--muted); }
+.section-note{ margin-top:6px; color:var(--muted); font-size:.95rem; }
+
+.q{ margin-top:22px; padding-top:18px; border-top:1px solid var(--rule); }
+.q-head{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; }
+.q-id{ font-family:var(--display); font-weight:700; font-size:1.35rem; line-height:1; }
+.q-title{ font-family:var(--display); font-weight:600; font-size:1.1rem; }
+.q-tags{ display:flex; flex-wrap:wrap; gap:4px; margin-left:auto; }
+.q-change{ margin-top:6px; font-size:.88rem; color:var(--muted); max-width:80ch; }
+.q-change b{ font-family:var(--mono); font-weight:500; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); margin-right:4px; }
+
+.variant{ display:grid; grid-template-columns:150px minmax(0,1fr); gap:6px 14px; margin-top:12px; align-items:start; }
+.variant .who{
+  font-family:var(--mono); font-size:.7rem; font-weight:500; text-transform:uppercase; letter-spacing:.08em;
+  padding:4px 7px; border-radius:4px; line-height:1.3; margin-top:3px; justify-self:start;
+}
+.variant.pt .who{ background:var(--accent-soft); color:var(--accent); }
+.variant.cb .who{ background:var(--surface-2); color:var(--ink); border:1px solid var(--rule); }
+.variant .say{ font-size:1.07rem; max-width:68ch; margin:0; }
+.variant.pt .say{ font-weight:600; }
+.variant.cb .say{ font-weight:600; font-style:italic; }
+
+.probes{ margin-top:12px; }
+.probes h4{ font-family:var(--mono); font-size:.72rem; font-weight:500; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.probes ul{ margin-top:4px; }
+.probes li{ font-size:.97rem; }
+.probes .pfx{ font-family:var(--mono); font-size:.72rem; color:var(--muted); margin-right:4px; }
+
+.callout{ margin-top:14px; border:1px solid var(--rule); border-radius:6px; background:var(--surface); display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+.callout > div{ padding:12px 16px; min-width:0; }
+.callout > div + div{ border-left:1px solid var(--rule); }
+.callout .lbl{ font-family:var(--mono); font-size:.72rem; font-weight:500; text-transform:uppercase; letter-spacing:.08em; display:flex; align-items:center; gap:6px; }
+.callout .syn .lbl{ color:var(--accent); }
+.callout .val .lbl{ color:var(--warn); }
+.callout p,.callout li{ font-size:.93rem; margin-top:.35rem; }
+.callout ul{ margin-top:.25rem; }
+.callout .val{ background:var(--warn-soft); border-radius:0 6px 6px 0; }
+q{ quotes:"\201C" "\201D" "\2018" "\2019"; }
+.pid{ font-family:var(--mono); font-size:.82em; font-weight:500; }
+
+.concept{ margin-top:14px; border:1.5px solid var(--ink); border-radius:6px; background:var(--surface); padding:16px 18px; }
+.concept .eyebrow{ color:var(--ink); }
+.concept blockquote{ margin:.5rem 0 0; font-size:1.1rem; line-height:1.5; max-width:68ch; }
+.concept + .concept{ margin-top:10px; }
+.concept.b{ border-style:dashed; }
+
+.exercise{ margin-top:14px; background:var(--surface-2); border-radius:6px; padding:14px 16px; }
+.exercise ol{ margin-top:6px; }
+
+.ladder{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; margin-top:10px; }
+.ladder div{ border:1px solid var(--rule); border-radius:4px; padding:8px; background:var(--surface); font-size:.86rem; min-width:0; }
+.ladder b{ display:block; font-family:var(--mono); font-weight:500; font-size:.72rem; color:var(--accent); }
+
+.signals{ list-style:none; padding:0; margin-top:14px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 24px; }
+.signals li{ padding:10px 0; border-top:1px solid var(--rule); max-width:none; margin:0; min-width:0; }
+.signals .ph{ font-weight:700; }
+.signals .who{ font-family:var(--mono); font-size:.78rem; color:var(--muted); display:block; }
+.signals .m{ font-size:.94rem; display:block; margin-top:2px; }
+.signals .caveat{ color:var(--warn); font-size:.88rem; display:block; }
+
+.redflags{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:14px; }
+.redflags > .card{ min-width:0; }
+.redflags h3{ display:flex; flex-wrap:wrap; gap:6px 8px; align-items:baseline; }
+.redflags h3 .mono{ color:var(--bad); font-size:.9rem; }
+.redflags ul{ padding-left:1.1rem; }
+
+.checklist{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:14px; }
+.checklist > .card{ min-width:0; }
+.checklist ul{ list-style:none; padding:0; }
+.checklist li{ position:relative; padding-left:24px; font-size:.95rem; }
+.checklist li::before{ content:""; position:absolute; left:0; top:.28em; width:13px; height:13px; border:1.5px solid var(--muted); border-radius:2px; }
+
+.safety{ margin-top:16px; background:var(--bad-soft); border:1.5px solid var(--bad); border-radius:6px; padding:14px 16px; }
+.safety .eyebrow{ color:var(--bad); }
+
+/* Notes template */
+.sheet-head{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px 14px; margin-top:14px; }
+.field{ min-width:0; display:flex; flex-direction:column; justify-content:flex-end; }
+.field .fl{ font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.nl{ font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.field .line{ height:28px; border-bottom:1px solid var(--muted); }
+.notebox{ margin-top:12px; border:1px solid var(--rule); border-radius:6px; background:var(--surface); padding:10px 14px 12px; break-inside:avoid; }
+.notebox .nh{ display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; }
+.notebox .nh b{ font-family:var(--display); font-weight:700; }
+.notebox .nh span{ font-size:.9rem; color:var(--muted); }
+.nrow{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px 14px; margin-top:8px; }
+.nrow > div{ min-width:0; }
+.lined{
+  height:84px; margin-top:2px;
+  background-image:repeating-linear-gradient(to bottom, transparent 0, transparent 27px, var(--rule) 27px, var(--rule) 28px);
+}
+.verdict-row{ margin-top:8px; font-family:var(--mono); font-size:.76rem; color:var(--muted); display:flex; flex-wrap:wrap; gap:4px 14px; }
+.box{ display:inline-block; width:12px; height:12px; border:1.5px solid var(--muted); border-radius:2px; vertical-align:-2px; margin-right:4px; }
+
+footer{ margin-top:56px; padding-top:16px; border-top:1px solid var(--rule); font-size:.88rem; color:var(--muted); }
+footer p{ max-width:none; }
+footer .mono{ font-size:.8rem; }
+
+@media (max-width:860px){
+  .checklist{ grid-template-columns:1fr; }
+  .sheet-head{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ladder{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:640px){
+  body{ font-size:16px; padding-block:22px 36px; }
+  .grid2,.rules,.signals,.redflags,.callout,.nrow{ grid-template-columns:1fr; }
+  .callout > div + div{ border-left:0; border-top:1px solid var(--rule); }
+  .callout .val{ border-radius:0 0 6px 6px; }
+  .variant{ grid-template-columns:1fr; gap:4px; }
+  .q-tags{ margin-left:0; width:100%; }
+  .sheet-head{ grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion: reduce){ *{ transition:none !important; animation:none !important; scroll-behavior:auto !important; } }
+@media print{
+  :root{ --paper:#fff; --surface:#fff; --surface-2:#F1F3F6; }
+  body{ padding:0; font-size:11pt; background:#fff; color:#000; }
+  nav.toc{ display:none; }
+  a{ color:inherit; text-decoration:none; }
+  section.block{ margin-top:24px; }
+  .q,.card,.callout,.concept,.notebox,.safety,.exercise{ break-inside:avoid; }
+  #notes{ break-before:page; }
+  #checklist{ break-before:page; }
+  .tablewrap{ overflow:visible; }
+  .lined{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .notice,.pill,.tag,.callout .val,.safety{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="top">
+  <p class="eyebrow">Stage 4 · DE Step 21 · Real-user validation · Script v2</p>
+  <h1>Sepsis Sentinel Interview Guide</h1>
+  <p class="lede">A ready-to-use guide for real interviews with post-surgical patients, family caregivers, clinicians and health-system buyers. It revises the v1 script using what the synthetic study of 10 personas surfaced. Every question keeps a problem-first, open-ended form.</p>
+  <div class="meta"><span>~45 min per interview</span><span>12 core questions + 2 warm-up + close</span><span>Two variants per question</span><span>Assumptions A1–A8</span><span>2026-09-28</span></div>
+</header>
+
+<div class="notice" role="note" aria-label="Methodological disclaimer">
+  <p class="eyebrow">Methodological disclaimer</p>
+  <p>Synthetic user research provides a rapid, low-cost hypothesis test, but IT CANNOT RELIABLY PREDICT REAL HUMAN BEHAVIOR. All findings, objections, and willingness-to-pay metrics generated by synthetic personas must be validated through primary market research with real patients, clinicians, and health system buyers.</p>
+  <p class="sub">The shaded "What the synthetic study suggested" boxes below are hypotheses to test. They are for the interviewer only. Never read them aloud, show them, or use their wording in probes.</p>
+</div>
+
+<nav class="toc" aria-label="Contents">
+  <p class="eyebrow">Contents</p>
+  <ol>
+    <li><a href="#how">How to use</a></li>
+    <li><a href="#rules">Interviewer rules</a></li>
+    <li><a href="#changes">Changes from v1</a></li>
+    <li><a href="#assumptions">Step 20 assumptions</a></li>
+    <li><a href="#script">Script</a></li>
+    <li><a href="#signals">Signals to listen for</a></li>
+    <li><a href="#redflags">Red flags</a></li>
+    <li><a href="#checklist">Checklist</a></li>
+    <li><a href="#notes">Note template</a></li>
+  </ol>
+</nav>
+
+<!-- HOW TO USE -->
+<section class="block" id="how">
+  <p class="eyebrow">Before you start</p>
+  <h2>How to use this guide</h2>
+  <p class="intro">Run each interview in order: warm-up, problem discovery, the concept statement, value and commitment, then close. Pick the Patient/Caregiver or Clinician/Buyer line for each question. Caregivers answer about the person they care for; substitute that person's name.</p>
+
+  <h3 style="margin-top:22px">Who to recruit</h3>
+  <p class="small muted">Suggested first wave of about 35 interviews. The synthetic study had n=10 (6 patients/caregivers, 4 clinical/buyers), so these quotas deliberately fill its gaps. Stop adding to a segment once three interviews in a row produce no new objection theme.</p>
+  <div class="tablewrap">
+  <table class="tbl-recruit">
+    <thead><tr><th scope="col">Segment</th><th scope="col">Quota</th><th scope="col">Must include</th><th scope="col">Gap it fills</th></tr></thead>
+    <tbody>
+      <tr><td>Patients 60+, within 14 days of discharge after inpatient surgery</td><td class="num">10–12</td><td>≥3 immunocompromised (transplant, chemotherapy, biologics or methotrexate); ≥3 rural (30+ min from hospital or weak cell signal); ≥3 with arthritis, RA or hand swelling; ≥2 non-English-dominant, with a qualified interpreter; ≥2 emergency (non-elective) cases; at least half interviewed on post-discharge days 7–14</td><td>Synthetic patients were all interviewed on days 3–6, so days 7–14 went unobserved</td></tr>
+      <tr><td>Family caregivers</td><td class="num">6–8</td><td>≥2 Spanish- or Chinese-speaking; ≥2 older spouse caregivers; ≥1 adult child caring from a distance</td><td>Caregivers operate the device and receive calls (<span class="pid">P2</span>: <q>the real operators</q>)</td></tr>
+      <tr><td>RPM nurses, nurse managers, after-hours line nurses</td><td class="num">4–6</td><td>≥1 after-hours or weekend triage nurse; ≥1 hub with surgical patients enrolled</td><td>A2 hinges on this group; the synthetic study had one RPM manager (<span class="pid">P4</span>)</td></tr>
+      <tr><td>Surgeons and APPs</td><td class="num">4–6</td><td>Colorectal, cardiac and orthopedic; ≥2 APPs who make the post-discharge calls</td><td>APPs were named as referrals, not interviewed</td></tr>
+      <tr><td>CMIO and digital-health leaders</td><td class="num">2–3</td><td>≥1 who has run and ended a remote-monitoring pilot</td><td>One synthetic champion (<span class="pid">P2</span>)</td></tr>
+      <tr><td>CFO, finance, revenue cycle</td><td class="num">3–4</td><td>≥2 at hospitals participating in CMS TEAM; ≥1 revenue-cycle or compliance lead who knows RPM billing</td><td>B2B price was set by n=3 synthetic buyers</td></tr>
+      <tr><td>Optional: privacy/CISO, risk management, transplant coordinators, home-health PTs</td><td class="num">1–2 each</td><td>Referrals from earlier interviews</td><td>Named by synthetic personas in C2; never interviewed</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Consent, IRB and privacy</h3>
+      <ul>
+        <li>Get informed consent before starting and again before recording. Recently discharged patients may be tired or on opioids; offer to reschedule or split the session.</li>
+        <li>Ask your IRB or institutional research office whether the study needs review or an exemption determination, especially if you recruit through a health system.</li>
+        <li>Collect no PHI beyond what the analysis needs. Record a participant code, segment, procedure category and post-discharge day. Do not record names, dates of birth, MRNs, addresses or exact dates in notes.</li>
+        <li>If a health system recruits for you, work under its privacy office rules (HIPAA, and a BAA if you handle its patient data). Store recordings encrypted and delete them on the schedule in your consent form.</li>
+        <li>Offer compensation that your IRB approves, and pay the same amount whatever the participant says.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Length and recording</h3>
+      <ul>
+        <li>Plan 45 minutes: warm-up 4, problem discovery 22, concept 10, value and commitment 7, close 2.</li>
+        <li>Record audio only, with explicit permission. If the participant declines, take written notes and write up within one hour.</li>
+        <li>Use two people when you can: one asks, one takes notes on the template at the end of this guide.</li>
+        <li>Buyer interviews: book 45 minutes and prioritize Q8, Q11 and Q12 if time is cut.</li>
+        <li>Interview patients in their home or by phone or video. Patients with no smartphone are a required part of the sample; offer a landline call.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="safety" role="note" aria-label="Clinical safety protocol">
+    <p class="eyebrow">Clinical safety protocol</p>
+    <p>You are not the participant's clinician. If a patient or caregiver describes symptoms happening now that worry them or you (fever, chills, confusion, fast breathing, a wound that is red or draining, feeling much worse), pause the interview. Encourage them to contact their surgical team or after-hours line now, or call 911 in an emergency. Do not give medical advice, and do not resume unless they want to.</p>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Background for buyer interviews (verify before relying on it)</h3>
+    <p class="small">Know these so you can follow the participant, never to lead them. Verify current CMS rules and payer policy with a revenue-cycle expert.</p>
+    <ul class="small">
+      <li>Sepsis is not a Hospital Readmissions Reduction Program (HRRP) target condition. HRRP covers AMI, heart failure, pneumonia, COPD, CABG and THA/TKA, with a penalty cap of 3% of base DRG payments.</li>
+      <li>RPM codes: <span class="cpt">99453</span> <span class="cpt">99454</span> <span class="cpt">99457</span> <span class="cpt">99458</span>. Device-supply code 99454 historically required at least 16 days of data per 30 days. The CY2026 Physician Fee Schedule added shorter-duration options (2–15 days of device supply, and a 10-minute management code).</li>
+      <li>Billing RPM inside a surgical global period is an open compliance question.</li>
+      <li>CMS TEAM (Transforming Episode Accountability Model) started in January 2026 as a mandatory episode model at selected hospitals for select surgical episodes, including LEJR, CABG, major bowel, spinal fusion and hip/femur fracture. Episode budgets include 30 days after discharge.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- RULES -->
+<section class="block" id="rules">
+  <p class="eyebrow">Discipline</p>
+  <h2>Interviewer rules</h2>
+  <ol class="rules">
+    <li><strong>No solution before Section C.</strong> Never say "ring", "wearable", "sensor", "digital twin", "monitoring", "alert" or "sepsis" before the concept statement. Say "complications" or "getting sick" unless the participant raises infection first.</li>
+    <li><strong>Past behavior over hypotheticals.</strong> Ask "Tell me about the last time…" and "What did you do?", not "Would you…?"</li>
+    <li><strong>No yes/no questions.</strong> If one slips out, follow it with "Tell me more about that."</li>
+    <li><strong>No leading.</strong> Do not suggest answers, examples or emotions. Do not reuse the participant's words to steer them. Never repeat phrases from the synthetic callouts.</li>
+    <li><strong>Probe the story.</strong> "Tell me more." "What happened next?" "Why?" "Who else was involved?" "How did that turn out?"</li>
+    <li><strong>Hold a 5-second silence</strong> after each answer before you move on. People often add the most useful detail there.</li>
+    <li><strong>Note who raises what unprompted.</strong> Mark any mention of nights, who answers, hands, charging, cost or privacy that came before you asked.</li>
+    <li><strong>Read the concept statement verbatim, once.</strong> Do not explain it, defend it or add features. Answer factual questions with "What would you expect?"</li>
+  </ol>
+</section>
+
+<!-- CHANGES -->
+<section class="block" id="changes">
+  <p class="eyebrow">Script v1 → v2</p>
+  <h2>What changed from the v1 script</h2>
+  <ul class="changes">
+    <li><strong>Removed priming.</strong> v1 Q2 introduced the word "off", which then recurred in answers. v2 Q3 asks about a moment the participant "wasn't sure" instead. v1 Q1 said "day and night"; v2 Q1 drops it so nights can come up unprompted.</li>
+    <li><strong>Added three problem questions:</strong> the overnight hours (Q2), who participants want to hear from (Q4), and concrete past experience with things worn on the hands after surgery (Q5).</li>
+    <li><strong>Merged</strong> v1 Q3 (tracking tools) into Q4 probes, and v1 Q9 and Q10 (first reaction and day-and-night fit) into Q10.</li>
+    <li><strong>Buyer variants now probe</strong> episode-based budgets and who staffs calls and alerts after hours (Q8), and who would see a notification at which hours (Q11).</li>
+    <li><strong>Concept statement:</strong> the v1 wording is kept as Statement A for comparability. An optional Statement B changes only the form factor, to test whether objections are about fingers or about the idea.</li>
+    <li><strong>Added a forced-choice exercise</strong> (E1) to test the synthetic finding that people want a person more than a device, and a <strong>behavioral commitment close</strong> (Q12b) coded on a five-step ladder, alongside Van Westendorp.</li>
+    <li><strong>Added assumptions A5–A8</strong> that the synthesis surfaced, and tagged every question with the assumptions it tests.</li>
+  </ul>
+</section>
+
+<!-- ASSUMPTIONS -->
+<section class="block" id="assumptions">
+  <p class="eyebrow">DE Step 20</p>
+  <h2>Assumptions under test</h2>
+  <p class="intro">A1–A4 were scored across 10 synthetic personas (Validated / Partial / Invalidated). A5–A8 surfaced during synthesis and were not scored; their counts show how many personas raised the issue. Riskiest first within each group. Revised wording (′) comes from the synthesis Step 20 section.</p>
+  <div class="tablewrap">
+  <table class="tbl-assump">
+    <thead><tr><th scope="col">ID</th><th scope="col">Assumption</th><th scope="col">Synthetic verdict</th><th scope="col">What the synthetic data showed</th><th scope="col">Tested by</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="id">A1</td>
+        <td><span class="stmt"><strong>Adherence.</strong> Post-surgical patients will continuously wear a smart ring 24/7 for 14 days despite swelling, discomfort, and fatigue.</span><span class="rev">A1′: with pre-op fitting, edema-tolerant sizing or another form factor, ≥7-day battery and non-wear nudges, ≥80% of patients produce ≥18 valid hours/day on ≥11 of 14 days.</span></td>
+        <td><span class="pill bad">Invalidated</span><span class="counts num">V <b>0</b> · P <b>5</b> · I <b>5</b></span><span class="counts num">Pt/CG 0/3/3 · Clin/Buy 0/2/2</span></td>
+        <td>All 10 raised physical fit; 9 raised charging or connectivity. The highest-risk personas (<span class="pid">P6</span>'s husband, <span class="pid">P9</span>, <span class="pid">P10</span>) were least able to wear a ring.</td>
+        <td class="mono num">Q5 Q6 Q10</td>
+      </tr>
+      <tr>
+        <td class="id">A2</td>
+        <td><span class="stmt"><strong>Workflow &amp; alert fatigue.</strong> Care teams/RPM nurses will monitor and trust a baseline-deviation alert without being overwhelmed by false positives or admin burden.</span><span class="rev">A2′: a vendor-staffed triage layer keeps forwarded escalations at or below X per 100 patient-days with PPV ≥ Y, with no net increase in health-system nurse minutes.</span></td>
+        <td><span class="pill bad">Invalidated</span><span class="counts num">V <b>0</b> · P <b>5</b> · I <b>5</b></span><span class="counts num">Pt/CG 0/4/2 · Clin/Buy 0/1/3</span></td>
+        <td>3 of 4 clinical/buyers invalidated. No hub covered nights. Patients tolerated 1–3 false alarms; nurses about one-third noise.</td>
+        <td class="mono num">Q3 Q7 Q11</td>
+      </tr>
+      <tr>
+        <td class="id">A3</td>
+        <td><span class="stmt"><strong>Economic alignment.</strong> Health systems will pay for/deploy the ring under CMS RPM codes to avoid 30-day readmission penalties.</span><span class="rev">A3′: TEAM participants will pay a per-episode fee from episode budgets, or via risk-share, if a retrospective on their own data shows a plausibly preventable readmission fraction.</span></td>
+        <td><span class="pill bad">Invalidated</span><span class="counts num">V <b>0</b> · P <b>6</b> · I <b>4</b></span><span class="counts num">Pt/CG 0/4/2 · Clin/Buy 0/2/2</span></td>
+        <td>No persona named RPM codes as primary funding; 3 called RPM a partial offset. 3 of 6 patients/caregivers refused any out-of-pocket cost.</td>
+        <td class="mono num">Q8 Q12</td>
+      </tr>
+      <tr>
+        <td class="id">A4</td>
+        <td><span class="stmt"><strong>Patient pull / anxiety.</strong> Patients and caregivers feel enough anxiety about post-discharge complications to welcome continuous passive tracking.</span><span class="rev">A4′: patients and caregivers accept monitoring when their own clinician prescribes it and it is paired with a named human.</span></td>
+        <td><span class="pill warn">Partially validated</span><span class="counts num">V <b>2</b> · P <b>5</b> · I <b>3</b></span><span class="counts num">Pt/CG 2/2/2 · Clin/Buy 0/3/1</span></td>
+        <td>Anxiety was near-universal but showed up as a wish for a person. 8 of 10 asked for an accountable human in v1 Q8.</td>
+        <td class="mono num">Q1 Q2 Q3 Q4 Q9 Q10 E1</td>
+      </tr>
+      <tr>
+        <td class="id">A5</td>
+        <td><span class="stmt"><strong>Overnight alert ownership.</strong> A named, accountable clinician (health system or vendor) will receive and act on alerts 24/7, including nights and weekends, at a cost buyers accept.</span></td>
+        <td><span class="pill new">New · not scored</span><span class="counts num">Raised by <b>8</b>/10</span></td>
+        <td>Objection theme 4 (<span class="pid">P1</span>–<span class="pid">P8</span>): every hub described was daytime-only. One 24/7 triage seat needs about 4.5–5 FTE.</td>
+        <td class="mono num">Q2 Q4 Q8 Q11</td>
+      </tr>
+      <tr>
+        <td class="id">A6</td>
+        <td><span class="stmt"><strong>Ring form factor on post-op hands.</strong> A finger-worn sensor fits and stays on through days 0–14 despite IV-fluid swelling, arthritis/RA, tremor and sizing drift.</span></td>
+        <td><span class="pill new">New · not scored</span><span class="counts num">Raised by <b>10</b>/10</span></td>
+        <td>Objection theme 2. Even the Innovator (<span class="pid">P1</span>) reported about a 4-day gap when his fingers were too swollen.</td>
+        <td class="mono num">Q5 Q10</td>
+      </tr>
+      <tr>
+        <td class="id">A7</td>
+        <td><span class="stmt"><strong>TEAM episode budget as the payer path.</strong> Hospitals in CMS TEAM will pay per episode from episode budgets or via risk-share on documented savings.</span></td>
+        <td><span class="pill new">New · not scored</span><span class="counts num">Named by <b>2</b>/4 buyers</span></td>
+        <td><span class="pid">P2</span> and <span class="pid">P8</span> named TEAM or episode budgets; <span class="pid">P4</span> named a service-line budget; <span class="pid">P7</span> declined to price.</td>
+        <td class="mono num">Q8 Q12</td>
+      </tr>
+      <tr>
+        <td class="id">A8</td>
+        <td><span class="stmt"><strong>Signal separation.</strong> Finger HR/temperature/HRV deviation can separate post-op SIRS from early sepsis, leak or SSI with useful PPV and lead time, including in immunosuppressed patients and on darker skin.</span><span class="rev">Named the riskiest assumption in the synthesis. Interviews cannot test it; it needs the shadow-mode wear study (Step 21, test 2).</span></td>
+        <td><span class="pill new">New · not scored</span><span class="counts num">Baseline concern <b>7</b>/10</span><span class="counts num">Skin-tone/equity <b>5</b>/10</span></td>
+        <td>Objection themes 7 and 14. <span class="pid">P1</span>: <q>So it's baselining on a sick person.</q></td>
+        <td class="mono num">Q11 (trust conditions only)</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- SCRIPT -->
+<section class="block" id="script">
+  <p class="eyebrow">The script</p>
+  <h2>Interview script v2</h2>
+  <p class="intro">Bold lines are what you say. Patient/Caregiver lines sit on a blue label, Clinician/Buyer lines on a grey label and in italics. Probes are neutral follow-ups; use as many as the time allows.</p>
+
+  <!-- SECTION A -->
+  <div class="section-head"><h3>Section A · Warm-up</h3><span class="time">~4 min · rapport, no solution</span></div>
+
+  <article class="q" id="W1">
+    <div class="q-head"><span class="q-id">W1</span><span class="q-title">About you</span><span class="q-tags"><span class="tag">Rapport</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">To start, tell me a little about yourself and what life looks like for you right now.</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">To start, tell me about your role and what a typical week looks like for you and your team.</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>What takes up most of your time or energy right now?</li><li>Who else is part of your days at the moment?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>Unchanged apart from "and your team" for buyers.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>Rapport answers surfaced the binding constraints early. Caregivers described exhaustion (<span class="pid">P3</span> <q>not sleeping great</q>, <span class="pid">P6</span> about 4 hours a night). Buyers described capacity limits (<span class="pid">P2</span> 30+ meetings a week, <span class="pid">P4</span>'s hub open 8–5 weekdays, <span class="pid">P8</span> a 1.2% margin).</p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><p>Synthetic personas recited their persona-sheet traits almost verbatim. Real people will be less articulate and less on-message. Note whether real caregivers raise sleep loss and buyers raise capacity without prompting.</p></div>
+    </div>
+  </article>
+
+  <article class="q" id="W2">
+    <div class="q-head"><span class="q-id">W2</span><span class="q-title">Context</span><span class="q-tags"><span class="tag">Rapport</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">How did the surgery come about, and how have things gone since you came home?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">Where do patients who have just had surgery fit into the work you and your team do?</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>Tell me about the day you left the hospital. What happened?</li><li><span class="pfx">C/B</span>Who is responsible for them once they leave?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>Unchanged; added a discharge-day probe.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>Surfaced the ERAS shift of risk into the home (<span class="pid">P7</span>), surgical patients sitting outside medicine-built RPM programs (<span class="pid">P4</span>: <q>They mostly don't</q>), and rushed or English-only discharges (<span class="pid">P3</span>, <span class="pid">P10</span>).</p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><p>Real patients may not know their procedure or discharge process this precisely. Check discharge-experience claims against observed real discharges and against the interpreter-supported interviews.</p></div>
+    </div>
+  </article>
+
+  <!-- SECTION B -->
+  <div class="section-head"><h3>Section B · Problem discovery</h3><span class="time">~22 min · no solution mentioned</span></div>
+  <p class="section-note">Do not mention any device, monitoring or alert in this section. If time runs short, protect Q2, Q3, Q5 and Q9.</p>
+
+  <article class="q" id="Q1">
+    <div class="q-head"><span class="q-id">Q1</span><span class="q-title">The first days at home</span><span class="q-tags"><span class="tag">A4</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">Walk me through your time at home since you left the hospital, from the day you came home until today. What stands out?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">Walk me through what happens to a typical surgical patient between discharge and their first follow-up visit. Who is in contact with them, and when?</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>Which day was hardest? What happened that day?</li><li>What happened next?</li><li><span class="pfx">If past day 7</span>How did the second week compare with the first?</li><li><span class="pfx">C/B</span>Where in that stretch do you lose sight of patients?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>Dropped "day and night" so nights can come up unprompted; added a second-week probe.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>Nights dominated the first two weeks for all 6 patients/caregivers. Clinicians and buyers described the time between the 48–72h call and the 10–14 day visit as a gap: <span class="pid">P2</span> <q>After that call, it's a black hole.</q> and <span class="pid">P8</span> <q>silence until something shows up</q>.</p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>Synthetic patients were interviewed on days 3–6, so days 7–14, the classic leak window, were never observed. Interview at least half of real patients on days 7–14, or use a 14-day diary.</li><li>Record whether nights come up unprompted now that the question no longer names them.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="q" id="Q2">
+    <div class="q-head"><span class="q-id">Q2</span><span class="q-title">The overnight hours</span><span class="q-tags"><span class="tag">A4</span><span class="tag">A5</span><span class="pill new">New</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">Tell me about the nights since you came home. Think of the last night when your health or recovery was on your mind. What happened, and what did you do?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">Walk me through what happens today when a recently discharged surgical patient has a concern overnight or on a weekend. Tell me about the last time it happened.</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>What time was it? Who else was awake?</li><li>Who, if anyone, did you contact? When?</li><li>How did you decide between contacting someone and waiting?</li><li><span class="pfx">C/B</span>Who hears about it first? How long until someone who can act does?</li><li><span class="pfx">C/B</span>What did that cost your team the next day?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>New question. Nights were the strongest recurring theme but v1 only reached them through Q1.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>In all 4 night-time episodes (<span class="pid">P1</span>, <span class="pid">P6</span>, <span class="pid">P9</span>, <span class="pid">P10</span>) nobody called until morning, or at all. "2 a.m. / 3 a.m." recurred across 8 personas. <span class="pid">P1</span> and <span class="pid">P10</span>: <q>didn't want to be the guy who calls</q>. Clinicians: <span class="pid">P7</span> <q>Night is where it dies.</q>, <span class="pid">P4</span> <q>a notification at 2 a.m. goes to nobody in my world</q>.</p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>Whether real patients actually wait until morning, and why (social cost, distance, not knowing). Recall is tidier than behavior; pair with a diary or after-hours call logs.</li><li>Whether real hubs and surgical offices truly have no overnight coverage, or whether an answering service or house supervisor absorbs these calls.</li><li>LLM homogeneity: the shared "2 a.m." motif may be model style, not shared vernacular.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="q" id="Q3">
+    <div class="q-head"><span class="q-id">Q3</span><span class="q-title">A moment of uncertainty</span><span class="q-tags"><span class="tag">A4</span><span class="tag">A2</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">Tell me about a moment during recovery when you weren't sure whether what you were noticing was part of normal healing. What did you notice, what did you do, and how did it turn out?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">Tell me about the most recent surgical patient who came back sicker than expected. How was it discovered, and what happened in the days before?</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>What did you check or measure, if anything? What did you see?</li><li>What had you been told to do at discharge? How did that fit what you saw?</li><li>Who else noticed? What did they say?</li><li><span class="pfx">C/B</span>Looking at the record afterwards, what was there before anyone acted?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>Removed the word "off", which v1 introduced and which then recurred in answers.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>The strongest evidence in the study: 6/6 patients/caregivers had a low-grade temperature episode (99.x to 100.2°F) and none met the call-above-101°F rule. All 3 frontline clinical personas (<span class="pid">P2</span>, <span class="pid">P4</span>, <span class="pid">P7</span>) told a recent bowel-surgery story with 1–2 days of prodrome. <span class="pid">P1</span>: <q>What I lacked that night wasn't data; I had plenty of data.</q> <span class="pid">P3</span>: <q>That "I'm fine" is not information.</q></p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>The v1 wording primed "off"; count how often real people describe a prodrome in their own words.</li><li>Hindsight bias shapes clinician stories (<span class="pid">P2</span> said so herself). Check against a retrospective chart review of real readmissions.</li><li>Whether real patients take their temperature at all at home.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="q" id="Q4">
+    <div class="q-head"><span class="q-id">Q4</span><span class="q-title">Who they turn to</span><span class="q-tags"><span class="tag">A4</span><span class="tag">A5</span><span class="pill new">New</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">When a question or worry about your recovery comes up, who do you turn to? Tell me about the last time.</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">When a surgical patient has a question after discharge, who do they actually reach, and whose word do they act on? Tell me about a recent example.</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>Who did you most want to hear from? Why that person?</li><li>How did you reach them, and how long did it take?</li><li>What are you using to keep track of how recovery is going: notes, devices, apps, people?</li><li><span class="pfx">C/B</span>In practice, who owns a patient between discharge and follow-up?</li><li><span class="pfx">C/B</span>What tools does your team use to keep track of them today?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>New question on the trusted messenger; absorbs v1 Q3 (tracking tools) as a probe.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>At least 6 personas said they would follow a trusted clinician's lead, and the messenger differed each time: surgeon (<span class="pid">P1</span>, <span class="pid">P10</span>), surgeon in Spanish (<span class="pid">P3</span>), transplant coordinator (<span class="pid">P5</span>), the husband's doctor (<span class="pid">P6</span>), local family doctor (<span class="pid">P9</span>). Current tracking was manual: notebooks, spreadsheets, fridge charts; institutions ran on <q>phone, Epic, and hope</q> (<span class="pid">P4</span>). <span class="pid">P10</span>: <q>Somebody who knows my name.</q></p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>Synthetic personas over-reported organized routines. Real logging is likely thinner; ask to see notes or photos where appropriate.</li><li>Whether the trusted messenger is realistically reachable after hours, and whether it is the surgeon's office, primary care or family.</li><li>Rural and non-English-dominant participants may name different people (church, neighbor, pharmacist).</li></ul></div>
+    </div>
+  </article>
+
+  <article class="q" id="Q5">
+    <div class="q-head"><span class="q-id">Q5</span><span class="q-title">Things on the hands</span><span class="q-tags"><span class="tag">A1</span><span class="tag">A6</span><span class="pill new">Reframed</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">Since the surgery, tell me about anything you've had on your hands, fingers or wrists, such as jewelry, a watch, a hospital bracelet or a clip. What happened with each?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">What have you seen happen with patients' hands and fingers in the first two weeks after surgery? Tell me about a recent patient.</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>What were your hands like in the first few days? And now?</li><li>What did you take off, and when? Who helped?</li><li>What are your hands doing during a normal day: washing, cooking, holding a walker?</li><li>Where and how have you been sleeping?</li><li><span class="pfx">C/B</span>What do patients take off, and why?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>v1 Q5 asked broadly about "body, hands, arms and sleep". v2 anchors on concrete items worn on the hands since surgery; sleep moves to a probe. The examples are everyday items, not the product.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>Hands were a hard constraint: IV-fluid swelling (<span class="pid">P1</span>, <span class="pid">P3</span>, <span class="pid">P5</span>, <span class="pid">P6</span>, <span class="pid">P9</span>), arthritis or RA (<span class="pid">P3</span>, <span class="pid">P9</span>, <span class="pid">P10</span>), tremor (<span class="pid">P5</span>, <span class="pid">P6</span>), a fistula arm (<span class="pid">P5</span>), hands often in water (<span class="pid">P3</span>, <span class="pid">P5</span>). <span class="pid">P1</span>: <q>So I've got a gap of about four days in my data, right when you'd most want it.</q> <span class="pid">P4</span>: <q>the ring fits on day one and is loose on day ten, or it's too tight on day three</q>.</p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>Persona design deliberately loaded hand problems into <span class="pid">P9</span> and <span class="pid">P10</span>, so 10/10 overstates prevalence.</li><li>Whether real patients' swollen-finger experience matches: measure finger circumference on post-op days 0, 3, 7 and 14 in a fit clinic, across procedures.</li><li>What share of the real beachhead has arthritis or RA.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="q" id="Q6">
+    <div class="q-head"><span class="q-id">Q6</span><span class="q-title">Things people stopped using</span><span class="q-tags"><span class="tag">A1</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">Tell me about a health device, app or routine you were asked to use at home and stopped using, or never started. What happened?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">Tell me about a home-device program where patients' use dropped off. When did it drop, and what drove it?</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>When did you stop? What was going on then?</li><li>Who set it up, charged it or reminded you?</li><li>Where is it now?</li><li>What did you do instead?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>Was v1 Q4; clinician variant reworded to ask for a specific program.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>Abandonment was universal: spirometer (<span class="pid">P1</span>, <span class="pid">P5</span>, <span class="pid">P6</span>, <span class="pid">P7</span>), pendant (<span class="pid">P3</span>), CPAP (<span class="pid">P9</span>, <span class="pid">P10</span>), Holter (<span class="pid">P9</span>), BP apps (<span class="pid">P5</span>, <span class="pid">P6</span>), a wrist wearable pilot (<span class="pid">P2</span>: <q>Meanwhile patients stopped charging the devices within a week or two</q>). Drivers: no feedback, the sense that nobody is looking, discomfort, surveillance. <span class="pid">P10</span>: <q>with my history, if it went on at all, it's in the drawer by day three</q>.</p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>Synthetic recall was tidy. Real drop-off timing (days or weeks) must be measured in a wear study, not recalled.</li><li>Who charges devices in real homes, and whether that person is the exhausted caregiver.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="q" id="Q7">
+    <div class="q-head"><span class="q-id">Q7</span><span class="q-title">Warnings that turned out to be nothing</span><span class="q-tags"><span class="tag">A2</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">Tell me about the last time a reading, warning or alarm of any kind turned out to be nothing. How did you feel, and what did you do the next time it went off?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">Tell me about the last time an alert system or dashboard produced a lot of warnings that turned out to be nothing. What happened to how your team used it?</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>How many times did it happen before you changed what you did?</li><li>What did you change?</li><li>Who else was affected?</li><li><span class="pfx">C/B</span>Who decided to change the settings or stop using it? What did it take?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>Was v1 Q6; added "of any kind" so home alarms count.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>All 10 had a false-alarm story with the same arc: panic, then disabling it (doorbell camera, smoke alarm, Epic Sepsis Model, pulse oximeter). Tolerance: 1–3 events for patients, about one-third noise for nurses. <span class="pid">P4</span>: <q>The thing that makes nurses tune out isn't one false alarm, it's the fiftieth one on a Tuesday.</q> <span class="pid">P2</span>: <q>by month three it's wallpaper</q>. <span class="pid">P9</span>: <q>First time it's wrong. Same as the smoke alarm.</q></p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>Stated tolerance is hypothetical. Measure real behavior with a Wizard-of-Oz alert queue: how many false alerts before a nurse or caregiver stops responding.</li><li>Real alert PPV and alerts per 100 patient-days are unknown until a shadow-mode study.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="q" id="Q8">
+    <div class="q-head"><span class="q-id">Q8</span><span class="q-title">Paying, budgets and staffing</span><span class="q-tags"><span class="tag">A3</span><span class="tag">A5</span><span class="tag">A7</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">Tell me about the last time you had to decide whether a health product or service was worth paying for. How did you decide, and who ended up paying?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">Walk me through how the last post-discharge or remote monitoring program at your organization was funded, approved or cancelled. Who had to say yes, and which numbers mattered?</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>What made it feel worth it, or not?</li><li><span class="pfx">C/B</span>Where, if anywhere, do episode-based or value-based budgets come into decisions about care after discharge?</li><li><span class="pfx">C/B</span>If they raise TEAM or bundles: How has that changed what you track after discharge?</li><li><span class="pfx">C/B</span>Who staffs follow-up calls and after-hours questions today? Whose budget pays for that time?</li><li><span class="pfx">C/B</span>What happened to the program in the end?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>Was v1 Q7. Patient line now anchors on a real past decision. Buyer probes add episode budgets and after-hours staffing.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>Patients expected a doctor's order to mean coverage (<span class="pid">P1</span>: <q>If my surgeon said, "we're enrolling you, Medicare covers it," I'd say yes without thinking about price.</q>). No buyer named RPM codes as primary funding; <span class="pid">P2</span>, <span class="pid">P4</span> and <span class="pid">P8</span> called them a partial offset. <span class="pid">P8</span>: <q>It would come out of the episode budget, meaning TEAM and ACO, not RPM.</q> Staffing was the decisive number (<span class="pid">P2</span>: <q>It also taught me that the threshold isn't a technical decision, it's a staffing decision.</q>).</p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>The personas' 2026 reimbursement claims (short-duration RPM codes, TEAM scope, global-period billing, patient coinsurance) are not facts. Confirm with real revenue-cycle and compliance staff.</li><li>Real procurement behavior: who actually signs, and which budget line exists at a real TEAM hospital.</li><li>Only 2 of 4 synthetic buyers named TEAM; test A7 with finance leaders at participating hospitals.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="q" id="Q9">
+    <div class="q-head"><span class="q-id">Q9</span><span class="q-title">One thing to change</span><span class="q-tags"><span class="tag">A4</span><span class="tag">A5</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">Thinking back over the time since you left the hospital, if you could change one thing about it, what would it be? Why that?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">Thinking about patients' first two weeks after discharge, if you could change one thing, what would it be? Why that?</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>What would that have looked like on the hardest day?</li><li>Who would do it?</li><li>What would come second?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>Was v1 Q8; added a "second thing" probe because a single answer hides trade-offs.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>The clearest signal in the study: 8/10 asked for an accountable human owner or interpreter rather than more data. <span class="pid">P6</span>: <q>I want someone to carry part of it.</q> <span class="pid">P2</span>: <q>if I had to choose one thing, it's a human accountable for the black hole.</q> <span class="pid">P8</span> asked for targeting, <span class="pid">P9</span> for less distance.</p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>Social desirability and LLM convergence both push toward "a person". Real answers may be more practical (pain control, sleep, transport).</li><li>The one-thing framing forces a single answer; use E1 and later conjoint tests (nurse calls vs sensor vs both).</li></ul></div>
+    </div>
+  </article>
+
+  <!-- SECTION C -->
+  <div class="section-head"><h3>Section C · Neutral concept exposure</h3><span class="time">~10 min · read verbatim, once</span></div>
+  <p class="section-note">Use Statement A by default. For alternate interviews within each segment, use Statement B, which changes only the form factor. Note the version on the template. Do not add who answers, what it costs or what it detects. Record whether the participant asks "who" on their own.</p>
+
+  <div class="concept">
+    <p class="eyebrow">Statement A · default (v1 wording, unchanged)</p>
+    <blockquote>"Some teams are exploring a small ring worn on the finger that passively measures heart rate, temperature, and similar signals around the clock for about two weeks after discharge. It learns a person's own normal pattern and can notify a care team if the pattern changes. It is an early idea, and I'm looking for honest reactions, including reasons it would not work."</blockquote>
+  </div>
+  <div class="concept b">
+    <p class="eyebrow">Statement B · optional, form-factor-neutral</p>
+    <blockquote>"Some teams are exploring a small sensor worn on the finger, wrist or chest that passively measures heart rate, temperature, and similar signals around the clock for about two weeks after discharge. It learns a person's own normal pattern and can notify a care team if the pattern changes. It is an early idea, and I'm looking for honest reactions, including reasons it would not work."</blockquote>
+  </div>
+
+  <article class="q" id="Q10">
+    <div class="q-head"><span class="q-id">Q10</span><span class="q-title">First reaction and fit</span><span class="q-tags"><span class="tag">A4</span><span class="tag">A1</span><span class="tag">A6</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">What goes through your mind as you hear that? What, if anything, concerns you about it?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">What goes through your mind as you hear that? What, if anything, concerns you about it for your patients or your team?</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li><strong>Required:</strong> Walk me through how something like this would fit, or not fit, into a normal day and night for you (your patients) over those two weeks.</li><li>Who would put it on, and who would look after it?</li><li>What would happen during a shower, at the kitchen sink, at night?</li><li>Tell me more about that concern. Where does it come from?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>Merges v1 Q9 (first reaction) and v1 Q10 (day-and-night walkthrough, now a required probe).</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>First reactions split 2 positive (<span class="pid">P1</span>, <span class="pid">P3</span>: <q>Honestly? My first reaction is, I want that.</q>), 4 conditional (<span class="pid">P2</span>, <span class="pid">P4</span>, <span class="pid">P5</span>, <span class="pid">P6</span>: <q>I suppose my first thought is, that's another thing.</q>), 4 skeptical (<span class="pid">P7</span>–<span class="pid">P10</span>; <span class="pid">P10</span>: <q>The second thing is, it's a tracking device.</q>). Walkthroughs exposed sizing at discharge, charging at night, water, phone pairing, the caregiver as operator, and hubs closed at night.</p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>Personas echoed the statement's words ("own normal", "care team"), which is priming. Compare A and B, and later test versions with and without a named human service.</li><li>Walkthroughs are imagined. Real fit needs a 14-day in-home wear pilot.</li><li>Real older patients may be polite to the interviewer; <span class="pid">P9</span> said he would wear it "to be polite" then lose it.</li></ul></div>
+    </div>
+  </article>
+
+  <article class="q" id="Q11">
+    <div class="q-head"><span class="q-id">Q11</span><span class="q-title">Trust, and who is on the other end</span><span class="q-tags"><span class="tag">A2</span><span class="tag">A5</span><span class="tag">A8</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">What would need to be true for you to trust a notification from something like this? What would make you stop paying attention to it?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">What would need to be true for your team to trust a notification from something like this? Who would you expect to see it, at what hours, and what would make them stop paying attention?</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>Who would you want to hear from if it noticed something? Why that person?</li><li>What would you want them to tell you?</li><li>Tell me about the last time a system earned or lost your trust. What happened?</li><li><span class="pfx">C/B</span>What evidence would you need to see first, and from which patients?</li><li><span class="pfx">C/B</span>Where would it need to show up in your current systems?</li></ul></div>
+    <div class="q-change"><b>vs v1</b>Was v1 Q11. Buyer line adds who sees it and at what hours; new probe on the preferred messenger.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>Trust required explainable alerts (what changed, by how much, over what window), a named clinician screening first, tiered next steps, and validation in post-surgical, skin-tone-diverse patients. <span class="pid">P1</span>: <q>Two or three false alarms that I can't explain.</q> <span class="pid">P4</span>: <q>The algorithm doesn't have a license; I do, and my nurses do</q>. <span class="pid">P5</span>: <q>was this tested on people who look like me and take my medications?</q> <span class="pid">P6</span>: <q>I just don't feel comfortable with a machine judging whether he's sick.</q></p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>Stated thresholds ("a third", "two or three") are hypotheses. Real PPV, alerts per 100 patient-days and clinician response need shadow mode and a Wizard-of-Oz queue.</li><li>Whether real Black and immunosuppressed patients raise accuracy concerns unprompted; recruit them specifically.</li><li>Patients split on seeing their own data (<span class="pid">P1</span>, <span class="pid">P5</span> yes; <span class="pid">P3</span>, <span class="pid">P6</span> no). Check the real split.</li></ul></div>
+    </div>
+
+    <div class="exercise">
+      <p class="eyebrow">Optional exercise E1 · forced choice · ~2 min · tests A4′</p>
+      <p>Show or read three options on a card. <strong>Rotate the order</strong> between interviews. Ask: <strong>"For your (your patients') first two weeks at home, which of these would you pick? Why that one?"</strong> Then: "What would make you pick a different one?"</p>
+      <ol>
+        <li>Phone calls from a nurse on set days after discharge.</li>
+        <li>The sensor just described, with a nurse reviewing its readings around the clock.</li>
+        <li>The usual discharge instructions and follow-up visit.</li>
+      </ol>
+      <p class="small muted">Accept "none" or "a mix" and ask them to describe it. Synthetic hint: 3 of 6 patients/caregivers said they would prefer or accept a nurse call over the device (<span class="pid">P6</span>: <q>I'd rather have a nurse call me every other day than have a ring.</q>). Social desirability may inflate the nurse option; watch for hesitation.</p>
+    </div>
+  </article>
+
+  <!-- SECTION D -->
+  <div class="section-head"><h3>Section D · Value and commitment</h3><span class="time">~7 min</span></div>
+  <p class="section-note">Ask the four price questions in order and write the numbers down exactly. Never offer an anchor or mention any synthetic price. Note whether a buyer priced the device alone or a staffed service.</p>
+
+  <article class="q" id="Q12">
+    <div class="q-head"><span class="q-id">Q12</span><span class="q-title">Paying for it, and what they would commit to</span><span class="q-tags"><span class="tag">A3</span><span class="tag">A7</span><span class="tag">A4</span><span class="tag">WTP</span></span></div>
+    <p class="eyebrow" style="margin-top:12px">12a · Van Westendorp</p>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">How would you expect something like this to be paid for? For the two-week period, at what price would it seem so cheap you'd doubt it works? A good deal? Getting expensive? Too expensive to consider?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">How would you expect something like this to be paid for? Per monitored patient episode, what price would feel too cheap to be credible? Good value? Getting expensive? A non-starter? What would need to be included at those prices?</p></div>
+    <p class="eyebrow" style="margin-top:16px">12b · Behavioral commitment close <span class="pill new">New</span></p>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">If a small in-home study of this started at your hospital, what would you need to know before taking part? Who else would you want involved in that decision?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">What would you need to see before agreeing to a pilot with your own patients? Who else would need to be in the room, and would you introduce me to them?</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>Tell me more about why that number.</li><li>What would change your answer?</li><li><span class="pfx">C/B</span>What would it take for your team to share de-identified readmission data for a retrospective review?</li><li><span class="pfx">C/B</span>Who has budget authority for a pilot, and at what size?</li><li><span class="pfx">Pt/CG</span>Only offer a study sign-up if one actually exists. Never promise one.</li></ul></div>
+    <div class="ladder" aria-label="Commitment ladder">
+      <div><b>0 · None</b>Polite interest only</div>
+      <div><b>1 · Time</b>Agrees to a follow-up meeting or a fit-clinic visit</div>
+      <div><b>2 · Reputation</b>Makes a named introduction (RPM manager, revenue cycle, CFO)</div>
+      <div><b>3 · Data</b>Starts a data-sharing or retrospective-review request</div>
+      <div><b>4 · Money</b>Letter of intent or paid pilot discussion</div>
+    </div>
+    <div class="q-change"><b>vs v1</b>Was v1 Q12. Adds 12b, a commitment question coded on the ladder above. Stated prices alone did not predict purchase.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>B2B median good value <span class="mono num">$125</span>/episode (stated range <span class="mono num">$100–250</span>, n=3; <span class="pid">P7</span> refused: <q>I'm the wrong person to price it.</q>). Too cheap under <span class="mono num">$50–75</span>; non-starter <span class="mono num">$400–600</span>. Three buyers expected the price to include 24/7 staffed triage. B2C median good deal about <span class="mono num">$39</span> for two weeks (n=4); 3/6 refused any out-of-pocket cost. <span class="pid">P9</span>: <q>Money's not the only cost.</q> <span class="pid">P10</span>: <q>If it's free, I'm the product.</q> <span class="pid">P8</span>'s first ask was a retrospective on his own TEAM readmissions.</p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><ul><li>Van Westendorp with n=3 synthetic buyers is not a price. Use real proposals with anchors to 5–10 CFOs or VPs, and seek LOIs or paid pilots.</li><li>Real procurement behavior: security review, value analysis committee, contracting timelines.</li><li>Patient coinsurance on RPM codes (verify) may block fixed-income patients even at a $0 device price.</li></ul></div>
+    </div>
+  </article>
+
+  <!-- SECTION E -->
+  <div class="section-head"><h3>Section E · Close</h3><span class="time">~2 min</span></div>
+
+  <article class="q" id="C1">
+    <div class="q-head"><span class="q-id">C1–C2</span><span class="q-title">What I missed, and who to talk to</span><span class="q-tags"><span class="tag">All</span></span></div>
+    <div class="variant pt"><span class="who">Patient / Caregiver</span><p class="say">What should I have asked you that I didn't? Who else should I talk to about the first weeks after surgery?</p></div>
+    <div class="variant cb"><span class="who">Clinician / Buyer</span><p class="say">What should I have asked you that I didn't? Who else should I talk to, inside or outside your organization?</p></div>
+    <div class="probes"><h4>Probes</h4><ul><li>Why that person? How would I best reach them?</li><li>Thank them, confirm how they want to hear about results, and stop the recording.</li></ul></div>
+    <div class="q-change"><b>vs v1</b>Unchanged. Asked as two questions; one line here to save space.</div>
+    <div class="callout">
+      <div class="syn"><p class="lbl">What the synthetic study suggested</p><p>C1 answers were high-yield: what happens after the alert (<span class="pid">P1</span>, <span class="pid">P7</span>), the pre-op baseline window (<span class="pid">P1</span>), liability and same-day access (<span class="pid">P2</span>), device returns (<span class="pid">P4</span>), language (<span class="pid">P3</span>), caregivers' own burden (<span class="pid">P6</span>), refusers (<span class="pid">P10</span>), distance (<span class="pid">P9</span>). Referrals pointed to APPs, after-hours line nurses, transplant coordinators, revenue cycle, the CISO, risk management, home-health PTs, churches, union halls and caregiver groups.</p></div>
+      <div class="val"><p class="lbl">Still needs real-world validation</p><p>Synthetic personas cannot supply real people or organizations. Real referrals are the next interviews; track them on the template and follow up within a week.</p></div>
+    </div>
+  </article>
+</section>
+
+<!-- SIGNALS -->
+<section class="block" id="signals">
+  <p class="eyebrow">Listening</p>
+  <h2>Signals to listen for</h2>
+  <p class="intro">Recurring phrases from the synthetic transcripts. When a real participant says something similar in their own words, and unprompted, mark it on the template. Never feed these phrases to participants.</p>
+  <ul class="signals">
+    <li><span class="ph">"2 a.m." / "3 a.m."</span><span class="who">8 personas · P1 P2 P3 P4 P5 P7 P8 P10</span><span class="m">Night as the locus of both risk and the operational gap. Points to A5.</span></li>
+    <li><span class="ph">"Bother" / "didn't want to be a bother"</span><span class="who">6 personas · P3 P4 P5 P6 P7 P9</span><span class="m">The main barrier to calling. Pairs with "didn't want to be the guy who calls" (P1, P10).</span></li>
+    <li><span class="ph">"Who knows me" / "somebody I know"</span><span class="who">5 personas · P1 P5 P6 P9 P10</span><span class="m">Continuity: the messenger must know the patient. Points to A4′.</span></li>
+    <li><span class="ph">"Healthy people" / "healthy volunteers"</span><span class="who">5 personas · P1 P4 P5 P7 P8</span><span class="m">Rejects wellness-population evidence; wants post-surgical data. Points to A8.</span></li>
+    <li><span class="ph">"Cries wolf" / "crying wolf"</span><span class="who">3 personas · P1 P3 P5</span><span class="m">False alarms spend trust that does not come back. Points to A2.</span></li>
+    <li><span class="ph">"In a drawer" / "sitting on the dresser"</span><span class="who">5 personas · P3 P4 P5 P9 P10</span><span class="m">The natural end state of an abandoned device. Points to A1.</span></li>
+    <li><span class="ph">"I'm not a nurse"</span><span class="who">3 personas · P3 P6 P9</span><span class="m">Caregivers reject the role of clinical interpreter.</span></li>
+    <li><span class="ph">"A real person"</span><span class="who">3 personas · P3 P9 P10</span><span class="m">Trust anchored in a known, accountable human, not a text or robot call.</span></li>
+    <li><span class="ph">"Nobody's looking" / "anybody on the other end"</span><span class="who">4 personas · P2 P5 P6 P7</span><span class="m">Engagement collapses when patients sense no one reviews their data.</span></li>
+    <li><span class="ph">"Worse than nothing"</span><span class="who">3 personas · P1 P2 P5</span><span class="m">Silent or unwatched monitoring seen as net harm and false reassurance.</span></li>
+    <li><span class="ph">"One more thing"</span><span class="who">2 personas · P3 P6</span><span class="m">Device as burden on an overloaded caregiver.</span></li>
+    <li><span class="ph">"Consumer ring with a dashboard bolted on"</span><span class="who">3 personas · P2 P4 P8</span><span class="m">Buyers' fear that a low price means a wellness device with no clinical service behind it.</span></li>
+    <li><span class="ph">"Off" / "didn't look right"</span><span class="who">4 personas · P2 P3 P7 P9</span><span class="m">A 1–2 day prodrome before objective data.</span><span class="caveat">Caveat: v1 Q2 introduced "off". Count it only when unprompted.</span></li>
+    <li><span class="ph">"Who's the care team?"</span><span class="who">2 personas · P3 P4</span><span class="m">The concept's vague "care team" raised an immediate ownership question.</span><span class="caveat">Caveat: echoes the concept statement. Count it only if asked before you mention anyone.</span></li>
+    <li><span class="ph">"Learns my own normal"</span><span class="who">3 personas · P3 P5 P6</span><span class="m">Personal baseline resonated for some and raised doubt for others.</span><span class="caveat">Caveat: echoes the concept statement. Do not treat it as independent evidence.</span></li>
+  </ul>
+  <p class="small muted" style="margin-top:14px">Single-persona lines worth hearing again in real words: <q>Just knowing that if something happens at 2 a.m., somebody knows before 7 a.m.</q> (<span class="pid">P3</span>), <q>A cheap device that doubles my alert volume is the most expensive thing you could sell me.</q> (<span class="pid">P4</span>), <q>That somebody believes me the first time.</q> (<span class="pid">P5</span>), <q>That's not a device, that's just, somebody paying attention.</q> (<span class="pid">P10</span>). LLM homogeneity caveat: shared phrasing across synthetic transcripts may reflect model style rather than real vernacular.</p>
+</section>
+
+<!-- RED FLAGS -->
+<section class="block" id="redflags">
+  <p class="eyebrow">Kill criteria</p>
+  <h2>Red flags that would invalidate each assumption</h2>
+  <p class="intro">Tally these across real interviews, by segment. One red flag is an anecdote; the same red flag from most of the decisive segment is a verdict.</p>
+  <div class="redflags">
+    <div class="card"><h3><span class="mono">A1</span> Adherence</h3><ul><li>Most patients describe taking off jewelry, watches or clips in the first 72 hours after discharge.</li><li>Caregivers say no one in the home would charge or check a device.</li><li>Patients recall abandoning prior home devices within days, not weeks.</li><li>Clinicians report their own home-device programs losing most patients within two weeks.</li></ul></div>
+    <div class="card"><h3><span class="mono">A2</span> Workflow &amp; alert fatigue</h3><ul><li>RPM nurses say any new alert stream in their queue is a non-starter, even pre-screened.</li><li>Nurses report disengaging from past tools after a handful of false alerts.</li><li>Surgeons say they would push to switch off anything that pages overnight.</li><li>Per-alert documentation is required and nobody has time for it.</li></ul></div>
+    <div class="card"><h3><span class="mono">A3</span> Economic alignment</h3><ul><li>No buyer can name a budget line or a past program that was funded this way.</li><li>Revenue cycle says RPM cannot be billed for these patients (global period, data-day rules).</li><li>Finance leaders say avoided readmissions do not change their numbers.</li><li>Patients refuse any cost-sharing, including coinsurance.</li></ul></div>
+    <div class="card"><h3><span class="mono">A4</span> Patient pull</h3><ul><li>Patients who described night worries still say they would rather wait until morning.</li><li>Most first reactions frame the concept as surveillance or burden.</li><li>In E1, most pick nurse calls even when the sensor comes with a nurse.</li><li>Patients say they would wear it only to please their surgeon.</li></ul></div>
+    <div class="card"><h3><span class="mono">A5</span> Overnight ownership</h3><ul><li>No party (hospital, surgical group or vendor) is willing to own alerts at night.</li><li>Buyers will not pay for staffed triage inside the price band they give.</li><li>After-hours line nurses say they cannot absorb added calls.</li></ul></div>
+    <div class="card"><h3><span class="mono">A6</span> Ring on post-op hands</h3><ul><li>Most patients describe finger swelling or arthritis that makes any finger item impossible during days 0–7.</li><li>Clinicians say rings must come off for IV access, procedures or imaging.</li><li>Statement B draws no more acceptance than A, which suggests the objection is to wearing anything.</li></ul></div>
+    <div class="card"><h3><span class="mono">A7</span> TEAM as payer path</h3><ul><li>Finance leaders at TEAM hospitals cannot direct episode dollars to a vendor before savings are proven.</li><li>They accept only pure risk-share with nothing upfront, at a size that cannot fund 24/7 staffing.</li><li>TEAM volumes at target hospitals are too small to matter.</li></ul></div>
+    <div class="card"><h3><span class="mono">A8</span> Signal separation</h3><ul><li>Interviews cannot invalidate this. Flag it when clinicians describe post-op physiology so variable that a personal baseline is meaningless, then route to the shadow-mode study.</li><li>Clinicians or patients describe known accuracy problems on darker skin or with the medications common in the beachhead.</li></ul></div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="block" id="checklist">
+  <p class="eyebrow">One page</p>
+  <h2>Interviewer checklist</h2>
+  <div class="checklist">
+    <div class="card">
+      <h3>Before</h3>
+      <ul>
+        <li>Consent form signed; recording consent confirmed</li>
+        <li>IRB determination on file</li>
+        <li>Participant code assigned; no PHI in notes</li>
+        <li>Segment and variant chosen (Pt/CG or C/B)</li>
+        <li>Concept statement version set (A or B) per rotation</li>
+        <li>E1 card printed; option order rotated</li>
+        <li>Safety protocol and local after-hours number at hand</li>
+        <li>Interpreter booked if needed</li>
+        <li>Recorder tested; note template printed</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>During</h3>
+      <ul>
+        <li>No solution words before Section C</li>
+        <li>Past behavior first; "tell me about the last time"</li>
+        <li>No yes/no, no examples, no leading</li>
+        <li>"Tell me more" / "What happened next?"</li>
+        <li>5-second silence after each answer</li>
+        <li>Mark unprompted mentions (nights, who answers, hands, cost, privacy)</li>
+        <li>Concept read verbatim, once</li>
+        <li>Price numbers written exactly; no anchors</li>
+        <li>Commitment ask made (12b)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>After (within 1 hour)</h3>
+      <ul>
+        <li>Complete the note template</li>
+        <li>Score A1–A7 as V / P / I / no evidence, with the quote behind each</li>
+        <li>Code the commitment ladder step (0–4)</li>
+        <li>Log red flags heard</li>
+        <li>Log referrals and follow up within a week</li>
+        <li>Upload recording to secure storage; delete local copy</li>
+        <li>Second coder reviews a sample of scores</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- NOTES TEMPLATE -->
+<section class="block" id="notes">
+  <p class="eyebrow">Print one per interview</p>
+  <h2>Note-taking template</h2>
+  <p class="intro">Write what they did (past behavior) separately from what they think they would do. Put verbatim quotes in quotation marks. Mark "U" beside anything said unprompted.</p>
+  <div class="sheet-head">
+    <div class="field"><div class="fl">Participant code</div><div class="line"></div></div>
+    <div class="field"><div class="fl">Segment</div><div class="line"></div></div>
+    <div class="field"><div class="fl">Procedure category · post-discharge day</div><div class="line"></div></div>
+    <div class="field"><div class="fl">Interviewer · date</div><div class="line"></div></div>
+    <div class="field"><div class="fl">Concept statement (A / B)</div><div class="line"></div></div>
+    <div class="field"><div class="fl">E1 order shown · choice</div><div class="line"></div></div>
+    <div class="field"><div class="fl">Consent &amp; recording confirmed</div><div class="line"></div></div>
+    <div class="field"><div class="fl">Interpreter (language)</div><div class="line"></div></div>
+  </div>
+
+  <div class="notebox"><div class="nh"><b>W1–W2</b><span>Context and constraints</span></div><div class="nrow"><div><div class="nl">What they did / their situation</div><div class="lined"></div></div><div><div class="nl">Verbatim quote</div><div class="lined"></div></div><div><div class="nl">Signals · red flags</div><div class="lined"></div></div></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q1</b><span>First days at home · A4</span></div><div class="nrow"><div><div class="nl">What they did</div><div class="lined"></div></div><div><div class="nl">Verbatim quote</div><div class="lined"></div></div><div><div class="nl">Signals · red flags</div><div class="lined"></div></div></div><div class="verdict-row"><span><span class="box"></span>Nights raised unprompted</span><span><span class="box"></span>Days 7–14 described</span></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q2</b><span>Overnight hours · A4 A5</span></div><div class="nrow"><div><div class="nl">What they did</div><div class="lined"></div></div><div><div class="nl">Verbatim quote</div><div class="lined"></div></div><div><div class="nl">Signals · red flags</div><div class="lined"></div></div></div><div class="verdict-row"><span><span class="box"></span>Waited until morning</span><span><span class="box"></span>Called at night</span><span><span class="box"></span>No night concern</span></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q3</b><span>Moment of uncertainty · A4 A2</span></div><div class="nrow"><div><div class="nl">What they noticed / did</div><div class="lined"></div></div><div><div class="nl">Verbatim quote</div><div class="lined"></div></div><div><div class="nl">Signals · red flags</div><div class="lined"></div></div></div><div class="verdict-row"><span>Highest temperature noted: ________</span><span><span class="box"></span>Prodrome described in own words</span></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q4</b><span>Who they turn to · A4 A5</span></div><div class="nrow"><div><div class="nl">Who, how, how fast</div><div class="lined"></div></div><div><div class="nl">Verbatim quote</div><div class="lined"></div></div><div><div class="nl">Tracking tools used</div><div class="lined"></div></div></div><div class="verdict-row"><span>Trusted messenger: ______________________</span></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q5</b><span>Things on the hands · A1 A6</span></div><div class="nrow"><div><div class="nl">Items worn / removed, when</div><div class="lined"></div></div><div><div class="nl">Verbatim quote</div><div class="lined"></div></div><div><div class="nl">Swelling · arthritis · tremor · water · sleep</div><div class="lined"></div></div></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q6</b><span>Things stopped using · A1</span></div><div class="nrow"><div><div class="nl">Device · when stopped · why</div><div class="lined"></div></div><div><div class="nl">Verbatim quote</div><div class="lined"></div></div><div><div class="nl">Who charged / set up</div><div class="lined"></div></div></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q7</b><span>False alarms · A2</span></div><div class="nrow"><div><div class="nl">What happened</div><div class="lined"></div></div><div><div class="nl">Verbatim quote</div><div class="lined"></div></div><div><div class="nl">Signals · red flags</div><div class="lined"></div></div></div><div class="verdict-row"><span>Events before they changed behavior: ______</span></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q8</b><span>Paying, budgets, staffing · A3 A5 A7</span></div><div class="nrow"><div><div class="nl">Decision / program story</div><div class="lined"></div></div><div><div class="nl">Verbatim quote</div><div class="lined"></div></div><div><div class="nl">Budget line · who staffs after hours</div><div class="lined"></div></div></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q9</b><span>One thing to change · A4 A5</span></div><div class="nrow"><div><div class="nl">First thing</div><div class="lined"></div></div><div><div class="nl">Second thing</div><div class="lined"></div></div><div><div class="nl">Verbatim quote</div><div class="lined"></div></div></div><div class="verdict-row"><span><span class="box"></span>Person</span><span><span class="box"></span>Information</span><span><span class="box"></span>Access / distance</span><span><span class="box"></span>Other</span></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q10</b><span>First reaction and fit · A4 A1 A6</span></div><div class="nrow"><div><div class="nl">First reaction</div><div class="lined"></div></div><div><div class="nl">Day-and-night walkthrough</div><div class="lined"></div></div><div><div class="nl">Concerns (unprompted first)</div><div class="lined"></div></div></div><div class="verdict-row"><span><span class="box"></span>Positive</span><span><span class="box"></span>Conditional</span><span><span class="box"></span>Skeptical</span><span><span class="box"></span>Asked "who answers" unprompted</span></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q11 + E1</b><span>Trust · A2 A5 A8 · forced choice</span></div><div class="nrow"><div><div class="nl">Trust conditions</div><div class="lined"></div></div><div><div class="nl">What loses trust</div><div class="lined"></div></div><div><div class="nl">E1 choice and why</div><div class="lined"></div></div></div></div>
+
+  <div class="notebox"><div class="nh"><b>Q12</b><span>Price and commitment · A3 A7 WTP</span></div><div class="nrow"><div><div class="nl">Too cheap · good · expensive · too expensive</div><div class="lined"></div></div><div><div class="nl">Payer expected · what's included</div><div class="lined"></div></div><div><div class="nl">Commitment asked / given</div><div class="lined"></div></div></div><div class="verdict-row"><span>Ladder: <span class="box"></span>0 <span class="box"></span>1 <span class="box"></span>2 <span class="box"></span>3 <span class="box"></span>4</span><span><span class="box"></span>Refused to price</span><span><span class="box"></span>Device only <span class="box"></span>Staffed service</span></div></div>
+
+  <div class="notebox"><div class="nh"><b>C1–C2 + scoring</b><span>Missed topics · referrals · assumption read</span></div><div class="nrow"><div><div class="nl">What I should have asked</div><div class="lined"></div></div><div><div class="nl">Referrals (role, how to reach)</div><div class="lined"></div></div><div><div class="nl">A1–A7: V / P / I / none, with quote</div><div class="lined"></div></div></div></div>
+</section>
+
+<footer>
+  <p class="mono">Synthetic study · n=10 synthetic personas · generated with Claude Code · 2026-09-28</p>
+  <p>Synthetic research cannot predict real human behavior. Validate every finding with real patients, clinicians and health-system buyers.</p>
+  <p>Sources: research/02_interview_script.md (v1), research/03_synthesis.md, research/synthesis_data.json, research/transcripts/.</p>
+</footer>
+
+</div>
+</body>
+</html>

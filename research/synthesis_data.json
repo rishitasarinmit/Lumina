@@ -1,0 +1,1544 @@
+{
+  "study": "The Sepsis Sentinel: synthetic customer-discovery synthesis (Disciplined Entrepreneurship Steps 3, 5, 8, 20)",
+  "disclaimer": "SYNTHETIC research: cannot predict real human behavior; validate with real patients, clinicians and buyers.",
+  "scoring_rubric": "Per cell: Validated = persona's own words support the assumption as stated without material conditions; Partially Validated = supports it only under explicit conditions or with mixed/indirect evidence; Invalidated = persona's words contradict it as stated. Verdict: Validated only if a majority validate with no invalidation majority in the decisive segment; Invalidated if no persona validates it as stated and >=50% of the decisive segment (patients/caregivers for A1 and A4; clinical/buyers for A2 and A3) invalidate; otherwise Partially Validated.",
+  "assumptions": [
+    {
+      "id": "A1",
+      "name": "Adherence",
+      "statement": "Post-surgical patients will continuously wear a smart ring 24/7 for 14 days despite swelling, discomfort, and fatigue.",
+      "validated": 0,
+      "partial": 5,
+      "invalidated": 5,
+      "verdict": "Invalidated",
+      "segment_split": {
+        "patients_caregivers": {
+          "validated": 0,
+          "partial": 3,
+          "invalidated": 3
+        },
+        "clinical_buyers": {
+          "validated": 0,
+          "partial": 2,
+          "invalidated": 2
+        }
+      },
+      "scores": [
+        {
+          "persona": "P1",
+          "name": "Raj Mehta",
+          "score": "Partially Validated",
+          "evidence": "Would wear 24/7 only if it replaces his Oura (refuses a second ring); his own fingers were too swollen to wear a ring for ~4 days after surgery, the highest-risk window.",
+          "quote": "For me personally, it'd fit trivially, as long as it's replacing the Oura rather than adding to it."
+        },
+        {
+          "persona": "P2",
+          "name": "Dr. Aisha Okafor",
+          "score": "Partially Validated",
+          "evidence": "Credits passive design, but reports ~60% 30-day CHF RPM adherence and a 2022 wrist-wearable pilot where patients stopped charging within 1-2 weeks; flags sizing, edema, charging, smartphone sync.",
+          "quote": "Meanwhile patients stopped charging the devices within a week or two"
+        },
+        {
+          "persona": "P3",
+          "name": "Maria Gonzalez",
+          "score": "Partially Validated",
+          "evidence": "Rosa wears jewelry (late husband's ring) but abandoned a medical pendant after ~2 weeks; hands in water all day, swollen knuckles, charging falls to Maria; realistic case is nagging.",
+          "quote": "Realistic case is probably in between, where I'm checking every visit, \"Mami, where's the ring,\" and it becomes one more thing I nag about."
+        },
+        {
+          "persona": "P4",
+          "name": "Karen Mitchell, RN",
+          "score": "Partially Validated",
+          "evidence": "Passive capture helps her drop-off problem, but she loses ~40% of RPM patients by week 3 and expects sizing drift, charging lapses and non-transmission chasing.",
+          "quote": "the ring fits on day one and is loose on day ten, or it's too tight on day three"
+        },
+        {
+          "persona": "P5",
+          "name": "Denise Washington",
+          "score": "Partially Validated",
+          "evidence": "Perfect with life-or-death meds but self-described inconsistent with gadgets; still-swollen fingers, fistula arm rules out left hand, dominant hand constantly in water.",
+          "quote": "Gadgets, I'm honest, I'm hit or miss."
+        },
+        {
+          "persona": "P6",
+          "name": "Linda Chen",
+          "score": "Invalidated",
+          "evidence": "David quit his watch (tremor), pulls off the oximeter clip, has puffy hands; Linda (arthritic, exhausted) would be the operator and fears it coming off in the recliner.",
+          "quote": "He doesn't like things on him."
+        },
+        {
+          "persona": "P7",
+          "name": "Dr. Thomas Brennan",
+          "score": "Invalidated",
+          "evidence": "Explicitly does not expect 24/7 wear; only already-engaged patients comply; swollen hands in week one.",
+          "quote": "so I'm not assuming 24/7 anything for two weeks"
+        },
+        {
+          "persona": "P8",
+          "name": "Greg Halvorsen",
+          "score": "Invalidated",
+          "evidence": "Expects RPM-cuff-level drop-off or worse; knows low adherence means no billable data days.",
+          "quote": "I'd expect the same adherence drop-off we see on our cuffs, maybe worse after surgery with swelling and fatigue."
+        },
+        {
+          "persona": "P9",
+          "name": "Harold \"Hal\" Jenkins",
+          "score": "Invalidated",
+          "evidence": "Has not worn his wedding ring in 20 years (swelling/arthritis), took a Holter off on day 2, CPAP in closet; cannot manage charging; would wear it 'to be polite' then lose it.",
+          "quote": "Then it'd be dead in a drawer."
+        },
+        {
+          "persona": "P10",
+          "name": "Frank DeLuca",
+          "score": "Invalidated",
+          "evidence": "RA flare with 'walnut' knuckles makes a ring physically impossible; history of abandoning CPAP, CPM, BP cuff.",
+          "quote": "with my history, if it went on at all, it's in the drawer by day three"
+        }
+      ],
+      "key_quotes": [
+        "So I've got a gap of about four days in my data, right when you'd most want it.",
+        "the ring fits on day one and is loose on day ten, or it's too tight on day three",
+        "Then it'd be dead in a drawer.",
+        "Meanwhile patients stopped charging the devices within a week or two"
+      ],
+      "insight": "No persona validated 24/7 x 14-day ring wear despite swelling. All 10 raised physical fit (swelling, arthritis, sizing), 9 raised charging or connectivity, and even the Innovator documented a ~4-day data gap in the first post-op days. The personas at highest clinical risk (P6's husband, P9, P10: older, arthritic, alone or frail caregiver) are the least able to wear a ring. Adherence depends on who prescribes the device (surgeon or trusted clinician), on fit, on battery life, and on non-wear detection, more than on patient motivation."
+    },
+    {
+      "id": "A2",
+      "name": "Workflow & Alert Fatigue",
+      "statement": "Care teams/RPM nurses will monitor and trust a baseline-deviation alert without being overwhelmed by false positives or admin burden.",
+      "validated": 0,
+      "partial": 5,
+      "invalidated": 5,
+      "verdict": "Invalidated",
+      "segment_split": {
+        "patients_caregivers": {
+          "validated": 0,
+          "partial": 4,
+          "invalidated": 2
+        },
+        "clinical_buyers": {
+          "validated": 0,
+          "partial": 1,
+          "invalidated": 3
+        }
+      },
+      "scores": [
+        {
+          "persona": "P1",
+          "name": "Raj Mehta",
+          "score": "Partially Validated",
+          "evidence": "Would act on a meaningful, explainable signal and wants a human on the other end, but 2-3 unexplained false alarms end his trust and he expects the team to tune out too.",
+          "quote": "Two or three false alarms that I can't explain."
+        },
+        {
+          "persona": "P2",
+          "name": "Dr. Aisha Okafor",
+          "score": "Partially Validated",
+          "evidence": "Champion willing to design tiered escalation, but her hub is at safe-capacity limits with weak overnight coverage; predicts low-PPV alerts become ignored within three months.",
+          "quote": "by month three it's wallpaper"
+        },
+        {
+          "persona": "P3",
+          "name": "Maria Gonzalez",
+          "score": "Partially Validated",
+          "evidence": "Will trust only if a person with medical training screens first and tells her what to do; describes herself as trusting fully after one alarm and ignoring it after three.",
+          "quote": "I'm a ten and then I'm a zero."
+        },
+        {
+          "persona": "P4",
+          "name": "Karen Mitchell, RN",
+          "score": "Invalidated",
+          "evidence": "The RPM nurse this assumption depends on: hub closed nights/weekends, ~35% existing alert noise, refuses a standalone dashboard, per-alert Epic documentation would 'crush' the team.",
+          "quote": "a notification at 2 a.m. goes to nobody in my world"
+        },
+        {
+          "persona": "P5",
+          "name": "Denise Washington",
+          "score": "Partially Validated",
+          "evidence": "Will keep responding (anxiety), but trust depends on endorsement from her transplant coordinator and on explainable alerts; repeated false alarms make her feel she is bothering people.",
+          "quote": "If it goes off and it's nothing, a couple of times, I'd still call, because I can't not call."
+        },
+        {
+          "persona": "P6",
+          "name": "Linda Chen",
+          "score": "Partially Validated",
+          "evidence": "Would attend out of fear, but does not trust machine judgment; trust only via a nurse who knows David giving clear steps; after 2-3 false alarms David would take it off, and 'He'd win that argument if it had been wrong.'",
+          "quote": "I just don't feel comfortable with a machine judging whether he's sick."
+        },
+        {
+          "persona": "P7",
+          "name": "Dr. Thomas Brennan",
+          "score": "Invalidated",
+          "evidence": "Epic Sepsis Model experience: residents learned to click through; will push to shut off any system that pages at night over artifact; APPs will not watch another screen.",
+          "quote": "Night is where it dies."
+        },
+        {
+          "persona": "P8",
+          "name": "Greg Halvorsen",
+          "score": "Invalidated",
+          "evidence": "Cut two contracts for alert noise; treats false alarms as unreimbursed nurse time and avoidable ED cost under TEAM/ACO.",
+          "quote": "a false alarm is unreimbursed nurse time at best"
+        },
+        {
+          "persona": "P9",
+          "name": "Harold \"Hal\" Jenkins",
+          "score": "Invalidated",
+          "evidence": "One false alarm ends it (smoke-alarm analogy); even a true alert would get 'wait and see till morning'.",
+          "quote": "First time it's wrong. Same as the smoke alarm."
+        },
+        {
+          "persona": "P10",
+          "name": "Frank DeLuca",
+          "score": "Invalidated",
+          "evidence": "Tolerance of one or two false alarms; distrusts sensors professionally; stops answering if every alert means 'go to the ER'.",
+          "quote": "One false alarm. Maybe two, I'm feeling generous."
+        }
+      ],
+      "key_quotes": [
+        "The thing that makes nurses tune out isn't one false alarm, it's the fiftieth one on a Tuesday.",
+        "It also taught me that the threshold isn't a technical decision, it's a staffing decision.",
+        "Night is where it dies.",
+        "A cheap device that doubles my alert volume is the most expensive thing you could sell me."
+      ],
+      "insight": "The assumption fails as written, where existing care teams absorb the alerts. 3 of 4 clinical/buyer personas invalidated it and the 4th is conditional. None of the hubs covers nights, yet night is where the signal and the caregiver anxiety are. All 10 personas said false alarms would quickly erode their trust (tolerance of 1-3 false alarms for patients; about one-third noise for nurses). Trust requires explainable alerts, a named human screening them, and a tiered protocol signed off by surgeons. The viable version is a vendor-staffed 24/7 triage layer that forwards only pre-screened, explained, actionable escalations into Epic."
+    },
+    {
+      "id": "A3",
+      "name": "Economic Alignment",
+      "statement": "Health systems will pay for/deploy the ring under CMS RPM codes to avoid 30-day readmission penalties.",
+      "validated": 0,
+      "partial": 6,
+      "invalidated": 4,
+      "verdict": "Invalidated",
+      "segment_split": {
+        "patients_caregivers": {
+          "validated": 0,
+          "partial": 4,
+          "invalidated": 2
+        },
+        "clinical_buyers": {
+          "validated": 0,
+          "partial": 2,
+          "invalidated": 2
+        }
+      },
+      "scores": [
+        {
+          "persona": "P1",
+          "name": "Raj Mehta",
+          "score": "Partially Validated",
+          "evidence": "Indirect: expects hospital/Medicare to pay and would enroll without thinking if covered; would read an out-of-pocket ask as lack of institutional confidence. No view on RPM codes.",
+          "quote": "If my surgeon said, \"we're enrolling you, Medicare covers it,\" I'd say yes without thinking about price."
+        },
+        {
+          "persona": "P2",
+          "name": "Dr. Aisha Okafor",
+          "score": "Partially Validated",
+          "evidence": "Would fund a study-grade pilot within her $250K authority, but from episode/value-based budget + integrated health plan; RPM only a partial offset (14-day episode misfit); sepsis not HRRP.",
+          "quote": "with RPM billing as a partial offset, not the business case"
+        },
+        {
+          "persona": "P3",
+          "name": "Maria Gonzalez",
+          "score": "Partially Validated",
+          "evidence": "Indirect: intuitively endorses readmission-avoidance logic (payer/hospital should pay); falls back to out-of-pocket payment. Silent on RPM codes.",
+          "quote": "They're the ones who don't want her coming back, right?"
+        },
+        {
+          "persona": "P4",
+          "name": "Karen Mitchell, RN",
+          "score": "Partially Validated",
+          "evidence": "Finance will ask about RPM first, but a 2-week episode is a problem (16-day rule; new short-duration code unproven locally); expects service-line/quality budget; sepsis not a penalty condition.",
+          "quote": "sepsis on its own isn't one of the readmission penalty conditions"
+        },
+        {
+          "persona": "P5",
+          "name": "Denise Washington",
+          "score": "Partially Validated",
+          "evidence": "Indirect: expects Medicare/hospital to pay because avoided ICU days save more; cannot absorb any cost-sharing, which matters because RPM services can carry Part B coinsurance (verify).",
+          "quote": "I would expect Medicare to pay for it, or the hospital, because if it keeps me out of the ICU they save a lot more than whatever this costs."
+        },
+        {
+          "persona": "P6",
+          "name": "Linda Chen",
+          "score": "Partially Validated",
+          "evidence": "Indirect: expects Medicare to cover if ordered; would pay ~$75 grudgingly on doctor's advice.",
+          "quote": "But I'd wonder why Medicare wouldn't pay for it if it was so important."
+        },
+        {
+          "persona": "P7",
+          "name": "Dr. Thomas Brennan",
+          "score": "Invalidated",
+          "evidence": "Doubts RPM data-day minimums can be met because he doubts daily wear; notes post-op sepsis is not an HRRP condition; declined to price.",
+          "quote": "So I'd be skeptical that the billing model holds up."
+        },
+        {
+          "persona": "P8",
+          "name": "Greg Halvorsen",
+          "score": "Invalidated",
+          "evidence": "Economic buyer rejects both legs: not RPM (fraction at best), not HRRP (sepsis/colectomy not penalized; ~0.6% penalty). Would only deploy on TEAM/ACO lives, preferably via risk-share with nothing upfront.",
+          "quote": "It would come out of the episode budget, meaning TEAM and ACO, not RPM."
+        },
+        {
+          "persona": "P9",
+          "name": "Harold \"Hal\" Jenkins",
+          "score": "Invalidated",
+          "evidence": "Indirect: 'Medicare or nobody', rejects any cost-sharing, and would not generate billable data days.",
+          "quote": "Anything I got to write a check for."
+        },
+        {
+          "persona": "P10",
+          "name": "Frank DeLuca",
+          "score": "Invalidated",
+          "evidence": "Indirect: pays zero, and payer funding increases his suspicion that the data will be used against him.",
+          "quote": "If the insurance company is paying for something, it's because it saves them money, and usually that means it saves them money on me."
+        }
+      ],
+      "key_quotes": [
+        "It would come out of the episode budget, meaning TEAM and ACO, not RPM.",
+        "RPM billing is not a clean fit for a fourteen-day episode.",
+        "Honestly, TEAM is the only place it clearly lands.",
+        "For commercial fee-for-service, avoiding a readmission can actually cost us revenue."
+      ],
+      "insight": "The specific mechanism (RPM codes to avoid HRRP penalties) was rejected by every buyer who spoke to it. No persona called RPM the primary funding source: three described it as a partial offset at most, and three noted that post-op sepsis is not an HRRP penalty condition. Willingness to pay does exist, but it sits in CMS TEAM episode budgets, ACO attributed lives, integrated health plans, and vendor risk-share. For patients, free-to-me is necessary but not sufficient ('Money's not the only cost'). Any patient cost-sharing is a dealbreaker for 3 of the 6 patients/caregivers."
+    },
+    {
+      "id": "A4",
+      "name": "Patient Pull / Anxiety",
+      "statement": "Patients and caregivers feel enough anxiety about post-discharge complications to welcome continuous passive tracking.",
+      "validated": 2,
+      "partial": 5,
+      "invalidated": 3,
+      "verdict": "Partially Validated",
+      "segment_split": {
+        "patients_caregivers": {
+          "validated": 2,
+          "partial": 2,
+          "invalidated": 2
+        },
+        "clinical_buyers": {
+          "validated": 0,
+          "partial": 3,
+          "invalidated": 1
+        }
+      },
+      "scores": [
+        {
+          "persona": "P1",
+          "name": "Raj Mehta",
+          "score": "Validated",
+          "evidence": "High anxiety at 3 a.m. and already self-tracks continuously; the care-team notification is exactly the missing loop (though he wants it on his own Oura).",
+          "quote": "The part that's genuinely new is \"notify a care team.\" That's the loop I just told you is missing, so that part interests me a lot."
+        },
+        {
+          "persona": "P2",
+          "name": "Dr. Aisha Okafor",
+          "score": "Partially Validated",
+          "evidence": "Reports families sense decline without objective data and that passive capture removes a drop-off driver; but also that patients disengage when 'nobody's looking'.",
+          "quote": "The passive part is appealing — no pairing a cuff, no stepping on a scale — because that addresses one of the drop-off drivers I described."
+        },
+        {
+          "persona": "P3",
+          "name": "Maria Gonzalez",
+          "score": "Validated",
+          "evidence": "Intense night-time anxiety rooted in father's death from septic shock; immediate pull ('that's the nights thing'), conditional on Mom wearing it and a human answering.",
+          "quote": "Honestly? My first reaction is, I want that."
+        },
+        {
+          "persona": "P4",
+          "name": "Karen Mitchell, RN",
+          "score": "Partially Validated",
+          "evidence": "Patients assume 'the hospital is watching me' (latent demand), but many 'don't want to bother anybody' or be reminded they are sick.",
+          "quote": "They think \"the hospital is watching me,\" and that's a dangerous misunderstanding."
+        },
+        {
+          "persona": "P5",
+          "name": "Denise Washington",
+          "score": "Partially Validated",
+          "evidence": "Very anxious (blunted fever); likes 'learns my own normal' and wants objective proof to be believed, but would choose a daily nurse call over the device.",
+          "quote": "I'd take the nurse."
+        },
+        {
+          "persona": "P6",
+          "name": "Linda Chen",
+          "score": "Partially Validated",
+          "evidence": "Extremely anxious and sleep-deprived, but first reaction is burden; likes that it goes to the care team; prefers a nurse who calls.",
+          "quote": "I suppose my first thought is, that's another thing."
+        },
+        {
+          "persona": "P7",
+          "name": "Dr. Thomas Brennan",
+          "score": "Invalidated",
+          "evidence": "Reports that engagement concentrates in 'engineers and the anxious ones', not the isolated elderly most likely to get into trouble.",
+          "quote": "Those are usually the engineers and the anxious ones."
+        },
+        {
+          "persona": "P8",
+          "name": "Greg Halvorsen",
+          "score": "Partially Validated",
+          "evidence": "Weak/indirect: no patient-level evidence; supports the early-detection concept; expects oldest patients to drop off.",
+          "quote": "The idea itself, catching deterioration early, I don't have a problem with."
+        },
+        {
+          "persona": "P9",
+          "name": "Harold \"Hal\" Jenkins",
+          "score": "Invalidated",
+          "evidence": "Patient denies anxiety and need; wife June wants 'somebody else keeping an eye' but doubts he'd wear it.",
+          "quote": "I don't need a gadget to tell me I'm sick."
+        },
+        {
+          "persona": "P10",
+          "name": "Frank DeLuca",
+          "score": "Invalidated",
+          "evidence": "Real infection fear (friend Sal; methotrexate) but frames the concept as surveillance; would welcome a nurse call instead.",
+          "quote": "The second thing is, it's a tracking device."
+        }
+      ],
+      "key_quotes": [
+        "Honestly? My first reaction is, I want that.",
+        "I don't want more numbers. I have plenty of numbers. I want someone to carry part of it.",
+        "I'd take the nurse.",
+        "That's not a device, that's just, somebody paying attention."
+      ],
+      "insight": "Anxiety was near-universal: every patient/caregiver except the stoic P9, whose wife voiced it for him, described night-time uncertainty. But anxiety showed up as a wish for a human, not for a device. This is the 'want a human' risk the script anticipated. Only 2 of 10 welcomed the concept outright (the Innovator and the Early-adopter caregiver), and 3 of 6 patients/caregivers said they would prefer or accept a nurse call over the ring. The pull is for a trusted person who interprets signals. Passive tracking is acceptable when it serves that person and is prescribed by the patient's own clinician."
+    }
+  ],
+  "personas": [
+    {
+      "id": "P1",
+      "name": "Raj Mehta",
+      "segment": "Patient",
+      "adoption": "Innovator",
+      "stance": "Enthusiastic about closing the care-team loop; will not wear a second ring.",
+      "summary": "Raj (67, 5 days post-laparoscopic sigmoid colectomy, ex-distributed-systems engineer) self-tracks with a Google Sheet, an Oura ring and an Apple Watch. On night 3 he had a 100.2°F temperature at 3 a.m. and a resting HR +12 bpm over baseline. It was below the 101°F instruction threshold, so he read about anastomotic leaks for two hours instead of calling. He frames the gap as missing interpretation rather than missing data. He likes 'notify a care team' but asks what the product does that Oura does not. He will not wear two rings or lose two years of baseline, and he warns that a post-discharge baseline is 'baselining on a sick person'. He says he would adopt an Oura/Apple Health integration tomorrow and a second ring probably not.",
+      "key_quote": "What I lacked that night wasn't data; I had plenty of data.",
+      "conditions": [
+        "Replace or integrate with existing Oura/Apple Health (no second ring)",
+        "Pre-operative baseline for elective cases",
+        "Transparent inputs, thresholds and raw-data export",
+        "Validated PPV/miss rate in post-surgical patients",
+        "Named clinician on the other end with a stated response time",
+        "No insurer/data-broker access",
+        "Paid by hospital/Medicare"
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Dr. Aisha Okafor",
+      "segment": "Clinical/Buyer",
+      "adoption": "Early adopter (champion)",
+      "stance": "Interested champion, governance-heavy, and burned by a failed pilot. Wants ownership first and the tool second.",
+      "summary": "Dr. Okafor (CMIO/VP Digital Health, 12-hospital academic system with an integrated plan) calls the post-surgical period after the 48-hour call 'a black hole'. Her 2022 wrist-wearable pilot died because nobody owned the alerts and patients stopped charging. She credits the passive ring but raises in order: the post-op baseline, PPG accuracy across skin tones, and who owns a 2 a.m. alert. Her RPM hub lacks overnight coverage. She wants PPV and nurse workload per 100 patients, FDA clearance, Epic integration, and a pilot designed as a study with a kill criterion. She sees RPM as a partial offset only and would fund from an episode/TEAM or health-plan budget. Device-only good value is $150-250 per episode, with more tolerated for a staffed 24/7 service.",
+      "key_quote": "Show me PPV and nurse workload per 100 patients.",
+      "conditions": [
+        "Prospective validation in a comparable post-surgical population incl. skin-tone subgroups",
+        "FDA clearance with a clear intended use",
+        "Epic integration (order-triggered enrollment, data in Epic)",
+        "Named alert owner and tiered escalation, including overnight",
+        "BAA with no secondary use/model training",
+        "Pilot with prespecified success and kill criteria",
+        "Funded from episode/value-based budget + health plan"
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "Maria Gonzalez",
+      "segment": "Caregiver",
+      "adoption": "Early adopter",
+      "stance": "Strong pull ('I want that'), tempered by whether Mom will keep it on and who answers at 2 a.m.",
+      "summary": "Maria (44, HR manager) is caring for her Spanish-dominant mother Rosa (78, hip hemiarthroplasty, T2DM). Her father died of septic shock after surgery while saying 'estoy bien'. She calls four times a day, visits twice, and checks a kitchen camera at 2 a.m., but has 'nothing' from 9 p.m. to 7 a.m. Rosa abandoned a $35/month pendant ('ugly'), though she wears her late husband's ring, so her objection is to medical-looking devices, not jewelry. Maria wants a person with medical training to screen alerts and tell her what to do. She wants the surgeon to prescribe the ring in Spanish, off-finger detection on her phone, and a two-week rental she can return. She would pay $40-60 out of pocket ($75 with a night nurse).",
+      "key_quote": "Just knowing that if something happens at 2 a.m., somebody knows before 7 a.m.",
+      "conditions": [
+        "Surgeon/nurse prescribes and explains it to Rosa in Spanish",
+        "Looks like jewelry, fits swollen knuckles, tolerates dishwater",
+        "Awake clinician screens overnight alerts and tells caregiver what to do",
+        "Off-finger/non-wear alert to caregiver",
+        "Low, disclosed false-alarm rate",
+        "Two weeks, returnable, no subscription; insurer/hospital pays first"
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "Karen Mitchell, RN",
+      "segment": "Clinical/Buyer",
+      "adoption": "Early majority (pragmatist gatekeeper)",
+      "stance": "'Not against it', but will veto anything that lands on her nurses without night coverage and false-alarm numbers.",
+      "summary": "Karen (RPM manager, 9 RNs/4 MAs, ~400 chronic patients, hub open 8-5 weekdays) says surgical patients are outside her program ('They mostly don't') and calls that 'a gap'. Her defining story is a post-op patient on her cuff/scale whose HR climbed and BP fell all weekend while the hub was closed. He was found septic on Monday, and it raised the question of who is liable for data nobody looked at. She already runs ~35% alert noise and has raised thresholds before. She refuses standalone dashboards, fears per-alert documentation and churn of two-week enrollments, and wants explainable alerts plus a surgeon-signed standing protocol. She would pay $100-150 per episode as good value; vendor 24/7 staffing 'changes my math'.",
+      "key_quote": "But show me the night coverage plan and the false-alarm numbers before you show me the ring.",
+      "conditions": [
+        "Vendor-provided 24/7 triage that escalates only real problems",
+        "False-alarm rate well under one-third; non-wear distinct from clinical alerts",
+        "Explainable alert (which signal, over what window)",
+        "Standing protocol signed off by surgeons",
+        "Epic integration; no standalone dashboard; minimal documentation",
+        "Staffing model (patients/nurse, alerts/patient/day, minutes each)",
+        "Device logistics (sizing, returns, cleaning) handled",
+        "~100-patient pilot with comparison group"
+      ]
+    },
+    {
+      "id": "P5",
+      "name": "Denise Washington",
+      "segment": "Patient",
+      "adoption": "Early majority (conditional)",
+      "stance": "Conditionally interested because of her blunted fever; equity, privacy and messenger are dealbreakers.",
+      "summary": "Denise (58, kidney transplant on tacrolimus/mycophenolate, 6 days post open ventral hernia repair) keeps a notebook of her 'normal' numbers because immunosuppression masks fever. A prior 9-hour ED wait with urosepsis left her feeling disbelieved. Her one change would be 'that somebody believes me the first time'. She likes 'learns my own normal', but asks whether it works on dark skin and on immunosuppressed patients, where the data goes (disability, insurance), and whether it changes what happens at the ED door. It would have to come from and be watched by her transplant coordinator, with a person calling to explain what changed. She cannot pay anything ('that's groceries') and would still pick a nurse over the ring.",
+      "key_quote": "was this tested on people who look like me and take my medications?",
+      "conditions": [
+        "Given and monitored by her transplant team (coordinator endorsement)",
+        "Validated on Black and transplant/immunosuppressed patients",
+        "A person calls and says what changed; she can also see her own numbers",
+        "Data stays with her care team (no insurer/disability/vendor resale)",
+        "Zero cost, no deposit",
+        "Helps her be believed at ED triage (call-ahead)"
+      ]
+    },
+    {
+      "id": "P6",
+      "name": "Linda Chen",
+      "segment": "Caregiver",
+      "adoption": "Late majority",
+      "stance": "Exhausted and wary; wants fewer, clearer warning signs and a nurse who calls rather than a device.",
+      "summary": "Linda (72, retired accountant, arthritic) is the sole caregiver for David (76, CABG x3, COPD, early Parkinson's). She sleeps ~4 hours listening to his breathing, runs 11 medications from a fridge chart, and cannot tell which of the binder's ~20 warning signs matter. A cold-hand oximeter reading of 86 nearly made her call 911. Her first reaction was 'another thing'. She likes that alerts go to the care team rather than to her, but David pulls things off, his hands are swollen and tremulous, and app/Bluetooth setup would need her daughter. She distrusts a machine judging illness. She would pay $25-30, or $75 grudgingly if the doctor insisted.",
+      "key_quote": "I don't want more numbers. I have plenty of numbers. I want someone to carry part of it.",
+      "conditions": [
+        "Prescribed by David's doctor",
+        "Zero setup/app/Bluetooth; no charging burden on her",
+        "Nurse who knows David calls with clear steps",
+        "Works with tremor, COPD baseline and cold hands",
+        "Takes work off her plate rather than adding to it",
+        "Covered by Medicare"
+      ]
+    },
+    {
+      "id": "P7",
+      "name": "Dr. Thomas Brennan",
+      "segment": "Clinical/Buyer",
+      "adoption": "Late majority (clinical skeptic / veto holder)",
+      "stance": "Skeptical. Specificity, liability and night pages would lead him to push to turn it off.",
+      "summary": "Dr. Brennan (Chief of Colorectal Surgery, ~350 cases/yr, ERAS) says ERAS moved the risk window home. Leaks present days 5-10, after the 48-72h APP call and before the 2-week clinic visit. His recent LAR leak patient had been 'off' for a day or two. He calls the concept 'a consumer gadget looking for a medical indication'. He doubts that finger HR/temperature can separate SIRS from sepsis when the Epic model could not, fears data becoming 'Exhibit A', and expects false alerts to drive unnecessary ED visits and CTs. He wants a prospective (ideally randomized) colorectal study published in journals he reads, first-line triage off his APPs, and an explicit protocol. The comparator is a day-5 nurse call plus CRP. He declined to price it.",
+      "key_quote": "You get one shot.",
+      "conditions": [
+        "Prospective, ideally randomized, colorectal/major-abdominal study in DCR/JAMA Surgery/ASCRS",
+        "Clinically meaningful lead time and outcome change, not just earlier curves",
+        "Low false-alarm rate, especially at night",
+        "First-line triage outside his APPs/residents",
+        "Explicit escalation protocol (call, CRP, CT thresholds)",
+        "Must beat a well-timed day-5 nurse call + CRP",
+        "Liability addressed"
+      ]
+    },
+    {
+      "id": "P8",
+      "name": "Greg Halvorsen",
+      "segment": "Clinical/Buyer",
+      "adoption": "Late majority (economic skeptic)",
+      "stance": "'where's the money' is his first reaction. Would deploy only on TEAM/ACO lives via risk-share, on his own data.",
+      "summary": "Greg (CFO, 3-hospital nonprofit, 1.2% margin, nursing labor +22%) sees post-discharge as where surgical margin leaks. His TEAM major-bowel episodes ran over target because of a handful of infection readmissions. He has cut three digital-health contracts that 'sold outcomes and delivered dashboards'. He rejects RPM codes (a 14-day episode misses the 16-day rule and new short codes are unconfirmed) and HRRP (sepsis and colectomy are not penalized). TEAM, the ACO, and possibly MA are the only places the money lands, and under fee-for-service an avoided readmission can cost revenue. His break-even: ~$350K all-in at $200/episode for ~1,100 episodes, requiring 15-25 avoided readmissions, and he wants 1.5x. His all-in price with vendor overnight monitoring is $100-150 good value, with risk-share and nothing upfront preferred.",
+      "key_quote": "It would come out of the episode budget, meaning TEAM and ACO, not RPM.",
+      "conditions": [
+        "Retrospective analysis of his own TEAM readmissions (preventable fraction)",
+        "Peer-reviewed PPV and alert volume per 100 surgical patients",
+        "Prospective pilot (few hundred patients, matched comparison) analyzed by his finance team",
+        "Displaces existing cost (call vendor, care-transitions FTE time)",
+        "Vendor covers overnight monitoring; all implementation costs priced",
+        "Risk-share on documented episode savings; payback within 12 months, >=1.5x",
+        "Passes CISO security review"
+      ]
+    },
+    {
+      "id": "P9",
+      "name": "Harold \"Hal\" Jenkins",
+      "segment": "Patient",
+      "adoption": "Laggard",
+      "stance": "Rejects it. Won't wear a ring, has no connectivity, and distance dominates. His wife June quietly wants someone watching.",
+      "summary": "Hal (81, rural Iowa farmer, emergency small-bowel resection, AFib on apixaban, CKD) insisted on discharge on day 4. The evening before the interview he ate little and looked 'gray' with a ~99°F temperature, which he blamed on pain pills. He has not worn his wedding ring in 20 years because of swelling, abandoned a Holter and CPAP, has a flip phone that doesn't work indoors and no internet, and lives 55 miles from the surgeon. He would put the ring on 'to be polite' and lose it, and would respond to any alert with 'wait and see till morning'. He would only listen to his family doctor of 30 years or that doctor's nurse. June: 'I'd like somebody else keeping an eye'. He treats Medicare as the only payer, and even free carries a cost.",
+      "key_quote": "Money's not the only cost.",
+      "conditions": [
+        "Recommended by his local family doctor (Doc Kessler) or nurse Barb",
+        "Set up by grandson; no charging, no smartphone, works via landline/cellular hub",
+        "Not a ring (cannot fit arthritic fingers)",
+        "A known person calls, not a machine",
+        "Zero cost",
+        "Escalation that respects an hour-plus drive"
+      ]
+    },
+    {
+      "id": "P10",
+      "name": "Frank DeLuca",
+      "segment": "Patient",
+      "adoption": "Rejector / deep skeptic",
+      "stance": "Rejects it as a 'tracking device' that can't fit his RA hands, but openly values catching infection and would take a nurse call.",
+      "summary": "Frank (69, retired electrician, lives alone, TKA day 5, RA with methotrexate held) felt pushed out of a 'factory' hospital. He was also denied rehab by an MA algorithm, and his CPAP 'compliance' was reported to his insurer. He watched a red knee overnight using a Sharpie line, thinking of a friend's infected hip. He rejects a ring on physical grounds (walnut-swollen knuckles, 'in the drawer by day three') and on data grounds, expecting it to be used to deny care. Paradoxically, a payer or free offer raises his suspicion. He concedes the value of infection detection. He would consider a non-ring device requested face-to-face by his surgeon, with a written, union-vouched data guarantee, and would welcome day-3/5/8 nurse calls.",
+      "key_quote": "If it's free, I'm the product.",
+      "conditions": [
+        "Not a ring (no pressure on swollen knuckles)",
+        "His own surgeon asks in person and the surgeon's office monitors and calls",
+        "Written guarantee: no insurer access, no sale, deleted after two weeks, vouched for by union benefits fund",
+        "Alert response offers options (photo, next-day look), not reflexive ER",
+        "Zero cost; even then 'not promising'"
+      ]
+    }
+  ],
+  "wtp": {
+    "b2c": [
+      {
+        "persona": "P1",
+        "too_cheap": 25,
+        "good_deal": 87.5,
+        "getting_expensive": 200,
+        "too_expensive": 350,
+        "refused": false,
+        "note": "Too cheap 'under about $25'; good deal '$75 to $100' (midpoint 87.5) if a real clinician is on the other end; getting expensive 'around $200'; too expensive '$350 or more'. Software-only on top of his Oura: no more than '$10 or $15 a month'. Would hesitate if asked for a credit card.",
+        "preferred_payer": "Hospital or Medicare (Plan G); out-of-pocket only as a reluctant fallback"
+      },
+      {
+        "persona": "P3",
+        "too_cheap": 20,
+        "good_deal": 50,
+        "getting_expensive": 135,
+        "too_expensive": 250,
+        "refused": false,
+        "note": "Too cheap 'Under twenty bucks' ($15 = 'cheap Amazon thing'); good deal '$40 to $60' (midpoint 50), '$75' still good if a nurse is on at night; getting expensive '$120, $150' (midpoint 135); too expensive 'Around $250'. Wants rental/refund if Mom won't wear it; no subscription.",
+        "preferred_payer": "Hospital or Medicare Advantage plan; caregiver out-of-pocket as fallback"
+      },
+      {
+        "persona": "P5",
+        "too_cheap": 5,
+        "good_deal": 5,
+        "getting_expensive": 25,
+        "too_expensive": 45,
+        "refused": true,
+        "note": "Refuses out-of-pocket ('I'm not paying for this out of my pocket'); hypothetical numbers given under protest. Too cheap: 'something off the internet for five dollars'; good deal 'zero, covered, or maybe a ten-dollar copay' (midpoint 5); getting expensive 'twenty-five dollars'; too expensive 'anything over forty, fifty dollars' (midpoint 45). Cannot float a $100 deposit.",
+        "preferred_payer": "Medicare/Medicaid or hospital; refuses out-of-pocket"
+      },
+      {
+        "persona": "P6",
+        "too_cheap": 10,
+        "good_deal": 27.5,
+        "getting_expensive": 75,
+        "too_expensive": 150,
+        "refused": false,
+        "note": "Too cheap 'ten dollars or less'; good deal 'Twenty-five, maybe thirty' (midpoint 27.5) if the doctor recommends; getting expensive 'Around seventy-five'; too expensive 'a hundred and fifty'. Would pay $75 'grudgingly' if the doctor said it was important.",
+        "preferred_payer": "Medicare/supplemental plan when doctor-ordered"
+      },
+      {
+        "persona": "P9",
+        "too_cheap": null,
+        "good_deal": 0,
+        "getting_expensive": null,
+        "too_expensive": null,
+        "refused": true,
+        "note": "Refused. 'Medicare or nobody.' Too cheap: 'I wouldn't doubt it for being cheap. I'd doubt it anyway.' Good deal: 'Free.' Getting expensive: 'Anything I got to write a check for.' Too expensive: 'Anything.' Even if free: 'Money's not the only cost.'",
+        "preferred_payer": "Medicare or hospital only; refuses any out-of-pocket"
+      },
+      {
+        "persona": "P10",
+        "too_cheap": 0,
+        "good_deal": null,
+        "getting_expensive": null,
+        "too_expensive": null,
+        "refused": true,
+        "note": "Refused ('I wouldn't pay for it. Zero.'). Too cheap: 'Free is too cheap. If it's free, I'm the product.' Too expensive: 'anything that comes out of my pocket. Five bucks, fifty bucks, doesn't matter'. Payer funding raises suspicion.",
+        "preferred_payer": "Hospital or insurance, but distrusts insurer-funded monitoring; refuses any out-of-pocket"
+      }
+    ],
+    "b2b": [
+      {
+        "persona": "P2",
+        "too_cheap": 75,
+        "good_deal": 200,
+        "getting_expensive": 375,
+        "too_expensive": 550,
+        "refused": false,
+        "note": "Device + software only (her nurses carry load): too cheap 'under about $75'; good value '$150 to $250' (midpoint 200); getting expensive '$350 to $400' (midpoint 375); non-starter 'Above about $500 to $600' (midpoint 550). With staffed 24/7 triage + Epic integration the 'expensive' line moves to '$600 or $700'. Gut numbers; 'our CFO would discount them further.'",
+        "preferred_payer": "Episode/value-based (TEAM) budget + integrated health plan; RPM as partial offset"
+      },
+      {
+        "persona": "P4",
+        "too_cheap": 50,
+        "good_deal": 125,
+        "getting_expensive": 250,
+        "too_expensive": 400,
+        "refused": false,
+        "note": "Gut only, no budget authority: too cheap 'under about fifty dollars'; good value 'a hundred to a hundred fifty' (midpoint 125), roughly the RPM recovery for a short episode; getting expensive 'around two fifty'; non-starter 'north of about four hundred', unless it includes night-covering monitoring staff.",
+        "preferred_payer": "Service-line/quality budget (cardiac or colorectal); RPM as partial offset"
+      },
+      {
+        "persona": "P7",
+        "too_cheap": null,
+        "good_deal": null,
+        "getting_expensive": null,
+        "too_expensive": null,
+        "refused": true,
+        "note": "Refused: 'I'm the wrong person to price it.' and 'I'm not going to pull a number out of the air for you'. Cost is driven by what false alarms trigger (APP time, ED visits, CTs). Wants a study before any money moves.",
+        "preferred_payer": "None stated; evidence first; defers to CFO; skeptical of RPM billing"
+      },
+      {
+        "persona": "P8",
+        "too_cheap": 50,
+        "good_deal": 125,
+        "getting_expensive": 250,
+        "too_expensive": 400,
+        "refused": false,
+        "note": "All-in incl. device, logistics and vendor overnight monitoring: too cheap 'under about $50'; good value 'around $100 to $150' (midpoint 125); getting expensive 'around $250'; non-starter '$400 and up'. If his nurses must monitor, 'knock $75 or so off every number'. Break-even at $200/episode x ~1,100 episodes + 1 FTE = ~$350K needs 15-25 avoided readmissions; wants >=1.5x.",
+        "preferred_payer": "TEAM/ACO episode budget via risk-share (vendor paid from documented savings, nothing upfront); MA payer funding would change the conversation"
+      }
+    ],
+    "b2b_summary": {
+      "unit": "USD per monitored patient episode (14 days)",
+      "n_priced": 3,
+      "n_refused": 1,
+      "refused_personas": [
+        "P7"
+      ],
+      "median": {
+        "too_cheap": 50,
+        "good_deal": 125,
+        "getting_expensive": 250,
+        "too_expensive": 400
+      },
+      "range_of_midpoints": {
+        "too_cheap": [
+          50,
+          75
+        ],
+        "good_deal": [
+          125,
+          200
+        ],
+        "getting_expensive": [
+          250,
+          375
+        ],
+        "too_expensive": [
+          400,
+          550
+        ]
+      },
+      "range_as_stated": {
+        "too_cheap": "under $50 to under $75",
+        "good_deal": "$100 to $250",
+        "getting_expensive": "$250 to $400",
+        "too_expensive": "$400 to $600+"
+      },
+      "acceptable_price_band_estimate": "$50-$250 per episode (between median too-cheap and median getting-expensive); indifference zone ~$125-$250",
+      "caveats": "n=3 synthetic buyers; P2 priced device+software only (staffed 24/7 service tolerated up to ~$600-700 'expensive'); P8 priced all-in including vendor overnight monitoring (knock ~$75 off if in-house nurses monitor); P4 non-starter above $400 unless monitoring staff included. Not a price; a hypothesis for real procurement tests.",
+      "p8_break_even": "At $200/episode x ~1,100 TEAM/ACO episodes + 1 triage FTE ($130K) = ~$350K/yr; needs ~15-25 avoided readmissions at ~$15-25K each; wants >=1.5x."
+    },
+    "b2c_summary": {
+      "unit": "USD out-of-pocket per 2-week period",
+      "n_refused_out_of_pocket": 3,
+      "refused_personas": [
+        "P5",
+        "P9",
+        "P10"
+      ],
+      "n_gave_full_numbers": 4,
+      "personas_with_numbers": [
+        "P1",
+        "P3",
+        "P5",
+        "P6"
+      ],
+      "median_including_P5_hypothetical": {
+        "too_cheap": 15.0,
+        "good_deal": 38.75,
+        "getting_expensive": 105.0,
+        "too_expensive": 200.0
+      },
+      "median_excluding_refusers": {
+        "too_cheap": 20,
+        "good_deal": 50,
+        "getting_expensive": 135,
+        "too_expensive": 250
+      },
+      "note": "B2C is not a viable primary channel: 3/6 refuse any out-of-pocket payment and all 6 expect the hospital/Medicare/plan to pay."
+    },
+    "payment_model_tally": [
+      {
+        "model": "Hospital/health system pays as part of care (patient expectation)",
+        "count": 5,
+        "personas": [
+          "P1",
+          "P3",
+          "P5",
+          "P9",
+          "P10"
+        ]
+      },
+      {
+        "model": "Medicare/insurer/MA covers when physician-ordered (patient expectation)",
+        "count": 6,
+        "personas": [
+          "P1",
+          "P3",
+          "P5",
+          "P6",
+          "P9",
+          "P10"
+        ]
+      },
+      {
+        "model": "Episode/TEAM/value-based (ACO) budget",
+        "count": 2,
+        "personas": [
+          "P2",
+          "P8"
+        ]
+      },
+      {
+        "model": "Service-line or quality budget",
+        "count": 1,
+        "personas": [
+          "P4"
+        ]
+      },
+      {
+        "model": "CMS RPM codes as PRIMARY funding",
+        "count": 0,
+        "personas": []
+      },
+      {
+        "model": "CMS RPM codes as partial offset only",
+        "count": 3,
+        "personas": [
+          "P2",
+          "P4",
+          "P8"
+        ]
+      },
+      {
+        "model": "Payer/integrated health plan/Medicare Advantage funds it",
+        "count": 3,
+        "personas": [
+          "P2",
+          "P3",
+          "P8"
+        ]
+      },
+      {
+        "model": "Risk-share/outcomes-based (paid from documented savings)",
+        "count": 1,
+        "personas": [
+          "P8"
+        ]
+      },
+      {
+        "model": "Per-episode all-in fee incl. vendor 24/7 monitoring (tolerated at higher price)",
+        "count": 3,
+        "personas": [
+          "P2",
+          "P4",
+          "P8"
+        ]
+      },
+      {
+        "model": "Out-of-pocket acceptable (conditional/fallback)",
+        "count": 3,
+        "personas": [
+          "P1",
+          "P3",
+          "P6"
+        ]
+      },
+      {
+        "model": "Refuses out-of-pocket",
+        "count": 3,
+        "personas": [
+          "P5",
+          "P9",
+          "P10"
+        ]
+      },
+      {
+        "model": "Refused to give price points",
+        "count": 3,
+        "personas": [
+          "P7",
+          "P9",
+          "P10"
+        ]
+      }
+    ]
+  },
+  "objections": [
+    {
+      "rank": 1,
+      "theme": "False alarms rapidly destroy trust (\"cries wolf\")",
+      "count": 10,
+      "personas": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10"
+      ],
+      "description": "Patients/caregivers tolerate 1-3 false alarms; nurses tolerate ~one-third noise before raising thresholds; the surgeon and CFO cite prior tools they stopped using or cancelled.",
+      "example_quote": "The thing that makes nurses tune out isn't one false alarm, it's the fiftieth one on a Tuesday.",
+      "example_quote_persona": "P4"
+    },
+    {
+      "rank": 2,
+      "theme": "Ring physical fit: post-op swelling, arthritis/RA, sizing drift, finger/hand constraints",
+      "count": 10,
+      "personas": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10"
+      ],
+      "description": "IV-fluid edema, arthritic/RA knuckles, tremor, fistula arm, weight loss, sizing at discharge; a ring that fits day 1 is loose by day 10.",
+      "example_quote": "I can't get my wedding ring past my knuckle and you want to put a ring on me.",
+      "example_quote_persona": "P10"
+    },
+    {
+      "rank": 3,
+      "theme": "Charging, pairing and connectivity friction ('one more thing')",
+      "count": 9,
+      "personas": [
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10"
+      ],
+      "description": "Charging removes the device (often at night) and falls on caregivers. Smartphone/Bluetooth pairing, rural cell and broadband gaps, and low tech literacy add to this.",
+      "example_quote": "I can't keep track of charging the phone. June does that.",
+      "example_quote_persona": "P9"
+    },
+    {
+      "rank": 4,
+      "theme": "No clear owner for the alert, especially nights/weekends",
+      "count": 8,
+      "personas": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P8"
+      ],
+      "description": "Every hub described is daytime-only; surgeons' offices close at five; a 2 a.m. alert 'goes to nobody'.",
+      "example_quote": "Because if it's the surgeon's office, they close at five.",
+      "example_quote_persona": "P3"
+    },
+    {
+      "rank": 5,
+      "theme": "Opaque or unactionable alerts: tell me what changed and what to do",
+      "count": 8,
+      "personas": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P10"
+      ],
+      "description": "Rejects black-box 'risk elevated' or 'pattern changed' messages. Wants the signal, magnitude and window, plus a tiered next step (recheck, photo, same-day visit, CRP, ED).",
+      "example_quote": "If you can't answer that, the device doesn't matter.",
+      "example_quote_persona": "P7"
+    },
+    {
+      "rank": 6,
+      "theme": "Prefers a human over a device",
+      "count": 8,
+      "personas": [
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P9",
+        "P10"
+      ],
+      "description": "The requested fix is a named, accountable person or a well-timed nurse call; a device is acceptable only in service of that person.",
+      "example_quote": "I'd rather have a nurse call me every other day than have a ring.",
+      "example_quote_persona": "P6"
+    },
+    {
+      "rank": 7,
+      "theme": "Baseline and specificity: post-op/comorbid physiology is already 'abnormal'",
+      "count": 7,
+      "personas": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7"
+      ],
+      "description": "Learning 'normal' after discharge baselines a sick person. SIRS mimics sepsis, and immunosuppression, diabetes, opioids, COPD and tremor confound signals.",
+      "example_quote": "So it's baselining on a sick person.",
+      "example_quote_persona": "P1"
+    },
+    {
+      "rank": 8,
+      "theme": "Evidence must come from post-surgical, 'people like me' populations",
+      "count": 7,
+      "personas": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P7",
+        "P8"
+      ],
+      "description": "Rejects healthy-volunteer/wellness validation; wants PPV, alerts per 100 patients, lead time, subgroup (skin tone, transplant) data, peer-reviewed.",
+      "example_quote": "was this tested on people who look like me and take my medications?",
+      "example_quote_persona": "P5"
+    },
+    {
+      "rank": 9,
+      "theme": "Privacy, surveillance and data misuse (insurer, government, vendor)",
+      "count": 7,
+      "personas": [
+        "P1",
+        "P2",
+        "P3",
+        "P5",
+        "P8",
+        "P9",
+        "P10"
+      ],
+      "description": "Fears data used to deny claims/disability, sold, or breached; caregiver-surveillance dignity concerns; CISO/BAA requirements.",
+      "example_quote": "You're building them a better tool to deny people.",
+      "example_quote_persona": "P10"
+    },
+    {
+      "rank": 10,
+      "theme": "Silent data gaps, false reassurance and liability for unseen data",
+      "count": 7,
+      "personas": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7"
+      ],
+      "description": "A dead or removed ring that looks like an all-clear, or an unwatched queue, is 'worse than nothing'; collected-but-unacted data becomes medicolegal exposure.",
+      "example_quote": "that data is going to be Exhibit A",
+      "example_quote_persona": "P7"
+    },
+    {
+      "rank": 11,
+      "theme": "Out-of-pocket resistance",
+      "count": 6,
+      "personas": [
+        "P1",
+        "P3",
+        "P5",
+        "P6",
+        "P9",
+        "P10"
+      ],
+      "description": "3 refuse any patient cost; the others cap at roughly $150-350 and see an out-of-pocket ask as a hospital offloading costs.",
+      "example_quote": "That starts to feel like they're offloading their costs onto me.",
+      "example_quote_persona": "P1"
+    },
+    {
+      "rank": 12,
+      "theme": "Downstream harm and access: reflexive ED referrals, CTs, distance",
+      "count": 6,
+      "personas": [
+        "P2",
+        "P5",
+        "P7",
+        "P8",
+        "P9",
+        "P10"
+      ],
+      "description": "Alerts that default to 'go to the ED' create unnecessary scans and TEAM cost, long ED waits, and hour-long rural drives; same-day access is the real bottleneck.",
+      "example_quote": "So an alerting tool can actually make my numbers worse in exactly the contracts where I'm supposed to be saving money",
+      "example_quote_persona": "P8"
+    },
+    {
+      "rank": 13,
+      "theme": "Device logistics: sizing, enrollment at discharge, setup, returns",
+      "count": 6,
+      "personas": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P8"
+      ],
+      "description": "Who sizes and fits the ring, and when? Rings need to be enrolled through a discharge order, returned, cleaned and replaced when lost.",
+      "example_quote": "With something that small, it's going in a drawer or down a drain.",
+      "example_quote_persona": "P4"
+    },
+    {
+      "rank": 14,
+      "theme": "Equity and access: skin-tone PPG accuracy, language, health literacy",
+      "count": 5,
+      "personas": [
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "description": "PPG/SpO2 bias on darker skin; English-only materials exclude Spanish/Chinese speakers; consent and literacy.",
+      "example_quote": "It's not just translation, it's respect.",
+      "example_quote_persona": "P3"
+    },
+    {
+      "rank": 15,
+      "theme": "Institutional economics and workload: no funding mechanism, no FTEs, no standalone dashboards",
+      "count": 4,
+      "personas": [
+        "P2",
+        "P4",
+        "P7",
+        "P8"
+      ],
+      "description": "RPM 14-day misfit, sepsis not HRRP, thin margins, nursing labor the binding constraint; must be in Epic and displace existing work.",
+      "example_quote": "If it's purely additive, it's just a new cost center.",
+      "example_quote_persona": "P8"
+    }
+  ],
+  "language_patterns": [
+    {
+      "phrase": "cries wolf / crying wolf",
+      "personas": [
+        "P1",
+        "P3",
+        "P5"
+      ],
+      "meaning": "False alarms as a moral story; trust is spent quickly and not recovered.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "in a drawer / in the drawer",
+      "personas": [
+        "P4",
+        "P9",
+        "P10"
+      ],
+      "meaning": "The natural end state of an abandoned device; P10 uses it as a fixed timeline ('by day three').",
+      "type": "recurring"
+    },
+    {
+      "phrase": "sitting on the dresser",
+      "personas": [
+        "P3",
+        "P5"
+      ],
+      "meaning": "Abandoned home devices (pendant, spirometer); P5 also leaves her rings 'in a dish on the dresser'.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "I'm not a nurse",
+      "personas": [
+        "P3",
+        "P6",
+        "P9"
+      ],
+      "meaning": "Caregivers (P9's wife June) reject the role of clinical interpreter; they want someone qualified to decide.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "didn't want to be the guy who calls",
+      "personas": [
+        "P1",
+        "P10"
+      ],
+      "meaning": "Social cost of calling at night. Even the most data-driven patient delays because of it.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "bother (didn't want to be a bother / bothering)",
+      "personas": [
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7",
+        "P9"
+      ],
+      "meaning": "The main behavioral barrier to escalation. Patients delay so as not to impose.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "a real person",
+      "personas": [
+        "P3",
+        "P9",
+        "P10"
+      ],
+      "meaning": "Trust is anchored in a human who is known and accountable, not a text or robot call.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "who knows me / knows him / knows my name / Somebody I know",
+      "personas": [
+        "P1",
+        "P5",
+        "P6",
+        "P9",
+        "P10"
+      ],
+      "meaning": "Continuity matters: the messenger must know the patient (PA Jessica, coordinator Tasha, Barb, 'my surgeon's people').",
+      "type": "recurring"
+    },
+    {
+      "phrase": "one more thing",
+      "personas": [
+        "P3",
+        "P6"
+      ],
+      "meaning": "Device as burden added to an overloaded caregiver.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "off (been off / was off / didn't look right)",
+      "personas": [
+        "P2",
+        "P3",
+        "P7",
+        "P9"
+      ],
+      "meaning": "Families notice a prodrome of 1-2 days before objective data exists. Caveat: the script's Q2 introduced the word 'off'.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "2 a.m. / 3 a.m.",
+      "personas": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P7",
+        "P8",
+        "P10"
+      ],
+      "meaning": "Night is the symbolic and literal locus of risk and of the operational gap.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "consumer ring with a dashboard bolted on / clinical sticker",
+      "personas": [
+        "P2",
+        "P4",
+        "P8"
+      ],
+      "meaning": "Buyers' shared fear that a low price signals a wellness device dressed up as clinical, with no one clinical behind it.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "healthy people / healthy volunteers",
+      "personas": [
+        "P1",
+        "P4",
+        "P5",
+        "P7",
+        "P8"
+      ],
+      "meaning": "Rejects wellness-population validation; demands post-surgical evidence.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "worse than nothing / worse than useless / worse than not having it",
+      "personas": [
+        "P1",
+        "P2",
+        "P5"
+      ],
+      "meaning": "False reassurance from unwatched or silent monitoring is seen as a net harm.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "who's the care team? / who is the \"care team\"",
+      "personas": [
+        "P3",
+        "P4"
+      ],
+      "meaning": "The concept's vague 'care team' raised an immediate ownership question.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "nobody's looking / nobody's reading / anybody on the other end",
+      "personas": [
+        "P2",
+        "P5",
+        "P6",
+        "P7"
+      ],
+      "meaning": "Engagement collapses when patients sense no one reviews their data.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "learns her/his/my own normal",
+      "personas": [
+        "P3",
+        "P5",
+        "P6"
+      ],
+      "meaning": "Personal baseline resonated as a concept (P5) but made P6 doubt it could know what normal is for her husband. Caveat: echoes the concept statement.",
+      "type": "recurring"
+    },
+    {
+      "phrase": "Closing that loop is the thing.",
+      "personas": [
+        "P1"
+      ],
+      "meaning": "Frames the value as closing the loop between data and a clinician, not the hardware.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "So it's baselining on a sick person.",
+      "personas": [
+        "P1"
+      ],
+      "meaning": "Crisp articulation of the baseline problem for the spec.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "After that call, it's a black hole.",
+      "personas": [
+        "P2"
+      ],
+      "meaning": "Buyer-native language for the post-discharge gap; strong headline for health-system messaging.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "It also taught me that the threshold isn't a technical decision, it's a staffing decision.",
+      "personas": [
+        "P2"
+      ],
+      "meaning": "Reframes alert tuning as an operating-model decision; sell the staffing model.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "That \"I'm fine\" is not information.",
+      "personas": [
+        "P3"
+      ],
+      "meaning": "Caregiver insight that self-report fails; supports passive objective signals.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "Just knowing that if something happens at 2 a.m., somebody knows before 7 a.m.",
+      "personas": [
+        "P3"
+      ],
+      "meaning": "Best caregiver value proposition line in the study.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "The algorithm doesn't have a license; I do, and my nurses do",
+      "personas": [
+        "P4"
+      ],
+      "meaning": "Explainability as a professional-accountability requirement.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "A cheap device that doubles my alert volume is the most expensive thing you could sell me.",
+      "personas": [
+        "P4"
+      ],
+      "meaning": "Price is dominated by labor; lead with alert volume per 100 patient-days.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "That somebody believes me the first time.",
+      "personas": [
+        "P5"
+      ],
+      "meaning": "Objective data as advocacy and credibility, especially for Black and immunosuppressed patients.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "I want someone to carry part of it.",
+      "personas": [
+        "P6"
+      ],
+      "meaning": "Caregiver burden-sharing; position the service as carrying weight, not adding data.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "You get one shot.",
+      "personas": [
+        "P7"
+      ],
+      "meaning": "Clinician trust is non-renewable; launch conservatively tuned.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "Both sold outcomes and delivered dashboards.",
+      "personas": [
+        "P8"
+      ],
+      "meaning": "What not to be; sell measured episode savings on the buyer's own ledger.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "Money's not the only cost.",
+      "personas": [
+        "P9"
+      ],
+      "meaning": "Wear burden is a real price even at $0.",
+      "type": "single-persona, worth adopting"
+    },
+    {
+      "phrase": "That's not a device, that's just, somebody paying attention.",
+      "personas": [
+        "P10"
+      ],
+      "meaning": "The emotional core of the unmet need, in a rejector's words.",
+      "type": "single-persona, worth adopting"
+    }
+  ],
+  "unmet_need": {
+    "statement": "An accountable, clinically qualified person who owns the patient from discharge to the first follow-up visit, especially overnight. That person turns ambiguous signals (for example, whether 99.4°F and foggy is nothing or the start of sepsis) into a clear next step, so patients and caregivers don't have to choose alone between overreacting and waiting until morning.",
+    "evidence": "9 of 10 personas described the core ambiguity of telling normal recovery from early complication (P1, P2, P3, P4, P5, P6, P7, P9, P10; P8 described the institutional version: 'better targeting'). All 6 patients/caregivers reported a sub-threshold low-grade temperature episode (99.x to 100.2°F) in the first days home. None met the discharge rule of calling above 101°F. In all 4 night-time episodes (P1, P6, P9, P10) nobody called until morning or at all. In Q8, 8 of 10 asked for a human owner or interpreter rather than more data: P1 'somebody on the care team to be able to see my trend data and tell me what normal looks like', P2 'Ownership', P3 'Someone watching her at night', P4 'someone to actually own them', P6 'someone to tell me what actually matters', P7 'a real clinical touchpoint around day five to seven', P10 'a real person', and P5 'That somebody believes me the first time'. P8 asked for targeting and P9 for less distance. All 3 frontline clinical personas (P2, P4, P7) recounted a recent bowel-surgery patient who had been 'off' for 1-2 days, or whose data sat unwatched over a weekend, before presenting septic.",
+    "count": 8,
+    "quotes": [
+      "What I lacked that night wasn't data; I had plenty of data.",
+      "I just don't want to be the doctor.",
+      "I want someone to carry part of it.",
+      "if I had to choose one thing, it's a human accountable for the black hole.",
+      "We should have caught that.",
+      "Somebody who knows my name."
+    ]
+  },
+  "surprises": [
+    "Every patient/caregiver (6/6) had a sub-threshold low-grade temperature episode (99.x to 100.2°F) in the first days home, and none met the call-above-101°F instruction. All 4 night-time episodes (P1, P6, P9, P10) waited until morning or never called. The single-threshold discharge sheet is the real incumbent, and it produces false reassurance.",
+    "The Innovator is not the easy customer. P1 already owns an Oura, refuses a second ring, and would adopt a software/API layer on his existing wearables 'tomorrow'. The most enthusiastic segment wants the service, not the hardware.",
+    "The economic buyer's all-in price including vendor overnight monitoring (P8: $100-150 good value) is lower than the champion's device-only price (P2: $150-250). The CFO discounts the champion by roughly 40% while also expecting more to be included.",
+    "The same ring form factor helps and hurts. Rosa (P3) wears her late husband's ring every day ('not against jewelry'), while arthritic/RA hands (P9, P10, P6's husband) make any ring impossible, and those patients are among the oldest and highest-risk.",
+    "Payer or free funding can reduce trust. P10: 'If it's free, I'm the product', and he asks why the insurer is paying. P9: 'Money's not the only cost.' Zero price does not produce adoption.",
+    "Continuous data can increase institutional liability rather than reduce risk. P2, P4 and P7 each independently said that data collected but not acted on becomes exposure (P7: 'Exhibit A'). P4's real case: vitals drifted all weekend in a closed hub.",
+    "Night is both where the most value is and where operations are weakest. It has the cleanest signal (P2), the most caregiver anxiety (P3, P6), and zero hub coverage (P2, P4, P8).",
+    "The price of the device is dominated by labor. P4: 'A cheap device that doubles my alert volume is the most expensive thing you could sell me.' P2: the threshold 'isn't a technical decision, it's a staffing decision'. Buyers price by alerts per 100 patients, not per ring.",
+    "Under fee-for-service, avoided readmissions can reduce hospital revenue (P8), and false-alarm ED visits can worsen TEAM/ACO performance. The product has a positive ROI only in risk-bearing contracts, which narrows the beachhead to TEAM episodes and integrated/ACO lives.",
+    "The immunocompromised patient (P5) wants the data mainly as credibility at the ED door ('That somebody believes me the first time'). This patient-advocacy use case, such as a call-ahead to triage, is absent from the concept.",
+    "Messenger beats device. At least 6 personas said the wearer would comply only if their own trusted clinician prescribed it (P1 surgeon enrolling, P3 surgeon in Spanish, P5 transplant coordinator, P6 David's doctor, P9 family doctor Doc Kessler, P10 own surgeon face-to-face), and the trusted messenger differs by persona.",
+    "Patients disagree about data visibility. P1 and P5 insist on seeing their own raw numbers, while P3 and P6 explicitly do not want more numbers or a 2 a.m. app, and want a clinician to filter first."
+  ],
+  "question_notes": [
+    {
+      "id": "W1",
+      "suggested": "Rapport questions surfaced the binding constraints early. Caregivers described exhaustion (P3 'not sleeping great', P6 ~4 h/night). Buyers described capacity limits (P2 30+ meetings/week, P4 hub 8-5 weekdays, P8 1.2% margin, P7 'no slack').",
+      "blind_spots": "Synthetic personas volunteer their persona-sheet traits almost verbatim. Real interviewees will be less articulate and less on-message. Check whether real caregivers bring up sleep loss and buyers bring up capacity without prompting."
+    },
+    {
+      "id": "W2",
+      "suggested": "Surfaced the ERAS shift of risk into the home (P7), the fact that surgical patients sit outside medicine-built RPM programs (P2, P4), and rushed or English-only discharges (P3, P10).",
+      "blind_spots": "Real patients may not know their procedure details or the discharge process as precisely. Validate discharge-experience claims against observation of real discharges."
+    },
+    {
+      "id": "Q1",
+      "suggested": "Nights dominate the first two weeks for all 6 patients/caregivers. Clinicians and buyers call the time between the 48-72h call and the 10-14 day visit a 'black hole' (P2), with 'silence until something shows up' (P8).",
+      "blind_spots": "The synthetic interviews were conducted on days 3-6, so days 7-14, the classic leak window, are unobserved. Real longitudinal diaries across all 14 days are needed."
+    },
+    {
+      "id": "Q2",
+      "suggested": "Produced the strongest evidence: 6/6 patients/caregivers had a sub-101°F event, and all 3 frontline clinical personas had a recent leak/abscess story preceded by 1-2 days of being 'off'.",
+      "blind_spots": "The word 'off' was introduced by the interviewer, so its recurrence is partly primed. Hindsight bias affects the clinician stories (P2 says this herself). Validate with chart review of real readmissions (P8's retrospective request)."
+    },
+    {
+      "id": "Q3",
+      "suggested": "Current tracking is manual and person-centred: notebooks, spreadsheets, fridge charts, phone calls, a neighbour, and a kitchen camera. Institutions rely on the 48h call, the portal and hope ('phone, Epic, and hope').",
+      "blind_spots": "Synthetic personas over-report organized routines. Real at-home logging adherence is likely lower. Observe real homes or use photo diaries."
+    },
+    {
+      "id": "Q4",
+      "suggested": "Device abandonment is universal and follows a pattern: spirometer (P1, P5, P6, P7), pendant (P3), CPAP (P9, P10), Holter (P9), BP apps (P5, P6), wrist wearable (P2). The drivers are lack of feedback, the sense that 'nobody's looking', discomfort, and surveillance (P10).",
+      "blind_spots": "Past-behavior framing worked, but synthetic recall is tidy. Real drop-off timing (days vs weeks) must be measured, not recalled."
+    },
+    {
+      "id": "Q5",
+      "suggested": "Hands are a hard constraint: IV-fluid swelling (P1, P3, P5, P6, P9), arthritis/RA (P3, P9, P10), tremor (P5, P6), fistula arm (P5), hands constantly in water (P3, P5). Sleep is broken and often in a recliner (P1, P6, P9, P10).",
+      "blind_spots": "Need objective measurement of finger circumference day 0-14 across procedures, and real ring-fit trials. Persona design deliberately loaded hand problems into P9 and P10."
+    },
+    {
+      "id": "Q6",
+      "suggested": "Everyone has a false-alarm story with the same arc: panic first, then disabling the alert (Ring camera, smoke alarm, ice machine, Epic Sepsis Model, pulse ox, PRO platform). Tolerance is 1-3 events for patients and ~one-third noise for nurses.",
+      "blind_spots": "Stated tolerance is a hypothetical. Measure real behavior with a silent-mode or Wizard-of-Oz alert stream (how many false alerts before a nurse or caregiver stops responding)."
+    },
+    {
+      "id": "Q7",
+      "suggested": "Patients: 'if a doctor orders it, it's covered' (P1). Buyers: RPM covers only part, and funding comes from TEAM/episode, service-line or health-plan budgets, with staffing cost the decisive number. Prior programs survived or died on billing plus penalty math (P2, P4) or were cancelled for 'no readmission delta' (P8).",
+      "blind_spots": "The personas' 2026 reimbursement details (short-duration RPM codes, TEAM scope, global-period interaction) must be confirmed with real revenue-cycle and compliance staff. They are claims by synthetic personas, not facts."
+    },
+    {
+      "id": "Q8",
+      "suggested": "8/10 asked for an accountable human owner or interpreter rather than more data, the single clearest signal in the study (see Unmet Need). P8 asked for targeting and P9 for less distance.",
+      "blind_spots": "The 'one thing' framing forces a single answer, and synthetic personas may be biased toward human-centred, socially desirable answers. Use real forced-choice or conjoint tests (ring vs nurse calls vs both)."
+    },
+    {
+      "id": "Q9",
+      "suggested": "First reactions: 2 positive (P1 'interests me a lot', P3 'I want that'), 4 conditional (P2, P4, P5, P6), 4 skeptical or negative (P7 'consumer gadget', P8 'where's the money', P9, P10 'tracking device'). The top concerns were who answers, fit, the baseline problem, privacy and skin-tone accuracy.",
+      "blind_spots": "The concept statement's wording ('learns a person's own normal', 'care team') was echoed back, which is priming. Test alternative concept statements (with and without a human service, and a non-ring form factor) with real users."
+    },
+    {
+      "id": "Q10",
+      "suggested": "Walking through the day and night exposed operational failure points: sizing at discharge, charging (removal at night), water, sync and connectivity, caregiver-as-operator, and hubs closed at night.",
+      "blind_spots": "Real behavior must be observed through a 14-day in-home wear pilot. Synthetic walkthroughs are imagined, not lived."
+    },
+    {
+      "id": "Q11",
+      "suggested": "Trust requires explainable alerts (what changed, by how much, over what window), a named clinician screening them, tiered next steps, and validation in post-surgical, skin-tone-diverse populations. Trust is lost after 1-3 false alarms, black-box scores, silent gaps, or reflexive ED referrals.",
+      "blind_spots": "Need real PPV and alerts per 100 patient-days in shadow mode, and real clinician response behavior. Stated thresholds of 'a third' or 'two or three' are hypotheses."
+    },
+    {
+      "id": "Q12",
+      "suggested": "B2B median good value is $125/episode (range $100-250). Too cheap is under $50-75 and a non-starter is $400-600. Three of four buyers expect the price to include 24/7 staffed triage. B2C out-of-pocket willingness to pay is low (median good deal ~$39 for two weeks among the four who gave numbers) and 3/6 refuse. Payment model: TEAM/episode or risk-share, with RPM a partial offset only.",
+      "blind_spots": "Van Westendorp with n=3 buyers and synthetic anchors is not a price. It needs real procurement conversations, LOIs, and CFO modelling on the buyer's own data."
+    },
+    {
+      "id": "C1-C2",
+      "suggested": "The C1 (what should I have asked) answers were high-yield: what happens after the alert (P1, P7), pre-op baseline window (P1), liability and same-day access (P2), device returns (P4), language (P3), caregivers' own burden (P6), what to do for refusers (P10), and distance (P9). Referrals pointed to APPs, after-hours line nurses, transplant coordinators, revenue cycle, the CISO, risk management, home-health PTs, churches, union halls and caregiver Facebook groups.",
+      "blind_spots": "Referral targets are the real next interviews. Synthetic personas cannot supply the actual people or organizations."
+    }
+  ],
+  "de_implications": {
+    "step3": "Narrow the End User Profile from all adults 60+ discharged after any inpatient surgery to elective CMS TEAM episodes (major bowel, CABG, lower-extremity joint, spinal fusion) at health systems in TEAM that have an RPM hub and/or an integrated health plan or ACO lives. Treat the end user as a triad: (a) the wearer (older, swollen/arthritic hands, frequently on opioids), (b) the family caregiver who actually operates the device and receives the calls (P2: caregivers are 'the real operators'), and (c) the RPM/triage nurse who consumes alerts. Elective surgery provides a pre-op baseline window (P1, P7). Immunocompromised patients have high need because of blunted fever (P5). Deprioritize or design alternatives for emergency surgeries (no baseline, e.g. P9), patients with RA or severe arthritis, and patients without cellular coverage.",
+    "step5": "Recommend THE Persona be Karen Mitchell, RN (RPM Nurse Manager). The value can only be realized through her team, and she holds the practical veto: P2 said the RPM manager 'has veto power in practice'. Every buyer priced the product through nurse workload, and A2 (her domain) was the most clearly invalidated assumption among clinical/buyers (3/4). Design the wearer experience for Rosa/Maria (P3): an older patient who is not a gadget user, plus an engaged caregiver who is the realistic early-adopter dyad. Keep Okafor (champion) and Halvorsen (economic buyer) for the DMU (Step 12). Do not make Raj (P1) the persona: he is unrepresentative, already owns an Oura, and rejects a second ring.",
+    "step6": "Full Life Cycle Use Case, revised: (1) Surgeon's office enrolls the patient at the pre-op visit through an Epic order; (2) ring sizing kit at pre-admission testing, with a 7-14 day pre-op baseline for elective cases; (3) removed for the OR, and a larger size or an alternative form factor (wrist/patch) is issued at discharge if fingers are swollen; (4) cellular hub, no phone pairing; teach-back to the caregiver in the patient's language; (5) days 0-14: vendor-staffed 24/7 nurse triage watches post-op-trajectory-adjusted deviations; non-wear or low battery triggers a caregiver nudge, never a clinical alert; (6) tiered escalation: nurse call → photo/recheck → same-day visit/CRP → ED with call-ahead; Epic In Basket only for pre-triaged escalations; (7) structured human touchpoints on about day 2, 5 and 9 (P4, P7, P10); (8) day 14: prepaid return mailer, data deletion confirmation, outcome report to service line and finance.",
+    "step8": "High-Level Product Spec: the product is a service (24/7 triage and escalation protocol) with a wearable attached, not a ring with a dashboard. Must-haves: multi-size or adjustable fit tolerant of edema and arthritis, plus a non-ring alternative; at least 7-day battery or charge-while-worn, so there is no nightly removal; cellular hub instead of smartphone Bluetooth; non-wear/signal-loss detection kept separate from clinical alerts; explainable alerts (which signal, magnitude, window, versus a population post-op trajectory plus a personal pre-op baseline); medication and comorbidity context (immunosuppression, beta-blockers, diabetes); Epic integration with no standalone login; bias-audited PPG across skin tones; multilingual caregiver notifications (Spanish, Chinese); patient data export (P1, P5); strict no-secondary-use/deletion terms. Consider an Oura/Apple Health BYOD integration tier (P1).",
+    "step9": "Quantified Value Proposition in the buyer's currency: (a) alerts per 100 patient-days and PPV, with a target of less than one-third false positives forwarded to health-system staff; (b) nurse minutes per enrolled patient, with net-zero or negative time by displacing post-discharge calls or the call vendor (P8: 2 FTE at ~$130K loaded plus a low-six-figure vendor); (c) lead time in hours versus current detection; (d) avoided TEAM-episode readmissions at ~$15-25K each. P8's break-even is ~15-25 avoided per ~1,100 episodes at $200/episode plus 1 FTE, and he requires 1.5x. For caregivers: 'somebody knows before 7 a.m.', measured as caregiver sleep hours and anxiety scores.",
+    "step15_16": "Pricing Framework: B2B per-episode, all-in (device, logistics, 24/7 triage, Epic integration), anchored at $125-200 with an outcomes-based or risk-share component on documented TEAM episode savings (P8's preferred structure). Avoid a device-only SKU below ~$50-75, which reads as 'a consumer ring with a dashboard bolted on'. Do not rely on B2C: median out-of-pocket good deal is ~$39 per two weeks and half refuse, and patient coinsurance on RPM codes (verify) is a barrier for fixed-income patients. Treat RPM codes as an upside offset. LTV (illustrative only): a mid-size system with ~1,000-1,200 TEAM/ACO episodes/yr at $125-200 is ~$125-240K ARR, expanding across service lines. Unit-economics risk: one 24/7 triage seat needs ~4.5-5 FTE (~$600K+/yr at P8's loaded cost), so triage must be pooled across many systems before the price covers labor.",
+    "step20": "Revised assumptions. A1′: with pre-op fitting, edema-tolerant sizing or an alternative form factor, a battery of at least 7 days, and non-wear nudges, at least 80% of enrolled patients produce at least 18 valid hours/day on at least 11 of 14 days. A2′: a vendor-staffed triage layer can keep forwarded escalations at or below X per 100 patient-days with PPV of at least Y, at no net increase in health-system nurse minutes. A3′: TEAM participants will pay a per-episode fee from episode budgets, or via risk-share, if a retrospective on their own data shows a plausibly preventable readmission fraction. A4′: patients and caregivers will accept monitoring when their own clinician prescribes it and it is paired with a named human. New and now riskiest, A5 (technical/clinical): finger HR/temperature/HRV deviation can separate post-op SIRS from early sepsis, leak or SSI with clinically useful PPV and lead time, including in immunosuppressed patients and on darker skin. Next riskiest: A2′ unit economics of 24/7 triage, then A1′ wear in the first 72 hours after discharge.",
+    "step21": "Tests with real humans: (1) Retrospective chart review with one TEAM hospital: what fraction of 30-day readmissions were infection or deterioration preceded by a 24h+ prodrome, and what did they cost (P8's first ask). (2) Shadow-mode wear study with ~50-100 real colorectal/CABG/TKA patients, ring collecting data with no alerts: measure wear-hours/day by day, finger swelling, reasons for removal; compute retrospective alerts per 100 patient-days, PPV and lead time against actual complications; stratify by age, skin tone and immunosuppression. (3) Fit clinic: circumference measurements on post-op days 0/3/7/14 and trials of 2-3 form factors (ring, wrist, patch), including RA/arthritic hands. (4) Wizard-of-Oz triage: RPM nurses work a simulated alert queue; measure minutes per alert, trust, and when they start clicking through. (5) Concierge MVP: human nurse calls on days 2/5/9, with vs without ring data; measure caregiver sleep and anxiety and patient preference (tests the 'want a human' finding). (6) Pricing: real proposals with price anchors ($125/$200/risk-share) to 5-10 CFOs/VPs; seek LOIs or paid pilots. (7) Real interviews the synthetic study could not cover: Spanish- and Chinese-speaking caregivers, Black transplant patients, rural patients with their family doctors, APPs, after-hours line nurses, revenue cycle, the CISO, risk management. (8) Revenue-cycle/compliance validation of 2026 RPM short-duration codes, the surgical global period, and patient coinsurance."
+  },
+  "limitations": [
+    "Synthetic personas cannot predict real behavior. Every score, objection and price here is an LLM's plausible simulation, not evidence. Treat all findings as hypotheses to prioritize real research, not as validation.",
+    "Persona design choices shaped the results. The 10 personas were deliberately spread across the adoption curve, with specific barriers written into their sheets (e.g., P9's swollen ring finger, P10's RA and privacy fears, P5's skin-tone concern, P8's HRRP skepticism). Many objections are therefore partly the persona brief speaking back. The mix (1 Innovator, 2 Laggard/Rejector patients) is not a representative sample of the beachhead.",
+    "LLM homogeneity risk. The transcripts share a voice: articulate, well-organized, well-informed about 2026 CMS policy, and prone to converge on the same socially desirable answer (a person over a device). Real interviewees are more varied, less coherent, and less informed. Recurring phrases may reflect model style rather than real shared vernacular.",
+    "Interviewer and concept priming. Q2 introduced the word 'off', and the concept statement introduced 'learns a person's own normal' and 'care team'. Recurrence of these phrases is partly an artifact.",
+    "n = 10 (6 patients/caregivers, 4 clinical/buyers; B2B WTP n = 3). Counts are directional only, with no statistical power. Medians of 3 numbers are not a price.",
+    "Timing gap. Patients were interviewed on days 3-6 after discharge, so days 7-14, the classic leak/SSI window, are unobserved.",
+    "Scoring subjectivity. Assumption scores were assigned by a single analyst using the rubric above. Clinician/buyer A1 and A4 scores and patient A3 scores rest on indirect evidence. A second coder and real-data inter-rater checks are needed.",
+    "Reimbursement and policy statements (RPM short-duration codes, TEAM scope, HRRP penalties, global period) are claims made by synthetic personas and must be verified with real revenue-cycle and compliance experts."
+  ]
+}
