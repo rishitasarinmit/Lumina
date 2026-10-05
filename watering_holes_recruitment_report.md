@@ -1,252 +1,402 @@
-# Lumina (The Sepsis Sentinel) — Virtual Watering Holes & Recruitment Playbook
+# Lumina: Watering Holes & Recruitment Playbook (v2, Boston-first)
 
-**Disciplined Entrepreneurship grounding:** Step 3 (End User Profile), Step 5 (Persona), Step 9 (Next 10 Customers), Step 12 (Decision-Making Unit), Step 21 (Test Key Assumptions).
-**Research date:** 2026-10-05, via live web search, WebFetch, and HTTP checks on every URL.
-**Target:** Oncology RPM / virtual care RNs (beachhead end users), clinical champions (nurse managers, virtual care directors, CNSs), and economic buyers (VP Home Hospital, VP Value-Based Care at Enhancing Oncology Model practices, CNOs).
+**Version 2, rebuilt from the deck *Lumina_Segmentation_BHM_PMR.pptx*.** Research date 2026-10-05, via live web search, WebFetch, and HTTP checks on every URL.
 
-> **Read this before posting anywhere.** Almost every professional community found here **bans vendor, market-research, survey, and recruitment posts** (verbatim rules quoted below). This changes the recruitment strategy: use the communities to **listen and identify people**, then contact individuals **one-to-one**, disclosing who you are and that Lumina is an early-stage venture. Use the **approved channels** (moderator approval, IRB-approved academic studies, corporate membership, event attendance) for anything posted publicly. Breaking these rules gets you banned from the communities where your beachhead users spend time.
+**Disciplined Entrepreneurship grounding:**
+- Step 1 (Segmentation)
+- Step 2 (Beachhead **S5: Home/RPM onboarding oncology RNs**; fallback **S1: post-infusion neutropenia nurses**)
+- Step 3 (End User Profile)
+- Step 5 (Persona)
+- Step 9 (Next 10 Customers)
+- Step 12 (Decision-Making Unit)
+- Step 21 (Test Key Assumptions)
 
----
+**The deck's PMR plan this targets** (week of Oct 5, 2026):
+- **22 interviews:** 8 end-user RNs, 4 champions, 4 economic buyers, 2 influencers, 2 experts, 2 vendor partners.
+- **2 observations** of RPM onboarding sessions.
+- **40+ outreach requests on Days 1–2**, Boston/Cambridge contacts first.
+- Every interview maps to hypotheses **H1–H8**.
 
-## Key findings
-
-1. **The densest end-user watering hole is ONS Communities** (Oncology Nursing Society; ONS has 35,000+ members). Its terms explicitly prohibit industry surveys and market-research posts. They also tell members to *"reach out to them directly"*. The only allowed recruitment post is for **member-led, IRB-approved, non-industry-sponsored** research. That door is open only if an academic partner (e.g., an MIT faculty-led study) leads the study.
-2. **No dedicated oncology-nursing subreddit exists.** r/OncologyNursing, r/hospitalathome, r/remotepatientmonitoring and similar names all came up empty. r/nursing (~1M) allows *academic* surveys only with mod review, IRB approval, and no compensation.
-3. **Few LinkedIn groups exist for these personas.** The best LinkedIn channel is **people search** (Boolean strings in §2). Groups are secondary.
-4. **Buyers (CNOs, VPs of home hospital / value-based care) are reached through relationships, not posts.** The best routes are the Hospital at Home Users Group, the COA Administrators' Network, Health Tech Nerds / Out-of-Pocket Slacks, and conference attendance.
-
----
-
-## 1. Watering hole directory (32 verified communities)
-
-**How URLs were checked.** Each row was confirmed with `curl -L` and/or WebFetch.
-- **LinkedIn and Facebook** redirect every group URL to a login page, including fake IDs, so an HTTP check proves nothing there. Those rows were confirmed through a third-party or owner page that names the group and its exact URL.
-- **Reddit** blocks automated access, so subreddit size, rules and activity come from the Arctic Shift Reddit archive. Every listed subreddit had posts dated October 2026.
-- **Sizes** are the best published figure, with source and date. Some are old, as flagged.
-
-**Persona key:** 🟦 **RN** = end user (oncology RPM / virtual care / triage RN) · 🟩 **CH** = clinical champion · 🟥 **EB** = economic buyer · ⬜ context only
-
-### 1a. Reddit
-
-| Name of Community / Group | Platform | Estimated # of Members / Size | Direct URL | Target Profile Match & Relevance |
-|---|---|---|---|---|
-| r/nursing | Reddit | ~1.02M subscribers (Arctic Shift snapshot, Feb 2025) | https://www.reddit.com/r/nursing/ | 🟦 RN. The largest nursing community, including oncology, home-health and triage RNs. Best for **listening** to alarm-fatigue and device-glitch pain. Rule: "No commercial posts, including job postings or surveys". Academic surveys need mod review, IRB approval and **no compensation**. |
-| r/Nurses | Reddit | ~41.7K (Arctic Shift, Feb 2025) | https://www.reddit.com/r/Nurses/ | 🟦 RN. Smaller general nursing sub with many students. Surveys are "allowed on a limited basis" with **prior mod approval**. |
-| r/nursinginformatics | Reddit | ~2.2K (Arctic Shift, Feb 2025) | https://www.reddit.com/r/nursinginformatics/ | 🟩 CH. Small but well targeted: nurse informaticists who evaluate RPM alerting workflows and Epic/Cerner integration. Bans spam and advertising; ask the mods before posting. |
-| r/healthIT | Reddit | ~38.6K (Arctic Shift, Feb 2025) | https://www.reddit.com/r/healthIT/ | 🟩 CH. Epic analysts, informatics and digital-health operators. Useful for alert-integration and alert-fatigue questions. Bans posts made "solely for the purpose of marketing". |
-| r/Oncology | Reddit | ~9.0K (Arctic Shift, Feb 2025) | https://www.reddit.com/r/Oncology/ | 🟩 CH. Oncologists and researchers (oncology nursing is on-topic). Good for clinical validation of neutropenic-fever and sepsis framing. "No advertising or self-promotion". |
-| r/cancer | Reddit | ~71.6K (Arctic Shift, Feb 2025) | https://www.reddit.com/r/cancer/ | ⬜ Patient and caregiver context: post-chemo home experience and acceptance of wearables. **Read only**: "No solicitations". |
-
-*Do not post in:* r/medicine (~506K) or r/healthcare (~93K); both ban surveys outright. r/digitalhealth is restricted and has been dead since 2022. r/telehealth (~2.5K) is mostly consumer spam.
-
-### 1b. LinkedIn groups & pages
-
-| Name of Community / Group | Platform | Estimated # of Members / Size | Direct URL | Target Profile Match & Relevance |
-|---|---|---|---|---|
-| Digital Health | LinkedIn Group | 100,000+ (Tellescope, Feb 2025) | https://www.linkedin.com/groups/2181454/ | 🟩 CH / 🟥 EB. Directors of virtual care, VPs of home hospital/digital, RPM leaders. Broad audience, so a post needs a very specific ask. |
-| Oncology Nursing Society (ONS) | LinkedIn Group | ~6,000 (Oncology Nurse Advisor, 2013; **may be dormant**) | https://www.linkedin.com/groups/1691967/ | 🟦 RN / 🟩 CH. OCN RNs and CNSs. Low confidence it is still active: ONS's own social page now lists only its company page. |
-| AI Nurses Network | LinkedIn Group | Not published | https://www.linkedin.com/groups/13072130/ | 🟩 CH. Nurse informaticists and CNSs interested in AI and early-warning tools, for questions on alert trust and design. Academic network (originated at King's College London), international membership. |
-| Oncology Nursing Society (company page) | LinkedIn Page | ~52.6K followers (LinkedIn snippet, Oct 2026) | https://www.linkedin.com/company/oncology-nursing-society | 🟦 RN. Use comment threads to find **engaged OCN commenters**, then send a 1:1 note (Script A). You cannot post to the page. |
-| World Hospital at Home Congress | LinkedIn Page | ~1.8K followers (LinkedIn snippet, Oct 2026) | https://www.linkedin.com/company/world-hospital-at-home-congress | 🟩 CH / 🟥 EB. Hospital-at-home nurse managers and program VPs (international). Comment-level engagement only. |
-
-### 1c. Facebook groups
-
-| Name of Community / Group | Platform | Estimated # of Members / Size | Direct URL | Target Profile Match & Relevance |
-|---|---|---|---|---|
-| AONN+ Private Group (Academy of Oncology Nurse & Patient Navigators) | Facebook Group (private) | ~2,100+ (JONS, Mar 2023) | https://www.facebook.com/groups/2106216099395341/ | 🟦 RN / 🟩 CH. Oncology nurse navigators and care-management RNs. Membership is by application, and AONN+ **bans commercial solicitation**. Ask the admins first. |
-| Nurses In Oncology | Facebook Group (private) | Not published | https://www.facebook.com/groups/1434284650172945 | 🟦 RN. Practicing oncology RNs: infusion, triage, navigation. Admin approval required. |
-| Remote Nurse Connection & Jobs | Facebook Group | 15,000+ (owner's site, Oct 2026) | https://www.facebook.com/groups/156370637311474 | 🟦 RN. Telehealth, RPM and triage RNs working remotely. Not oncology-specific, so screen for oncology experience. Recruiter posts reportedly tolerated. |
-| Telehealth Nurse Network | Facebook Group | "Thousands" (network's own blog, Jun 2026) | https://www.facebook.com/groups/telehealthnursenetwork | 🟦 RN. Remote, telehealth and RPM RNs, and care-management RNs. Mostly career-focused. |
-
-### 1d. Professional associations, forums & SIGs
-
-| Name of Community / Group | Platform | Estimated # of Members / Size | Direct URL | Target Profile Match & Relevance |
-|---|---|---|---|---|
-| **ONS Communities** (Oncology Nursing Society) | Higher Logic forum + chapter communities | ONS: 35,000+ members (ons.org, Jan 2025) | https://communities.ons.org/home | 🟦 RN / 🟩 CH. **Highest fit.** Relevant communities: Ambulatory/Outpatient, Nursing Navigation, Leadership/Management, APN, plus regional chapters. Members only. Terms ban "industry surveys, market-research opportunities". Use only 1:1 outreach, or an IRB-approved, non-industry academic study through the Clinical Helpdesk. |
-| ACCCeXchange (Association of Cancer Care Centers) | Higher Logic forum + member directory | ACCC: 45,000+ professionals at 1,700+ programs (accc-cancer.org, Oct 2026) | https://acccexchange.accc-cancer.org/home | 🟩 CH / 🟥 EB. Cancer program administrators, navigators, nursing leaders, people running EOM practice operations. Paid membership; **technology companies can join** ($500/yr individual). Rules: share experiences, not products. |
-| AONN+ Discussion Boards | Web forum | AONN+: 8,900+ members (aonnonline.org, Oct 2026) | https://aonnonline.org/discussions | 🟦 RN / 🟩 CH. Oncology nurse navigators and navigation administrators. Members only; a member database is included. |
-| COA Administrators' Network (CAN) | Private listserv + monthly calls | Not published | https://communityoncology.org/coa-initiatives/can/ | 🟥 EB. **Best EOM persona fit:** administrators and leaders at independent community oncology practices who run Enhancing Oncology Model participation. Staff join through a free myCOA account. Vendors go through the separate **Corporate Membership** program. |
-| AONL Leader2Leader (American Organization for Nursing Leadership) | Higher Logic forum | AONL: ~12,500 members (aonl.org, Oct 2026) | https://leaders.aonl.org/home | 🟥 EB / 🟩 CH. CNOs and nursing directors. **Strictest rules found:** research or survey solicitations need written AONL approval, and member contact info may not be used for outreach. Use it to listen and learn the vocabulary; reach these people elsewhere. |
-| AAACN Online Community: Telehealth Nursing Practice SIG & Care Coordination & Transition Management (CCTM) SIG | Salesforce community (SIGs) | AAACN: 4,400+ members (aaacn.org) | https://www.aaacn.org/get-involved/special-interest-groups | 🟦 RN / 🟩 CH. Telehealth and triage RNs and care-management nurses. The Telehealth SIG matches the RPM workflow almost exactly. Members only; login at https://community.aaacn.org/ |
-| Hospital at Home Users Group: Nursing Community of Practice + Technology Council | Community of practice / councils | Registry: 46 hospitals across 18 health systems (hahusersgroup.org) | https://www.hahusersgroup.org/about-the-users-group/councils-and-communities/nursing-cop/ | 🟩 CH / 🟥 EB. Hospital-at-home nurse managers and program directors. The Technology Council fits product discovery. Join by interest form; annual meeting **Nov 4, 2026 (virtual)**. |
-| ATA Member Community: Remote Monitoring SIG & Home Telehealth SIG (American Telemedicine Association) | Higher Logic community | 400+ member organizations (ATA) | https://americantelemed.connectedcommunity.org/home | 🟩 CH / 🟥 EB. Directors of virtual care and RPM program leaders; not oncology-specific. Terms ban recruitment and solicitation posts. |
-| SHM HMX: Hospital at Home SIG (Society of Hospital Medicine) | Higher Logic forum | SHM: 30+ SIGs; SIG size not published | https://connect.hospitalmedicine.org/about | 🟩 CH. Physician leads of hospital-at-home programs who co-own nursing workflows. Academic surveys allowed **only in the Open Forum**; commercial surveys are removed. SIG leaders invite direct contact. |
-| ANIA Connect (American Nursing Informatics Association) | Salesforce community | 3,000+ informatics professionals (ania.org) | https://www.ania.org/membership | 🟩 CH. Nurse informaticists and CNSs evaluating alert design and EHR integration. $120/yr. |
-| MASCC Neutropenia, Infection & Myelosuppression Study Group (Multinational Association of Supportive Care in Cancer) | Expert study group | Members from 70+ countries (MASCC) | https://mascc.org/study-groups/about-mascc-study-groups/ | 🟩 CH (key opinion leaders). Febrile-neutropenia and sepsis experts. Use for **clinical advisors and validation**, not for volume recruiting. |
-
-### 1e. Slack / Zulip / independent digital-health communities
-
-| Name of Community / Group | Platform | Estimated # of Members / Size | Direct URL | Target Profile Match & Relevance |
-|---|---|---|---|---|
-| Health Tech Nerds (HTN Pro) | Slack (paid) | 5,500+ in Slack; newsletter 30,000+ (healthtechnerds.com, Oct 2026) | https://www.healthtechnerds.com/about-htn-pro | 🟩 CH / 🟥 EB. Digital-health operators and virtual-care and value-based-care leaders. Best Slack for **warm intros** to VPs of virtual care / home hospital. Roughly $10–20/mo. |
-| Out-Of-Pocket (OOP) Slack | Slack (paid, vetted application) | Not published | https://www.outofpocket.health/ | 🟥 EB-adjacent. Payer, provider-operations and value-based-care builders; strong on EOM and value-based-care economics. Contribute before asking; content is off the record. |
-| Digital Medicine Society (DiMe) Slack | Slack (free) | Not published | https://dimesociety.org/join-slack/ | 🟩 CH. Wearable, sensor and connected-health validation experts. A direct fit for the continuous-wearable evidence questions. |
-| SONSIEL (Society of Nurse Scientists, Innovators, Entrepreneurs & Leaders) | Member platform | Not published | https://www.sonsiel.org/membership | 🟩 CH. Innovation-minded nurse leaders and likely **design partners**. Nurse membership $100/yr. |
-| HealthTech Hang | Slack + events | 3,000+ (healthtechhang.com, Oct 2026) | https://www.healthtechhang.com/ | 🟩 CH. Operators and some clinicians, mostly in the Bay Area and NYC. Joining is through events. |
-| FHIR Community Chat | Zulip | ~23,000 (Health Samurai, 2023) | https://chat.fhir.org/ | ⬜ Technical only. For EHR/FHIR alert-integration feasibility; not a place to recruit clinicians. |
-
-**Searched for but not verified (excluded):**
-- Subreddits that don't exist: r/OncologyNursing, r/hospitalathome, r/remotepatientmonitoring.
-- "ONS Connect" (the real name is ONS Communities).
-- "Society for Digital Health" (closest real community: DiMe).
-- Any Discord for oncology, virtual nursing or hospital at home.
-- LinkedIn groups for RPM, hospital at home, or EOM.
-- Old Slack invite links (Healthcare Homies, Redox, etc.), which return 404.
+> **Rules of engagement (unchanged from v1, still critical).**
+> - Nearly every professional forum here **bans vendor, market-research, survey and recruitment posts** (ONS, ACCC, AONL, ATA, SHM, AONN+, r/nursing, r/healthcare).
+> - Use the communities to listen and identify people, then contact them **one-to-one** with full disclosure that Lumina is an MIT student venture.
+> - Following the deck: no selling, and no patient data asked for or shared.
 
 ---
 
-## 2. LinkedIn people-search strings (primary channel for 1:1 outreach)
+## 0. What changed from v1, and what the deck needs corrected
 
-**Sales Navigator-only filters:** Seniority, Function, Company headcount, Boolean inside the Title filter, "Posted in past 30 days", and "Changed jobs in past 90 days". Plain LinkedIn search accepts `AND / OR / NOT`, quotes and parentheses in the keyword box.
+**New in v2:**
+1. **Two national oncology conferences are in Boston in the next 3 weeks.** The best in-person recruiting opportunity found:
+   - **ASCO Quality Care Symposium, Oct 16–17** (Hynes Convention Center)
+   - **ACCC National Oncology Conference, Oct 21–23** (Omni Boston Seaport)
 
-**A. Oncology RPM / virtual care RNs (beachhead end users)**
-- Sales Navigator, Title: `("remote patient monitoring" OR RPM OR "remote monitoring" OR "virtual care" OR "virtual nurse" OR telehealth OR telemonitoring) AND (nurse OR RN)`
-- Sales Navigator, Keywords: `(oncology OR cancer OR hematology OR OCN OR chemotherapy)`
-- Sales Navigator, other filters: Industry = Hospitals & Health Care; Geography = United States; Posted in past 30 days.
-- Plain search: `(oncology OR cancer OR OCN) AND ("remote patient monitoring" OR "virtual care" OR telehealth OR "remote monitoring") AND (RN OR nurse) NOT (recruiter OR sales OR "account executive")`
+   Both fall *after* the deck's Day-7 decision meeting. Use them for the **second round of 5–8 targeted interviews** that the deck triggers on "No conclusion" results, and for H5/H6 buyer conversations.
+2. **Boston channels for the 8 local RNs:**
+   - **Boston Oncology Nursing Society (BONS)**, the Boston ONS chapter. Its Fall Conference was **Oct 3, two days ago**; next listed item is a Dec 3 advocacy call.
+   - **Organization of Nurse Leaders (ONL) New England** for nurse managers and CNOs, with events Oct 14 – Dec 11.
+   - **Home Care Alliance of Massachusetts** for home-care clinical managers.
+3. **Channels for the S1 fallback and later segments:**
+   - S1: Infusion Nurses Society, NCODA nurses, the ONS Chemotherapy community.
+   - S3: the ASTCT Nursing SIG and Transplant ID SIG.
+4. **Expert and partner targets resolved to real papers, authors and 2026 company status** (§3).
 
-**B. Oncology triage / care-management RNs**
-- Sales Navigator, Title: `("triage nurse" OR "nurse triage" OR "telephone triage" OR "care manager" OR "care management" OR "nurse navigator" OR "care coordinator")`
-- Sales Navigator, Keywords: `(oncology OR cancer OR chemotherapy OR OCN OR "Enhancing Oncology Model" OR EOM)`
-- Plain search: `("triage nurse" OR "oncology triage" OR "nurse navigator" OR "care manager") AND (oncology OR cancer) AND (RN OR OCN) NOT (recruiter OR sales)`
+**Deck facts to correct before outreach** (they would weaken credibility in a first email):
 
-**C. Clinical champions: hospital-at-home nurse managers and directors of virtual care**
-- Sales Navigator, Title: `("hospital at home" OR "hospital-at-home" OR "home hospital" OR "acute care at home" OR "healthcare at home" OR "virtual care" OR "virtual nursing") AND (manager OR director OR "vice president" OR VP OR head)`
-- Sales Navigator, Seniority: Manager / Director / VP.
-- Plain search: `("hospital at home" OR "home hospital" OR "virtual care" OR "virtual nursing") AND (director OR manager OR "vice president") AND (nurse OR RN OR nursing) NOT (sales OR recruiter)`
-
-**D. Economic buyers: CNOs and VPs of value-based care at community oncology networks**
-- Sales Navigator, Title: `("chief nursing officer" OR CNO OR "vice president" OR VP OR "director of nursing" OR "chief clinical officer" OR "value-based" OR "value based")`
-- Sales Navigator, Keywords: `("Enhancing Oncology Model" OR EOM OR "value-based care" OR "Oncology Care Model")`
-- Current-company ideas (EOM participation checked against public sources):
-  - **The US Oncology Network** (12 practices in EOM).
-  - **Texas Oncology, Tennessee Oncology, Rocky Mountain Cancer Centers, Minnesota Oncology, West Cancer Center, Northwest Medical Specialties, Cancer & Hematology Centers of Western Michigan** (named EOM participants, AJMC, Jul 2023).
-  - **American Oncology Network** (announced EOM participation).
-  - **OneOncology** (partners *applied*; final status unconfirmed).
-  - **Florida Cancer Specialists** (current EOM status unconfirmed).
-  - Re-verify all of these against CMS's current EOM participant list before outreach.
-- Plain search: same companies in the Current company filter, plus `("chief nursing officer" OR "vice president" OR "director of nursing" OR "value-based") AND (oncology OR cancer)`
-
-**E. Clinical nurse specialists and informaticists**
-- Keywords: `("clinical nurse specialist" OR "nurse informaticist" OR "nursing informatics") AND (oncology OR "remote monitoring" OR "virtual care" OR "early warning")`
+| Deck says | What the web shows (Oct 2026) | Fix |
+|---|---|---|
+| Slide 8: MGB's RPM "runs on Best Buy's Current Health" | **Best Buy sold Current Health back to its co-founder in June 2025** (Healthcare Dive). Current Health is now independent and focused on CAR-T and bispecific therapy at home. | Say "Current Health" with no Best Buy reference. Confirm what MGB currently uses before mentioning it at all. |
+| Slide 7: partner "Blue Spark TempTraq" | Blue Spark **sold substantially all its assets** (closed March 2025). TempTraq is still sold at temptraq.healthcare. | Target "TempTraq" via its current contact page. Expect staff turnover. |
+| Slide 7: partner "Biofourmis" | **Merged with CopilotIQ** (Oct 2024). | Search LinkedIn under both companies. |
+| Slides 4 and 7: "ACCC" | ACCC is now the **Association of Cancer Care Centers** (formerly Association of Community Cancer Centers). | Use the new name. |
+| Slide 7: buyer "OneOncology" | OneOncology **acquired Navigating Cancer (now Navigating Care)** in Sept 2024, so it owns an oncology remote-monitoring tool. | Treat OneOncology as both a buyer and a competitor in H7 conversations. |
+| Slide 7: experts "THERMAL and Verily Patch authors" | THERMAL: **Fyfe, Larsen, Blud, Weinkove**, Malaghan Institute, NZ (*Intern Med J*). Verily Patch: **Verma et al.**, Verily Life Sciences with Mayo Clinic co-authors (*IEEE JTEHM* 2021). | Use the citations in §3. |
 
 ---
 
-## 3. Outreach scripts (0% pitch, Disciplined Entrepreneurship primary-market-research style)
+## 1. Channel map by deck profile (what to use for each interview quota)
 
-**Rules every script follows:**
-- Disclose who you are and that Lumina is an early-stage venture. Communities' terms and basic research ethics both require this, and hiding it is what gets accounts banned.
-- Ask about **past behavior**, never about the product.
-- Ask for 20 minutes and offer to share findings back.
-- Close with a referral ask.
-- Never mention the ring, the platform, pricing, or "AI" in the first contact.
-- Replace every `[bracket]` before sending.
+| Deck profile (n) | Hypotheses tested | Best channels, in order | Section |
+|---|---|---|---|
+| **End-user RNs (8)**: oncology RPM / virtual-care / infusion RNs at MGB, DFCI, BIDMC/BILH, BMC | H1, H2, H6 | 1) Intros from champions (deck: ask every leader for 2 RN intros). 2) BONS officers (one email to the social-media coordinator, then 1:1). 3) LinkedIn string A + Boston geography. 4) ONS Communities (Ambulatory, Chemotherapy). 5) Remote Nurse Connection FB group (national backup). | 2a, 2c, 4 |
+| **Champions (4)**: Huntsman at Home, Penn Cancer Care at Home, MGB Healthcare at Home leaders, DFCI Deputy CNO | H1, H2, H5, H8 | Warm intros via MIT/HMS (Zen Chu, Hacking Medicine). Hospital at Home Users Group Nursing Community of Practice. ONL New England. Script B. | 2a, 2d |
+| **Economic buyers (4)**: MGB Healthcare at Home President, DFCI CNO, VP value-based care at EOM networks | H3, H4, H5 | Senior warm intro. ACCC National Oncology Conference (Oct 21–23, Boston). COA Administrators' Network. LinkedIn string D. Script E. | 2b, 2d, 4 |
+| **Influencers (2)**: oncology medical director; clinical informatics / IT security | H2, H5 | Referrals from champions (deck). ANIA New England chapter. r/nursinginformatics and r/healthIT (listening). | 2a, 2f |
+| **Experts (2)**: ONS remote-monitoring leaders; THERMAL / Verily Patch authors | H2, H7 | Email the corresponding authors about their paper (Script F). ONS Congress 2026 triage presenters. | 3 |
+| **Partners (2)**: wearable / RPM vendor clinical or partnership leads | H4, H7 | Company contact pages and LinkedIn. DiMe Slack. MassMEDIC events (Oct 8, Oct 20). Script G. | 3, 2b, 2e |
 
-### Script A: LinkedIn connection note (oncology RPM / virtual care RNs). 258 characters, under the 300 limit.
+**H6 (word of mouth) is tested here as well.** Log which communities each interviewee names unprompted. The deck's pass mark is ≥70% naming the same forums. Ask "Where do you go to learn what other programs are doing?" before showing them this list.
 
-> Hi [First name], I'm an MIT student researching how oncology RPM/virtual care nurses handle home monitoring after chemo: alerts, device glitches, non-wear. Not selling anything. Could I learn from your experience in a 20-min call? Glad to share what we find.
+---
 
-**Follow-up DM after they accept:**
-> Thanks for connecting, [First name]. Some context: I'm [Your name], an MIT student working on an early-stage project (Lumina) about how cancer patients are monitored at home after chemo or discharge. We're in the learning phase, so there's no product to show and I'm not selling anything.
->
-> I saw you work on [program / team from their profile]. I'd value 20 minutes on what a typical shift looks like for you: how alerts reach you, what happens when a patient's device stops sending data, and what the hardest part of the job is. I'll send you a short summary of what we learn across the nurses we speak with.
->
-> Would [two specific time windows] work? If not, is there a colleague you'd suggest I talk to instead?
+## 2. Watering hole directory
 
-### Script B: Email or InMail to clinical champions and nurse managers (oncology home-hospital programs)
+**How rows were verified.**
+- Every URL was checked with `curl -L` and/or WebFetch.
+- LinkedIn and Facebook send every group URL to a login page, including fake ones. Those rows are confirmed through owner or third-party pages that name the exact URL.
+- Reddit blocks automated access, so its data comes from the Arctic Shift archive (counts from February 2025; activity confirmed October 2026).
+- Sizes are given only where a source states them.
 
-**Subject:** 20 minutes on how your team catches post-chemo deterioration at home?
+**Persona key:** 🟦 RN end user · 🟩 champion · 🟥 economic buyer · 🟨 influencer · 🟪 expert · 🟧 partner · ⚪ connector / context
 
-> Dear [Title / Name],
->
-> I'm [Your name], a student at MIT doing primary research for an early-stage venture, Lumina, focused on the weeks after chemotherapy or discharge, when cancer patients recover at home. I'm writing to learn, not to sell; there is no product demo in this conversation.
->
-> Your work on [their hospital-at-home / oncology home care program, or the talk, paper, or post you saw] is why I'm reaching out. Programs like yours sit where several pressures meet: 30-day ED visits and readmissions, Enhancing Oncology Model expectations for navigation and 24/7 access, and nurse capacity.
->
-> I'd value 20 minutes to understand how this works in practice for your team:
-> - How patients are enrolled and monitored today, and who covers nights and weekends
-> - What happens with alerts that turn out to be false, and with data gaps when patients stop wearing devices
-> - Which measures your leadership watches most closely
->
-> In return, I'll share an anonymized summary of what we hear across oncology programs. If you aren't the right person, I'd be grateful for a referral to whoever on your team owns these workflows.
->
-> Would [two time windows] work?
->
-> With thanks,
-> [Name] · [MIT program] · [email] · [LinkedIn]
+### 2a. Boston & New England (new)
 
-### Script C: Subreddit or community forum post (peer-to-peer). Post **only after written moderator approval**, and only where surveys or interviews are allowed (e.g., r/Nurses with prior approval, the SHM Open Forum).
+| Name of Community / Group | Platform | Estimated # of Members / Size | Direct URL | Target Profile Match & Relevance |
+|---|---|---|---|---|
+| Boston Oncology Nursing Society (BONS): the Boston ONS chapter | Chapter website | Not published. Runs "7+ free CNE events annually" (bostonons.org, Oct 2026) | https://www.bostonons.org/ | 🟦 **Top local RN source** (H1, H2, H6). Oncology and infusion RNs across MGB, DFCI and BIDMC. Officers are listed on the site; contact BonsSocialMedia@gmail.com to ask how researchers may engage members. The events page is members-only. Fall Conference already held Oct 3, 2026. |
+| Boston ONS on LinkedIn | LinkedIn Page | 131 followers (Oct 2026) | https://www.linkedin.com/company/boston-ons/ | 🟦 Find chapter officers and engaged members for 1:1 Script A. Also on Facebook (https://www.facebook.com/BostonONS/) and Instagram. Ask the admin before any post. |
+| Southern New Hampshire ONS chapter | ONS Communities chapter | Not published | https://communities.ons.org/southernnewhampshire/home | 🟦 Covers **Northern Massachusetts** (Lowell, Lawrence, Merrimack Valley). Backup RN source. Contact via "Contact Us". |
+| Organization of Nurse Leaders (ONL), New England | Nurse-leader association | 1,100+ nurse leaders who lead 300,000+ licensed nurses (oonl.org, Oct 2026); LinkedIn 6.1K followers | https://www.oonl.org/ | 🟩🟥 Nurse managers, directors and CNOs at MGB, BILH, BMC (H3, H5). Use it to identify leaders by name, then cold-email them. **Don't pitch in sessions.** Events Oct 14 – Dec 11 (see 2b). |
+| Home Care Alliance of Massachusetts | Trade association | Not published | https://www.thinkhomecare.org/ | 🟩🟥🟦 Home-care clinical managers, QI directors and home RNs: the people who run home monitoring workflows (H1, H5). Affinity groups are members-only. It has an **Allied (vendor) membership** category. |
+| ANIA New England Chapter | Nursing informatics chapter | Not published | https://community.ania.org/northeastnewengland032/home | 🟨 Nurse informaticists who own RPM, EHR and alert integration. The deck's "clinical informatics" influencer (H2, H5). Discussion board needs an ANIA login. |
+| MIT Hacking Medicine | Student/community org + mailing list | Not published | https://hackingmedicine.mit.edu/ | ⚪ Connector to Boston clinician mentors and MGB innovators. **Zen Chu** (deck slide 8) co-founded it. Join the mailing list. |
+| MIT Sloan Healthcare Club / Healthcare & BioInnovations Conference | Student club + conference | Not published | https://www.sloan-hbc.mit.edu/ | ⚪🟥 Alumni and speaker intros to health-system executives (2026 keynotes included BMC Health System's CEO). Next conference is Feb 25–26, 2027. |
+| MeHI (MassTech eHealth Institute) events | State digital-health event listing | Not published | https://mehi.masstech.org/events | ⚪🟧 A single list of Boston digital-health events. Partner and connector access. |
+| MassMEDIC | Medtech trade association | Not published | https://business.massmedic.com/events | 🟧 Wearable and device vendors (H4, H7). Most events are paid. |
+| Health2Tech Boston | Luma meetup | 134 attendees at the Sept 9, 2026 event (Luma) | https://health2tech.com/ | ⚪🟧 Free health-tech meetup. No Boston date listed for Oct–Dec yet; watch the page. |
 
-**Step 1. Message to moderators (send first):**
-> Hi mods, I'm a student at MIT doing interview research on how oncology and home-monitoring nurses handle alerts and device problems after chemotherapy. Lumina is an early-stage student venture. Before posting anything I want to check your rules: may I post one transparent request for 20-minute conversations? It's unpaid, no product is shown, nothing is sold, and no identifiable patient information is collected. I'm happy to adjust the wording or skip posting if you'd rather.
+*Poor fit:* the **Massachusetts Nurses Association** (~23K members, https://www.massnurses.org/) is a **union** focused on labor issues, often skeptical of monitoring technology. Don't solicit at its events.
 
-**Step 2. Post (if approved):**
-> **[Mod-approved] Oncology/telehealth RNs: how do you deal with alarm fatigue and device glitches in home monitoring?**
->
-> Hi all. Full transparency first: I'm a student at MIT working on an early-stage project (Lumina) about home monitoring for cancer patients after chemo. The mods approved this post. I'm not selling anything and won't show a product.
->
-> I'm trying to understand the real workflow from people who do the job:
-> - When a home patient's vitals or device data look off, what actually happens next?
-> - How often are alerts false, and what does that do to how your team responds?
-> - What's the most frustrating part: setup, connectivity, patients taking devices off, after-hours coverage, or documentation?
->
-> If you're an oncology, RPM, triage, or virtual care RN and willing to do a 20-minute chat, comment or DM me. Replies in the thread are just as helpful. I'll post a summary of what we learn back here. Please don't share any patient details.
+*Searched, not found:* a Massachusetts AAACN chapter, a New England AONN+ chapter, public Dana-Farber nursing grand rounds, a "Boston Health Tech" Slack.
 
-### Script D: Professional association forum or direct message (ONS / ACCC / AAACN)
+### 2b. Dated events: Boston-area first, then national (Oct 2026 – Apr 2027)
 
-**Important.** ONS Communities and ACCCeXchange **forbid industry or market-research posts** in the forums.
-- Use this script as a **1:1 direct message** to a member whose posts show relevant expertise. ONS's terms point members to "reach out to them directly".
-- Or use it inside an **IRB-approved, academically led** study submitted through ONS's research-recruitment process.
-- Never post it publicly as a vendor.
+| Date | Event | Location | URL | Use for |
+|---|---|---|---|---|
+| **Oct 8** | MassMEDIC MedTech Ahead fall kickoff | Boston area | https://business.massmedic.com/events/Details/medtech-ahead-fall-startup-program-kickoff-event-1878755 | 🟧 Partner contacts (H7) |
+| **Oct 14, 22, 27** | ONL leadership programs | Virtual/MA | https://www.oonl.org/upcoming-programs | 🟩 Identify nurse leaders |
+| **Oct 16–17** | **ASCO Quality Care Symposium 2026** | **Hynes Convention Center, Boston** | https://cancerletter.com/event/2026-asco-quality-care-symposium/ (ASCO's site blocks bots) | 🟩🟥🟪 Oncology quality, care-delivery and ED-avoidance leaders. Deck contacts Roberts and Hassett have ASCO 2026 work, so check the program for their sessions. Best place for **second-round** interviews. |
+| **Oct 18–21** | AdvaMed MedTech Conference | BCEC, Boston | https://themedtechconference.com/ | 🟧 Wearable vendors |
+| **Oct 20** | MassMEDIC reception and panel | Boston area | https://business.massmedic.com/events/Details/cocktail-reception-and-panel-discussion-value-creation-and-the-valuation-reset-medtech-navigates-uncertain-waters-1943736 | 🟧⚪ |
+| **Oct 21–23** | **ACCC 43rd National Oncology Conference** | **Omni Boston Seaport** | https://www.accc-cancer.org/events/national-oncology-conference | 🟥🟩 Cancer program administrators, EOM practice leaders and navigators (H3, H4, H5, H6). Ask ACCC about student or exhibitor-hall access. |
+| **Oct 22** | MassBio Oktoberfest Mixer | Cambridge | https://www.massbio.org/events/oktoberfest-mixer/ | ⚪🟧 |
+| **Nov 4** | Hospital at Home Users Group Annual Meeting (virtual, before AAHCM) | Virtual | https://www.hahusersgroup.org/ | 🟩🟥 Home-hospital program leaders (H3, H5) |
+| **Nov 4** | Home Care Alliance of Massachusetts QI and Clinical Directors meeting (members only) | Zoom | https://members.thinkhomecare.org/community-calendar/Details/qi-and-clinical-director-s-combined-meeting-1521061 | 🟩 |
+| **Nov 15–18** | HLTH USA 2026 | Las Vegas | https://hlth.com/ | 🟥🟧 Executives and vendors |
+| **Dec 3** | Boston ONS Q4 Advocacy Call | Zoom | https://www.bostonons.org/ | 🟦 |
+| **Dec 8** | Home Care Alliance of Massachusetts Quality and Compliance Conference | Worcester | https://members.thinkhomecare.org/community-calendar/Details/2026-quality-and-compliance-conference-1893294 | 🟩 |
+| **Dec 11** | ONL Winter Quarterly Meeting | MA | https://onl.memberclicks.net/winter-quarterly-meeting-2026 | 🟩🟥 |
+| Feb 17–20, 2027 | Tandem Meetings (ASTCT/CIBMTR) | Orlando | https://www.cibmtr.org/Tandem | 🟪 S3 transplant / CAR-T (later segment) |
+| Apr 14–18, 2027 | ONS Congress 2027 | Washington, DC | https://help.ons.org/support/solutions/articles/151000164013 | 🟦🟪 National RN validation round |
 
-> Hi [Name],
->
-> I read your post in [ONS community name / thread topic] about [specific detail, e.g., after-hours triage for neutropenic fever]. It was useful. I'm [Your name], a student at MIT working on early-stage research (venture project: Lumina) into how oncology nurses monitor patients at home after chemotherapy. I'm messaging you directly because the community guidelines ask that research requests not be posted to the forum.
->
-> The issues I keep hearing about are:
-> - **Adherence:** patients removing devices, or data simply stopping
-> - **Alert fatigue:** too many false or unclear notifications
-> - **Workflow:** who owns an abnormal reading at 2 a.m., and how it gets documented
->
-> I'd like to hear how these play out in your practice, or not at all, in a 20-minute conversation. I won't present a product, and I'll share a de-identified summary of findings with everyone who contributes.
->
-> If it's not a good fit, is there someone in your program, such as a triage lead or a navigator, you'd suggest I ask?
->
-> Thank you,
-> [Name] · [MIT program] · [email]
+### 2c. National end-user RN channels (S5 beachhead + S1 fallback)
 
-### Script E: Cold outreach to economic buyers (VP Value-Based Care, VP Home Hospital, CNO)
+| Name of Community / Group | Platform | Estimated # of Members / Size | Direct URL | Target Profile Match & Relevance |
+|---|---|---|---|---|
+| **ONS Communities**: Ambulatory/Outpatient; Chemotherapy, Immunotherapy & Other Antineoplastics; Nursing Navigation; Blood & Marrow Transplant & Cellular Therapies; Leadership | Higher Logic forums | ONS 35,000+ members (ONS Voice, May 2026); per-community counts not published | https://communities.ons.org/home | 🟦🟩 Highest-fit national pool: Ambulatory/Chemo for S5 and S1, Blood & Marrow Transplant for S3. Terms **ban industry surveys and market research**. Use 1:1 contact, or an IRB-approved, non-industry academic study. |
+| Infusion Nurses Society (INS) Learning Center forum | Members' forum | INS 5,000+ members (ins1.org, Oct 2026) | https://www.learningcenter.ins1.org/ | 🟦 **S1 fallback.** Infusion RNs and infusion nursing leaders (deck's S1 champions). Members only; ask INS before recruiting. |
+| NCODA Nurses / NCODA CONNECT | Free community + private platform | Not published | https://ncoda.org/nurses/ | 🟦 S1/S5 in community oncology practices with in-house pharmacy, i.e. EOM-type practices. Membership is free; ask staff before posting. |
+| AAACN Telehealth Nursing Practice SIG & CCTM SIG | Salesforce community | AAACN 4,400+ members | https://www.aaacn.org/get-involved/special-interest-groups | 🟦 Telehealth and triage RNs and care managers (H1, H2). Members only. |
+| AONN+ Discussion Boards + private Facebook group | Web forum / Facebook | AONN+ 8,900+ members; Facebook group ~2.1K (2023) | https://aonnonline.org/discussions · https://www.facebook.com/groups/2106216099395341/ | 🟦 Oncology nurse navigators. Commercial solicitation banned; contact the admins first. |
+| ASTCT Nursing SIG & Transplant Infectious Disease SIG | Member SIG communities | Tandem 2026: 4,000+ in person | https://www.astct.org/Membership/Special-Interest-Groups | 🟦🟪 **S3 (later segment).** BMT/CAR-T nurses and infection coordinators. Paid membership; SIG rules apply. |
+| Remote Nurse Connection & Jobs | Facebook Group | 15,000+ (owner's site, Oct 2026) | https://www.facebook.com/groups/156370637311474 | 🟦 Remote, RPM and triage RNs nationally. Screen for oncology experience. |
+| Telehealth Nurse Network | Facebook Group | "Thousands" (owner's blog, Jun 2026) | https://www.facebook.com/groups/telehealthnursenetwork | 🟦 Telehealth and RPM RNs. |
+| Nurses In Oncology | Facebook Group (private) | Not published | https://www.facebook.com/groups/1434284650172945 | 🟦 Infusion, triage and navigation RNs. |
+| Oncology Nursing Society (company page) | LinkedIn Page | ~52.6K followers | https://www.linkedin.com/company/oncology-nursing-society | 🟦 Find engaged commenters for 1:1 outreach. |
 
-**Subject:** Learning from [Organization]: acute-care use after chemo, and how home monitoring pays for itself
+### 2d. Champion & buyer channels (national)
+
+| Name of Community / Group | Platform | Estimated # of Members / Size | Direct URL | Target Profile Match & Relevance |
+|---|---|---|---|---|
+| ACCCeXchange (Association of Cancer Care Centers) | Higher Logic forum + directory | ACCC 45,000+ professionals at 1,700+ programs | https://acccexchange.accc-cancer.org/home | 🟥🟩 Cancer program administrators and EOM operations staff (H3–H5). Technology-company membership $500/yr. Share experiences, not products. |
+| COA Administrators' Network (CAN) | Private listserv | Not published | https://communityoncology.org/coa-initiatives/can/ | 🟥 EOM practice administrators (deck's VP value-based care persona). Vendors use COA Corporate Membership. |
+| Hospital at Home Users Group: Nursing Community of Practice + Technology Council | Community of practice | Registry: 46 hospitals in 18 health systems | https://www.hahusersgroup.org/about-the-users-group/councils-and-communities/nursing-cop/ | 🟩🟥 Home-hospital nurse leaders (H1, H5). Join by interest form. |
+| AONL Leader2Leader | Higher Logic forum | AONL ~12,500 members | https://leaders.aonl.org/home | 🟥 CNOs. **Research solicitation is prohibited without written approval**, and member contact info can't be used for outreach. Listen only. |
+| ATA Community: Remote Monitoring & Home Telehealth SIGs | Higher Logic | 400+ member organizations | https://americantelemed.connectedcommunity.org/home | 🟩🟥 Virtual-care directors. Recruitment posts banned. |
+| SHM Hospital at Home SIG | Higher Logic | Not published | https://connect.hospitalmedicine.org/about | 🟩 Physician leads of hospital-at-home programs. Academic surveys allowed only in the Open Forum. |
+| Digital Health | LinkedIn Group | 100,000+ (Tellescope, Feb 2025) | https://www.linkedin.com/groups/2181454/ | 🟩🟥 Virtual-care and RPM leaders. Broad audience. |
+| World Hospital at Home Congress | LinkedIn Page | ~1.8K followers | https://www.linkedin.com/company/world-hospital-at-home-congress | 🟩 Hospital-at-home leaders (international). |
+
+### 2e. Slack & digital-health communities
+
+| Name of Community / Group | Platform | Estimated # of Members / Size | Direct URL | Target Profile Match & Relevance |
+|---|---|---|---|---|
+| Digital Medicine Society (DiMe) Slack | Slack (free) | Not published | https://dimesociety.org/join-slack/ | 🟪🟧 Wearable-validation experts and vendors (H2, H7). |
+| Health Tech Nerds (HTN Pro) | Slack (paid) | 5,500+ in Slack (Oct 2026) | https://www.healthtechnerds.com/about-htn-pro | 🟥🟩 Warm intros to virtual-care and value-based-care leaders. |
+| Out-Of-Pocket Slack | Slack (paid, vetted) | Not published | https://www.outofpocket.health/ | 🟥 Value-based-care and EOM economics (H4). |
+| SONSIEL | Member platform | Not published | https://www.sonsiel.org/membership | 🟩 Nurse innovators and possible design partners. |
+| AI Nurses Network | LinkedIn Group | Not published | https://www.linkedin.com/groups/13072130/ | 🟨 Nurse informaticists interested in AI and early warning (H2 trust). |
+
+### 2f. Reddit (listening; post only with mod approval)
+
+| Name of Community / Group | Platform | Estimated # of Members / Size | Direct URL | Target Profile Match & Relevance |
+|---|---|---|---|---|
+| r/nursing | Reddit | ~1.02M (Feb 2025) | https://www.reddit.com/r/nursing/ | 🟦 Listen for H1/H2 language. Surveys only if academic, IRB-approved, mod-reviewed and unpaid. |
+| r/Nurses | Reddit | ~41.7K | https://www.reddit.com/r/Nurses/ | 🟦 Surveys allowed with prior mod approval. |
+| r/nursinginformatics | Reddit | ~2.2K | https://www.reddit.com/r/nursinginformatics/ | 🟨 Informatics influencers (H2, H5). |
+| r/healthIT | Reddit | ~38.6K | https://www.reddit.com/r/healthIT/ | 🟨 Integration and IT-security perspective. |
+| r/Oncology | Reddit | ~9.0K | https://www.reddit.com/r/Oncology/ | 🟪 Clinical framing of neutropenic fever and sepsis. No self-promotion. |
+
+**Does not exist:** r/OncologyNursing, r/hospitalathome, r/remotepatientmonitoring. **Bans surveys:** r/medicine, r/healthcare.
+
+---
+
+## 3. Expert & partner targets (deck profiles: Expert ×2, Partner ×2)
+
+### Experts: papers to cite in outreach (H2 false alarms, H7 competition gap)
+
+| Study | Citation & URL | Authors / institution (as published) | Why it matters for Lumina |
+|---|---|---|---|
+| **THERMAL** | Fyfe RC, Larsen M, Blud D, Weinkove R. *Intern Med J.* https://doi.org/10.1111/imj.70199 · trial NCT05203809: https://clinicaltrials.gov/study/NCT05203809 | Malaghan Institute of Medical Research, Wellington, NZ (Fyfe, Weinkove are trial contacts) | Pilot of two wearables (incl. TempTraq) for neutropenic fever and CRS after chemo, SCT or CAR-T. Speaks to wear compliance and false alarms (H2), and to S1/S3. |
+| **Verily Patch** (the deck's "4.3 h earlier" claim) | Verma N, et al. *IEEE J Transl Eng Health Med* 2021;9:2700407. https://pmc.ncbi.nlm.nih.gov/articles/PMC8577572/ | Verily Life Sciences (Verma, corresponding author) with Mayo Clinic Hematology and Medical Oncology (Vera-Aguilera, Paludo, Markovic) | 86 autologous SCT patients; 90.2% sensitivity, 87.8% specificity, median 4.3 h lead time. Ask about real-world false-alarm rates (H2). |
+| CAR-T wearables (2026) | Rajeeve S, … Parekh S. *JCI Insight* 2026;11(12). https://insight.jci.org/articles/view/203988 | Icahn School of Medicine at Mount Sinai, with **Current Health (Boston)** co-authors Wilkes and Zahradka | CRS detected ~7 h before nurses. A bridge to Current Health as a partner (H7). |
+| Pediatric chemo, 2 wearables | Koenig C, Ammann RA, et al. *Support Care Cancer* 2024;32:188. https://doi.org/10.1007/s00520-024-08366-w | Inselspital Bern (per search snippet) | Device comparison and wear tolerance (H1). |
+| REMEDY (abstract) | Ketchum EB, … Bryan LJ. JHOP 2024 abstract. https://www.jhoponline.com/issue-archive/2024-issues/march-2024-vol-14-special-feature/remote-outpatient-temperature-monitoring-for-early-detection-of-febrile-neutropenia-after-high-dose-cytarabine-consolidation-chemotherapy-the-remedy-trial | Wellstar MCG Georgia Cancer Center / UGA | Home TempTraq after AML chemo: **a real S1 home workflow**. |
+| ONS Congress 2026 triage and remote-nursing presenters | Emory Winship (McMasters, telephone triage): https://winshipcancer.emory.edu/newsroom/articles/2026/winship-nurses-earn-national-spotlight-at-ons-congress.php · Florida Cancer Specialists remote triage team: https://www.flcancer.com/articles/2025-ons-congress/ · Dana-Farber nurses' 2026 abstracts: https://www.dana-farber.org/newsroom/news-releases/2026/dana-farber-nurses-present-research-at-2026-oncology-nursing-society-congress | As listed on each page | The **deck's "ONS remote-monitoring nursing leaders" expert slot**. The Dana-Farber page gives local names (e.g., Jennifer Servant, DNP). |
+
+### Vendor partners: 2026 status (H4 pricing, H7 competition)
+
+| Company | Status, Oct 2026 | Contact |
+|---|---|---|
+| **Current Health** | Independent again (Best Buy sold it to the co-founder, June 2025). Focused on CAR-T/bispecific home monitoring. **Boston-based staff** co-authored the 2026 Mount Sinai paper. | https://currenthealth.com/ · https://www.linkedin.com/company/currenthealth |
+| **TempTraq** (formerly Blue Spark) | Assets sold to BST Technology Acquisition, Mar 2025; product still marketed | https://temptraq.healthcare/contact/ |
+| **Biofourmis / CopilotIQ** | Merged Oct 2024; oncology roots via Gaido Health | https://biofourmis.com/contact-us |
+| **Canopy** | Independent; oncology remote monitoring (Texas Oncology, Utah Cancer Specialists deals) | https://canopycare.us/ |
+| **Navigating Care** | Owned by OneOncology (2024). Both a competitor and a window into an EOM network. | https://www.navigatingcare.com/contact/ |
+| Noona (Siemens Healthineers / Varian), Carevive (Health Catalyst) | Oncology patient-reported outcome (ePRO) platforms that are adjacent competitors | https://cancercare.siemens-healthineers.com/products/software/patient-engagement/noona · https://www.healthcatalyst.com/contact |
+
+---
+
+## 4. LinkedIn search strings (Boston-first)
+
+Add **Location = Greater Boston** (and then "Massachusetts") for round 1, and drop it for national backup. Sales Navigator-only filters: Seniority, Function, Company headcount, Boolean in Title, Posted in past 30 days.
+
+**A. End-user RNs: Boston oncology RPM, virtual care and infusion**
+- Keywords: `(oncology OR cancer OR OCN OR infusion OR hematology) AND ("remote patient monitoring" OR RPM OR "virtual care" OR telehealth OR "home hospital" OR "healthcare at home" OR infusion) AND (RN OR nurse) NOT (recruiter OR sales)`
+- Current company: `Mass General Brigham` · `Massachusetts General Hospital` · `Brigham and Women's Hospital` · `Dana-Farber Cancer Institute` · `Beth Israel Deaconess Medical Center` · `Beth Israel Lahey Health` · `Boston Medical Center`
+
+**B. The BILH RPM Operations Manager (deck slide 8, name TBD)**
+- Keywords: `"remote patient monitoring" AND (manager OR operations)`
+- Current company: `Beth Israel Lahey Health`
+
+**C. Champions: home-hospital and oncology nurse leaders**
+- Keywords: `("hospital at home" OR "home hospital" OR "healthcare at home" OR "cancer care at home" OR "virtual care") AND (director OR manager OR "nurse manager" OR "clinical nurse specialist")`
+- National extras: Current company `Huntsman Cancer Institute` (Huntsman at Home) and `Penn Medicine` (Cancer Care at Home)
+
+**D. Economic buyers: EOM networks and CNOs**
+- Keywords: `("chief nursing officer" OR "vice president" OR "value-based" OR "director of nursing") AND (oncology OR cancer)`
+- Current company:
+  - The US Oncology Network
+  - OneOncology
+  - American Oncology Network
+  - Texas Oncology
+  - Tennessee Oncology
+  - Rocky Mountain Cancer Centers
+  - Minnesota Oncology
+  - West Cancer Center
+- Re-verify EOM participation against CMS's current list.
+
+**E. S1 fallback: infusion nursing leaders**
+- Keywords: `(infusion OR "infusion center" OR "infusion services") AND (oncology OR cancer) AND ("nurse manager" OR director OR "clinical nurse specialist" OR educator)`
+
+---
+
+## 5. Outreach scripts (0% pitch, mapped to H1–H8)
+
+**Rules for every script:**
+- Disclose that you are an MIT student and that Lumina is an early-stage venture.
+- Ask about past behavior, not the product.
+- Ask for 20–30 minutes (deck standard); two teammates join, one asks and one takes notes.
+- Never ask for or share patient information.
+- Always end with **"Could you introduce me to two colleagues…"** (the deck's referral rule).
+- Never mention the wearable, AI or pricing in a first contact.
+
+### Script A: LinkedIn connection note (oncology RPM / virtual-care / infusion RNs). 259 characters.
+
+> Hi [First name], I'm an MIT student researching how Boston oncology nurses keep home monitoring working after chemo (setup, connectivity, non-wear, alerts). Not selling anything. Could I learn from your experience in a 20-min call? Glad to share what we find.
+
+**After they accept:**
+> Thanks, [First name]. I'm [Your name], part of an MIT team studying the first days after chemo or discharge, when patients are monitored at home. We're in a pure learning phase, with no product to show.
+>
+> Since you [onboard / monitor / infuse] patients at [organization], I'd love 20 minutes on your last few shifts:
+> - What slows down getting a patient set up at home?
+> - What happens when data stops coming in?
+> - How many alerts turn out to be nothing, and what does your team do then?
+>
+> No patient details needed. Would [two windows] work? And if a colleague runs onboarding more directly, I'd be grateful for an intro.
+
+*Tests: H1 (setup, connectivity, non-wear in the top 3), H2 (false-alert tolerance), H6 (ask at the end: "Where do you learn what other programs do?").*
+
+### Script B: Email to champions and nurse managers (oncology home-hospital programs)
+
+**Subject:** 20 minutes on how [Program] catches post-chemo deterioration at home?
 
 > Dear [Name],
 >
-> I'm [Your name] at MIT, leading primary research for Lumina, an early-stage venture studying how oncology programs manage patients at home after chemotherapy or discharge. This is a research request, not a sales call. We're deciding whether and how to build anything, and executives' economics will shape that decision.
+> I'm [Your name], an MIT student doing primary research for Lumina, an early-stage venture studying oncology patients at home after chemotherapy or discharge. This is a learning conversation, not a demo.
 >
-> [Organization]'s [EOM participation / hospital-at-home program / recent announcement] is why I'm writing. I'm trying to understand three things from leaders who own the P&L:
-> 1. Which post-treatment ED visits and admissions you consider avoidable, and how you track them under EOM or value-based contracts
-> 2. How remote-monitoring programs are funded in practice: billing codes (99453/99454/99457 and the newer short-duration options), episode budgets, or as an operating cost
-> 3. What a monitoring program would need to show in nurse time, alert volume, and avoided acute care before you'd fund a pilot, and what made past programs fail
+> [Program]'s work stood out to me: [personal hook, see §5.1]. Programs like yours sit where several pressures meet: ED visits and readmissions after treatment, Enhancing Oncology Model expectations for 24/7 access, and nurse capacity.
 >
-> Could we take 20 minutes in the next few weeks? I'll share a short benchmark summary from the oncology programs we speak with. If someone else on your team, such as your director of virtual care or quality lead, is better placed, I'd be grateful for an introduction.
+> Could we take 20–30 minutes? I'd like to understand:
+> - How patients are enrolled and set up at home, and what goes wrong
+> - How your team handles alerts and data gaps, including nights and weekends
+> - How a decision to pilot a new monitoring workflow actually gets made, and how long it takes
+>
+> I'll share a de-identified summary of what we learn across Boston and national programs. I'd also be grateful for introductions to two nurses on your team who do the onboarding day to day.
+>
+> With thanks,
+> [Name] · MIT [program] · [email] · [LinkedIn]
+
+*Tests: H1, H2, H5 (time to a pilot decision), H8 (S5 onboarding vs S1 neutropenia window: "Which matters more to your outcomes?").*
+
+### Script C: Community post or DM (mod-approved only; peer-to-peer)
+
+**Step 1, message to the mods or admins** (r/Nurses, the Boston ONS social media coordinator, Facebook group admins):
+> Hi, I'm an MIT student doing interview research on how oncology and home-monitoring nurses handle device setup, data gaps and alerts after chemo. Lumina is an early-stage student venture. May I share one transparent request for 20-minute conversations? It's unpaid, there's no product and no sales, and no patient information is collected. I'm happy to change the wording or not post at all if you'd prefer.
+
+**Step 2, post (only if approved):**
+> **[Mod-approved] Oncology/RPM/infusion RNs: what's the most frustrating part of monitoring patients at home after chemo?**
+>
+> Transparency first: I'm an MIT student on an early-stage project (Lumina). The mods okayed this post. I'm not selling anything.
+>
+> I'm trying to learn from people who do the work:
+> - What's harder: getting patients set up, keeping devices connected, or patients who stop wearing them?
+> - How many alerts are false, and when does your team start tuning them out?
+> - Who handles an abnormal reading at 2 a.m.?
+>
+> If you'd do a 20-min chat, comment or DM me. Thread replies help too. I'll post a summary back. Please don't share any patient details.
+
+*Tests: H1, H2, H6.*
+
+### Script D: 1:1 message to a professional-association member (ONS / ACCC / INS / AAACN)
+
+**Only as a 1:1 message.** ONS, ACCC and AONL terms forbid research or industry recruitment posts in the forums. ONS's terms tell members to "reach out to them directly". For a public ONS post, run an **IRB-approved, faculty-led, non-industry-sponsored** study through ONS's research process.
+
+> Hi [Name],
+>
+> I read your post in [ONS community / thread] on [specific topic, e.g., neutropenic fever triage after hours]. It was really helpful. I'm [Your name], an MIT student on early-stage research (venture project: Lumina) into how oncology nurses monitor patients at home after chemotherapy. I'm messaging directly because the community guidelines ask that research requests not be posted.
+>
+> Three issues keep coming up, and I'd value your view on whether they match your practice:
+> 1. **Adherence:** patients removing devices, or data quietly stopping
+> 2. **Alert fatigue:** how many false notifications before people stop trusting them
+> 3. **Workflow:** who owns an abnormal reading overnight, and how it gets documented
+>
+> Would you have 20 minutes? No product, no patient data. I'll share a de-identified summary. If it's not a fit, is there someone in your program, such as a triage lead or onboarding RN, you'd suggest?
+>
+> Thank you,
+> [Name] · MIT [program] · [email]
+
+*Tests: H1, H2, H6. For infusion nurses (S1), swap item 1 for "how you watch patients through the nadir window after they go home" to test H8.*
+
+### Script E: Executive cold email (VP Value-Based Care, President of Home Hospital, CNO)
+
+**Subject:** Learning from [Organization]: avoidable acute care after chemo, and what monitoring is worth
+
+> Dear [Name],
+>
+> I'm [Your name] at MIT, leading primary research for Lumina, an early-stage venture studying how oncology programs manage patients at home after chemotherapy or discharge. This is a research request, not a sales call. Leaders' economics will decide whether and what we build.
+>
+> [Personal hook, see §5.1]. I'm trying to understand from leaders who own the budget:
+> 1. **Who funds remote monitoring at [Organization]:** virtual-care / RPM operations, the oncology service line, or nursing. How much comes from billing codes, including the 2026 short-window codes, versus avoided ED visits or EOM performance?
+> 2. **What a per-episode or per-program cost would have to beat**, and what made past monitoring programs succeed or stall
+> 3. **How long from first conversation to pilot and to contract**, and who has to sign off
+>
+> Could we take 20–30 minutes in the next two weeks? [If attending: I'll also be at the ACCC National Oncology Conference in Boston, Oct 21–23, if meeting in person is easier.] I'll share a short benchmark from the programs we speak with. If your director of virtual care or quality lead is better placed, I'd welcome an introduction.
 >
 > Respectfully,
-> [Name] · [MIT program] · [email] · [LinkedIn]
+> [Name] · MIT [program] · [email] · [LinkedIn]
+
+*Tests: H3 (budget owner), H4 (ask "what would a monitored episode need to cost, and how would you fund it?" in the call, never in the email), H5 (sales cycle).*
+
+### Script F (bonus): email to a paper's author (expert)
+
+> Subject: Question about your [THERMAL / wearable fever-detection] study
+>
+> Dear Dr. [Name],
+>
+> I'm [Your name], an MIT student researching early infection detection for cancer patients at home (early-stage venture: Lumina). Your [study, journal, year] is one of the few that measured [wear compliance / lead time / false alarms] with continuous temperature in [population].
+>
+> Could I ask 20 minutes of questions about what didn't make the paper: how well patients tolerated the devices, how false alarms were handled, and what you'd need to see before nurses relied on alerts at home? I'm not selling anything. I'd be glad to share our nursing-interview findings in return.
+>
+> With thanks,
+> [Name] · MIT [program] · [email]
+
+*Tests: H2, H7.*
+
+### Script G (bonus): LinkedIn message to a vendor clinical or partnerships lead (partner)
+
+> Hi [Name], I'm an MIT student researching how oncology programs run home monitoring after chemo (venture project: Lumina, very early). I'm not pitching. I'd value 20 min on what you see in the field: where onboarding fails, how programs price and fund monitoring, and what oncology teams ask for that's hard to deliver.
+
+*Tests: H4, H7.*
+
+### 5.1 Personal hooks for the deck's Boston contacts (slide 8)
+
+**Verify each hook against a current source before sending.** These hooks are the deck team's own research and have not been re-checked here, except for the Current Health correction.
+
+| Contact (deck role) | Script | Hook to open with | Ask |
+|---|---|---|---|
+| Thomas J. Roberts, MD, MBA, Clinical Director of Oncology Services, MGB Healthcare at Home (Champion) | B | Leads MGB's oncology home-hospital service (launched Mar 2025); the team's ASCO 2026 abstract on readmissions. Check whether he presents at ASCO QCS Oct 16–17. | H1, H2, H8. Two RN intros. |
+| Heather O'Sullivan, MS, RN, President, MGB Healthcare at Home (Economic buyer) | E | Runs one of the largest US home-hospital programs. **Don't cite "Best Buy's Current Health";** ask what MGB uses. | H3, H4, H5 |
+| Stephen Dorner, MD, MPH, Chief Clinical & Innovation Officer, MGB Healthcare at Home (Champion) | B | Leads new home pathways, including oncology, and home-monitoring technology choices. | H2, H7 |
+| David Levine, MD, MPH, Clinical Director, R&D, MGB Healthcare at Home (Expert) | F | Hospital-at-home research; co-author of the oncology home-hospital study. | H4, H5 |
+| Michael J. Hassett, MD, MPH, Chief Quality Officer, Dana-Farber, eSyM PI (Influencer) | F/B | eSyM reduced ED visits across 6 systems while about half of patients used it. Ask about the adherence gap. Check whether he presents at ASCO QCS. | H1, H6, H7 |
+| Anne Gross, PhD, RN, SVP & CNO, Dana-Farber (Economic buyer) | E | Warm intro via Hassett or Cuccovia; owns oncology nursing including infusion. | H3, H5 |
+| Barbara Cuccovia, PhD, RN, Deputy CNO, Dana-Farber (Champion) | B | Transplant-nursing background bridges S1 and S3. | H1, H2, H8 |
+| RPM Operations Manager, BILH (End user / champion) | A→B | Runs enrollment, devices, thresholds and escalation, which is the S5 workflow exactly. Find via LinkedIn string B. | H1, H2, H5 |
+| Dina Katabi, PhD, MIT CSAIL (Expert) | F | Contactless home vital-sign monitoring: is a wearable the right form factor? | H7 |
+| Zen Chu, MIT Sloan / Hacking Medicine (Connector) | Short note | Ask for warm intros to Roberts, O'Sullivan and Hassett. | Intros |
 
 ---
 
-## 4. Recommended sequencing (Disciplined Entrepreneurship Step 9: Next 10 Customers)
+## 6. Seven-day execution plan (matches deck slide 9)
 
-1. **Week 1: listen.** Read r/nursing, r/nursinginformatics, ONS Communities (after joining) and the AAACN Telehealth SIG for 5–7 days. Log the exact phrases nurses use about alerts, non-wear and night coverage.
-2. **Week 1–2: 1:1 outreach to end users.** Run LinkedIn strings A and B, and send Script A to 40–60 RNs. Expect a ~10–20% reply rate (unvalidated assumption; track your actual rate).
-3. **Week 2: champions.** Send Script B to people found through string C, the Hospital at Home Users Group Nursing Community of Practice, DiMe Slack and SONSIEL.
-4. **Week 2–3: buyers.** Use Script E with string D plus warm intros via Health Tech Nerds, Out-of-Pocket and COA. Ask every champion you interview for a referral up the chain (DE Step 12, Decision-Making Unit).
-5. **Throughout.** For public posts, use Script C only after mod approval. Consider an IRB-approved, faculty-led study (e.g., through MIT's institutional review board) to unlock the ONS and r/nursing academic-survey paths.
-6. **Track** every contact in a single sheet with columns: source, persona, date, response, interview date, referral given.
+| Day | Action | Target |
+|---|---|---|
+| **Day 1 (Mon Oct 5)** | Send Zen Chu / faculty intro requests. Email BONS and ask how researchers may reach members. Send Script A to 25 Boston RNs (string A) and Script E/B to slide-8 leaders. | 20+ requests |
+| **Day 2** | Script A to 15 more RNs, including national backups. Script F to THERMAL, Verily and ONS-triage authors. Script G to Current Health, Canopy and TempTraq. Run string B for the BILH RPM manager. | 40+ requests total |
+| **Days 2–6** | Interviews (two teammates each). Request the 2 onboarding observations through champions. Tag H1–H8 V/I/NC after every call. Log the forums named (H6). | 22 interviews |
+| **Day 7** | Decision meeting (Stay / Narrow / Switch to S1 / Change channel). | Decision |
+| **Oct 16–17** | ASCO Quality Care Symposium (Boston): second-round interviews with care-delivery leaders. | 5–8 if needed |
+| **Oct 21–23** | ACCC National Oncology Conference (Boston): buyers and EOM administrators (H3–H5). | Buyer follow-ups |
 
-**Ethics and compliance checklist:**
-- Never ask for or record patient health information.
-- Disclose the venture in every message.
-- Don't offer compensation where community rules forbid it (e.g., r/nursing academic surveys).
-- Honor opt-outs immediately.
-- Re-verify each community's current rules on the day you post, because rules change.
+**Expected yield** is unvalidated; track it. To land 22 interviews from 40+ requests, the deck assumes roughly a 50% conversion, which is optimistic for cold outreach. Warm intros will carry most of the load, so start those first.
+
+## 7. Compliance checklist
+
+- **Disclosure:** state that you are an MIT student and that Lumina is a venture in every message.
+- **Patient information:** never collect or share PHI.
+- **Opt-outs:** honor them immediately.
+- **Posting:** post publicly only with written moderator approval.
+- **Compensation:** don't offer it where community rules forbid it (e.g., r/nursing academic surveys).
+- **IRB:** an IRB-approved, faculty-led study through MIT's IRB (COUHES) would open the ONS and Reddit academic-survey paths for later rounds.
+- **Rules change:** re-check each community's rules on the day you post.
